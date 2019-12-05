@@ -1,11 +1,10 @@
 package dssc.crossway2;
 
-import java.awt.image.PixelGrabber;
 
 public class GoBoard {
 
     private int side;
-    Cell [][] board;
+    private Cell [][] board;
 
     /**
      * GoBoard class

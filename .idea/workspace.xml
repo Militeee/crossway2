@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb783e39-6736-40ec-8a70-b64a8865b0ab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway2/Cell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway2/Colors.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway2/CrosswayRules.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway2/GameController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway2/GoBoard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway2/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway2/OutOfBoardException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/crossway2/MainTest.java" afterDir="false" />
+    <list default="true" id="cb783e39-6736-40ec-8a70-b64a8865b0ab" name="Default Changelist" comment="added all old files from crossway1 project">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway2/GenericBoard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway2/GoClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway2/IllegalMoveException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway2/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway2/MessageTypes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway2/Move.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway2/Validator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/crossway2/CellTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/crossway2/GameControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/crossway2/GoBoardTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/crossway2/RulesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway2/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway2/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway2/Colors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway2/Colors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway2/CrosswayRules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway2/CrosswayRules.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway2/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway2/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway2/GoBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway2/GoBoard.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -97,12 +99,21 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/test/crossway2" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/java/test/crossway2" />
+      <recent name="$PROJECT_DIR$/src/main/java/dssc/crossway2" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="dssc.crossway2" />
     </key>
@@ -119,26 +130,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.crossway2 [javadoc]">
-    <configuration name="crossway2 [check]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="check" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="JUnit.CellTest and 4 more">
     <configuration name="crossway2 [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -196,6 +188,20 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="CellTest and 4 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="crossway2.test" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <patterns>
+        <pattern testClass="test.crossway2.CellTest" />
+        <pattern testClass="test.crossway2.GameControllerTest" />
+        <pattern testClass="test.crossway2.GoBoardTest" />
+        <pattern testClass="test.crossway2.MainTest" />
+        <pattern testClass="test.crossway2.RulesTest" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crossway2.test" />
       <extension name="coverage">
@@ -213,11 +219,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CellTest and 4 more" />
         <item itemvalue="Gradle.crossway2 [javadoc]" />
         <item itemvalue="JUnit.MainTest" />
         <item itemvalue="Gradle.crossway2 [clean]" />
         <item itemvalue="Gradle.crossway2 [test]" />
-        <item itemvalue="Gradle.crossway2 [check]" />
       </list>
     </recent_temporary>
   </component>
@@ -265,7 +271,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="second commit" />
     <MESSAGE value="ho iniziato a riversare il codice dal vecchio repo" />
-    <option name="LAST_COMMIT_MESSAGE" value="ho iniziato a riversare il codice dal vecchio repo" />
+    <MESSAGE value="added all old files from crossway1 project" />
+    <option name="LAST_COMMIT_MESSAGE" value="added all old files from crossway1 project" />
   </component>
   <component name="WindowStateProjectService">
     <state x="566" y="148" width="777" height="818" key="CommitChangelistDialog2" timestamp="1575457377550">

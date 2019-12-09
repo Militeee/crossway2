@@ -1,5 +1,6 @@
 package dssc.crossway2;
 
+
 /**
  * enum of possible color status of a cell.
  */

@@ -1,18 +1,77 @@
 package dssc.crossway2;
 
 
-public class GoBoard {
+/**
+ * Go board class. A class to manage a Go Board, that is a square check board.
+ *
+ */
+public class GoBoard extends GenericBoard {
 
-    private int side;
-    private Cell [][] board;
+    private final static char EMPTY_SIGN = '.';
+    private final static char WHITE_SIGN = 'W';
+    private final static char BLACK_SIGN = 'B';
 
     /**
-     * GoBoard class
-     * @param size the size of the side of the board, in cells.
+     * GoBoard constructor
+     * @param side the side of the board, in cells
      */
-    public GoBoard(int size) {
-        this.side = size;
+    public GoBoard(int side) {
+        super(side);
+        initializeBoard();
     }
+
+    /**
+     * board initialization
+     */
+    @Override
+    public void initializeBoard() {
+        for (int i=0; i<this.side; i++) {
+            for (int j=0; j<this.side; j++) {
+                this.board[i][j] = new Cell(Colors.EMPTY);
+            }
+        }
+    }
+
+    public String toString() {
+        char[][] canvas = new char[side][side];
+        for(int i=0;i<side;i++) {
+            for(int j=0;j<side;j++) {
+                Colors c = null;
+                try {
+                    c = getCellStatus(j,i);
+                } catch (OutOfBoardException e) {
+                    e.printStackTrace();
+                }
+
+                if(c==Colors.WHITE)
+                    canvas[i][j]=WHITE_SIGN;
+
+                if(c==Colors.BLACK)
+                    canvas[i][j]=BLACK_SIGN;
+
+                if(c==Colors.EMPTY)
+                    canvas[i][j]=EMPTY_SIGN;
+            }
+        }
+
+        return matrixToString(canvas,side,side);
+
+    }
+
+    private String matrixToString(char[][] canvas, int a, int b) {
+
+        StringBuilder s = new StringBuilder();
+
+        for(int i=0;i<a;i++) {
+            for (int j = 0; j < b; j++) {
+                s.append(canvas[i][j]);
+            }
+            s.append("\n");
+        }
+
+        return s.substring(0,s.length()-1); // I don't want last \n;
+    }
+
 
     /**
      * Side getter
@@ -20,19 +79,15 @@ public class GoBoard {
      */
     public int getSide() {
 
-        return this.side;
+        return side;
     }
 
     /** Cell getter
-     * @param x x coord
-     * @param y coord
      * @return Gets the String status of a cell
-     * @throws OutOfBoardException when the x or y are out of board boundaries
      */
     public Colors getCellStatus(int x, int y) throws OutOfBoardException {
 
         if ((x>=this.side)||(y>=this.side)|| (x < 0) || (y < 0)) {
-
             throw new OutOfBoardException();
         }
 
@@ -44,13 +99,10 @@ public class GoBoard {
      * @param x x board coordinates
      * @param y y board coordinates
      * @param newStatus String status to update
-     * @throws OutOfBoardException when x or y out of board boundaries
      */
     public void setCellStatus(int x, int y, Colors newStatus) throws OutOfBoardException {
 
-
         if ((x>=this.side)||(y>=this.side) || (x < 0) || (y < 0) ) {
-
             throw new OutOfBoardException();
         }
 

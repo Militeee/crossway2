@@ -13,11 +13,9 @@ public class Cell {
         this.status = Colors.EMPTY;
     }
 
-    //ctor
     Cell (Colors status) {
         this.status = status;
     }
-
 
     public Colors getStatus() {
         return this.status;

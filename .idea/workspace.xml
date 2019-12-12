@@ -1,40 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb783e39-6736-40ec-8a70-b64a8865b0ab" name="Default Changelist" comment="added all old files from crossway1 project">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+    <list default="true" id="cb783e39-6736-40ec-8a70-b64a8865b0ab" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/CrosswayGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/CrosswayGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/CrosswayRules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/CrosswayRules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/GoClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/Validator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway2/Cell.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway2/Colors.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway2/CrosswayRules.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway2/GameController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway2/GenericBoard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway2/GoBoard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway2/GoClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway2/IllegalMoveException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway2/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway2/Message.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway2/MessageTypes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway2/Move.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway2/OutOfBoardException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway2/Validator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/crossway2/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/crossway/CellTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/crossway2/GameControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/crossway/GameControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/crossway2/GoBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/crossway/GoBoardTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/crossway2/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/crossway/MainTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/crossway2/RulesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/crossway/RulesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/crossway/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/crossway/CellTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/crossway/GameControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/crossway/GameControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/crossway/GoBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/crossway/GoBoardTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,16 +105,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.test.crossway in crossway2.test">
-    <configuration name="Unnamed (1)" type="ConfigurationType" factoryName="PerlRun" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="INTERPRETER_NAME" value="" />
-      <option name="PROGRAM_NAME" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <module name="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Unnamed" type="ConfigurationType" factoryName="PerlRun" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="INTERPRETER_NAME" value="" />
@@ -167,6 +129,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainTest and 1 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="crossway2.test" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <patterns>
+        <pattern testClass="test.crossway.MainTest" />
+        <pattern testClass="test.crossway.RulesTest" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="crossway2.test" />
       <extension name="coverage">
@@ -183,7 +156,6 @@
       </method>
     </configuration>
     <configuration name="test.crossway in crossway2.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="crossway2.test" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="test.crossway.*" />
@@ -191,18 +163,31 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test.crossway" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <option name="PARAMETERS" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.CellTest and 4 more" />
+      <item itemvalue="JUnit.MainTest" />
+      <item itemvalue="JUnit.test.crossway in crossway2.test" />
+      <item itemvalue="JUnit.MainTest and 1 more" />
+      <item itemvalue="PerlRun.Unnamed" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.test.crossway in crossway2.test" />
         <item itemvalue="JUnit.CellTest and 4 more" />
-        <item itemvalue="JUnit.MainTest" />
-        <item itemvalue="PerlRun.Unnamed (1)" />
         <item itemvalue="PerlRun.Unnamed" />
+        <item itemvalue="JUnit.MainTest and 1 more" />
+        <item itemvalue="JUnit.MainTest" />
       </list>
     </recent_temporary>
   </component>
@@ -243,7 +228,21 @@
       <option name="project" value="LOCAL" />
       <updated>1575457377610</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added all old files from crossway1 project">
+      <created>1576147586433</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1576147586433</updated>
+    </task>
+    <task id="LOCAL-00004" summary="codice funzionante">
+      <created>1576147621951</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1576147621951</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -263,33 +262,34 @@
     <MESSAGE value="second commit" />
     <MESSAGE value="ho iniziato a riversare il codice dal vecchio repo" />
     <MESSAGE value="added all old files from crossway1 project" />
-    <option name="LAST_COMMIT_MESSAGE" value="added all old files from crossway1 project" />
+    <MESSAGE value="codice funzionante" />
+    <option name="LAST_COMMIT_MESSAGE" value="codice funzionante" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576145766949">
+    <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576148642288">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576145766949" />
-    <state x="566" y="148" width="777" height="818" key="CommitChangelistDialog2" timestamp="1576147586356">
+    <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576148642288" />
+    <state x="566" y="148" width="777" height="818" key="CommitChangelistDialog2" timestamp="1576147621903">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="566" y="148" width="777" height="818" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1576147586356" />
-    <state width="937" height="275" key="GridCell.Tab.0.bottom" timestamp="1576147594252">
+    <state x="566" y="148" width="777" height="818" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1576147621903" />
+    <state width="937" height="275" key="GridCell.Tab.0.bottom" timestamp="1576148746242">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="937" height="275" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1576147594252" />
-    <state width="937" height="275" key="GridCell.Tab.0.center" timestamp="1576147594251">
+    <state width="937" height="275" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1576148746242" />
+    <state width="937" height="275" key="GridCell.Tab.0.center" timestamp="1576148746242">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="937" height="275" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1576147594251" />
-    <state width="937" height="275" key="GridCell.Tab.0.left" timestamp="1576147594251">
+    <state width="937" height="275" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1576148746242" />
+    <state width="937" height="275" key="GridCell.Tab.0.left" timestamp="1576148746242">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="937" height="275" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1576147594251" />
-    <state width="937" height="275" key="GridCell.Tab.0.right" timestamp="1576147594251">
+    <state width="937" height="275" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1576148746242" />
+    <state width="937" height="275" key="GridCell.Tab.0.right" timestamp="1576148746242">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="937" height="275" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1576147594251" />
+    <state width="937" height="275" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1576148746242" />
     <state x="665" y="271" width="580" height="571" key="MultipleFileMergeDialog" timestamp="1576145690899">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -298,10 +298,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="443" y="131" width="1024" height="852" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1576143342271" />
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1576147605278">
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1576147627514">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1576147605278" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1576147627514" />
     <state x="616" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1575456226134">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

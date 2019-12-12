@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 
-class GameControllerTest {
+public class GameControllerTest {
 
 
    @Test

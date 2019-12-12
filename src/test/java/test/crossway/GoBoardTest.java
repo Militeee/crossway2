@@ -1,11 +1,12 @@
 package test.crossway;
 
 import dssc.crossway.Colors;
+import dssc.crossway.Coordinates;
 import dssc.crossway.GoBoard;
 import dssc.crossway.OutOfBoardException;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 
 public class GoBoardTest {
@@ -16,6 +17,18 @@ public class GoBoardTest {
        GoBoard board = new GoBoard (8);
        assertEquals(board.getSide(),8);
    }
+
+    @Test
+    public void isInsideTest() {
+        GoBoard board = new GoBoard (8);
+        assertTrue(board.isInside(new Coordinates(0,0)));
+        assertTrue(board.isInside(new Coordinates(4,6)));
+        assertFalse(board.isInside(new Coordinates(0,8)));
+        assertFalse(board.isInside(new Coordinates(8,0)));
+        assertFalse(board.isInside(new Coordinates(-1,5)));
+        assertTrue(board.isInside(new Coordinates(7,7)));
+        assertTrue(board.isInside(new Coordinates(7,0)));
+    }
 
    @Test
    public void setCellStatusTest() throws OutOfBoardException {

@@ -1,6 +1,6 @@
 package dssc.crossway;
 
-abstract class GenericBoard {
+public abstract class GenericBoard {
 
     int side;
      Cell[][] board;
@@ -17,4 +17,9 @@ abstract class GenericBoard {
     }
 
     abstract void initializeBoard();
+
+    public boolean isInside(Coordinates coord)
+    {
+        return coord.getX()<side && coord.getY()<side && coord.getY()>=0 && coord.getX()>=0;
+    }
 }

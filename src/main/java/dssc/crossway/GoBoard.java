@@ -86,28 +86,28 @@ public class GoBoard extends GenericBoard {
      * @return Gets the String status of a cell
      */
     public Colors getCellStatus(int x, int y) throws OutOfBoardException {
-
-        if ((x>=this.side)||(y>=this.side)|| (x < 0) || (y < 0)) {
-            throw new OutOfBoardException();
-        }
-
-        return this.board[x][y].getStatus();
+        return getCellStatus(new Coordinates(x,y));
     }
 
-    /**
-     * Cell setter
-     * @param x x board coordinates
-     * @param y y board coordinates
-     * @param newStatus String status to update
+    /** Cell getter
+     * @return Gets the String status of a cell
      */
-    public void setCellStatus(int x, int y, Colors newStatus) throws OutOfBoardException {
+    public Colors getCellStatus(Coordinates c) throws OutOfBoardException {
+        if(!isInside(c))
+            new OutOfBoardException();
 
-        if ((x>=this.side)||(y>=this.side) || (x < 0) || (y < 0) ) {
+        return this.board[c.getX()][c.getY()].getStatus();
+    }
+
+
+    public void setCellStatus(Coordinates c, Colors newStatus) throws OutOfBoardException {
+        if (!isInside(c)) {
             throw new OutOfBoardException();
         }
+        this.board[c.getX()][c.getY()].setStatus(newStatus);
+    }
 
-        this.board[x][y].setStatus(newStatus);
-
-
+    public void setCellStatus(int x, int y, Colors newStatus) throws OutOfBoardException {
+        setCellStatus(new Coordinates(x,y), newStatus);
     }
 }

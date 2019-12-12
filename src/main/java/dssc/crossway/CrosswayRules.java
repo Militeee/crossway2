@@ -1,5 +1,6 @@
 package dssc.crossway;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class CrosswayRules extends Validator {
@@ -12,6 +13,7 @@ public class CrosswayRules extends Validator {
         return board.getCellStatus(m.getX(), m.getY()) == Colors.EMPTY;
     }
 
+    /*
     private boolean noCrossways(GoBoard board, Move m) throws OutOfBoardException {
 
         Colors enemy = m.getColor().getOpposite();
@@ -66,6 +68,53 @@ public class CrosswayRules extends Validator {
 
 
         return legality;
+    }
+    */
+
+    private boolean noCrossways(GoBoard board, Move m) throws OutOfBoardException {
+        ArrayList<Coordinates> diagonalPositions = getDiagonalPositions(board, m.getCoordinates());
+
+        boolean result = diagonalPositions.stream()
+                .map(x -> !areCrossed(board, m, x))
+                .reduce(true, Boolean::logicalAnd);
+
+        return result;
+    }
+
+    private boolean areCrossed(GoBoard board, Move m, Coordinates coord2) {
+        Coordinates coord1 = m.getCoordinates();
+        Coordinates coord3 = new Coordinates(coord1.getX(), coord2.getY());
+        Coordinates coord4 = new Coordinates(coord2.getX(), coord1.getY());
+
+        Colors c[] = new Colors[0];
+        try {
+            c = new Colors[]{m.getColor(), board.getCellStatus(coord2), board.getCellStatus(coord3), board.getCellStatus(coord4)};
+        } catch (OutOfBoardException e) {
+            e.printStackTrace();
+        }
+
+        boolean full = c[0]!=Colors.EMPTY && c[1]!=Colors.EMPTY && c[2]!=Colors.EMPTY && c[3]!=Colors.EMPTY;
+        boolean cross = c[0] == c[1] && c[2] == c[3] && c[0] != c[2];
+        return full && cross;
+
+    }
+
+    private ArrayList<Coordinates> getDiagonalPositions(GoBoard board, Coordinates c) {
+        ArrayList<Coordinates> diagonalPositions = new ArrayList<>();
+        Coordinates[] diagonals = {
+                c.getNorthEast(),
+                c.getNorthWest(),
+                c.getSouthWest(),
+                c.getSouthEast()
+        };
+
+        for(Coordinates coord: diagonals)
+        {
+            if(board.isInside(coord))
+                diagonalPositions.add(coord);
+        }
+
+        return diagonalPositions;
     }
 
     @Override
@@ -133,13 +182,13 @@ public class CrosswayRules extends Validator {
             node = Q.poll();
             for (Coordinates n : adjacentNodes( node, board, c)) {
 
-                if ((n.getX_cord() == (side - 1)) && (c == Colors.WHITE)) {
+                if ((n.getX() == (side - 1)) && (c == Colors.WHITE)) {
                     return true;
-                } else if ((n.getY_cord() == (side - 1)) && (c == Colors.BLACK)) {
+                } else if ((n.getY() == (side - 1)) && (c == Colors.BLACK)) {
                     return true;
                 }
-                if (!visited[n.getX_cord()][n.getY_cord()]) {
-                    visited[n.getX_cord()][n.getY_cord()] = true;
+                if (!visited[n.getX()][n.getY()]) {
+                    visited[n.getX()][n.getY()] = true;
                     Q.add(n);
                 }
 
@@ -152,8 +201,8 @@ public class CrosswayRules extends Validator {
 
     private LinkedList<Coordinates> adjacentNodes(Coordinates node, GoBoard board, Colors c) {
 
-        int x = node.getX_cord() - 1;
-        int y = node.getY_cord() - 1;
+        int x = node.getX() - 1;
+        int y = node.getY() - 1;
 
         LinkedList<Coordinates> ret = new LinkedList<Coordinates>();
 
@@ -161,10 +210,10 @@ public class CrosswayRules extends Validator {
         for(int i = x; i < x + 3; i++){
             for(int j = y; j < y + 3; j++){
                 try {
-                    if (!(i == node.getX_cord() && j == node.getY_cord()) && (board.getCellStatus(i, j) == c)) {
+                    if (!(i == node.getX() && j == node.getY()) && (board.getCellStatus(i, j) == c)) {
                         ret.add(new Coordinates(i, j));
                     }
-                } catch (OutOfBoardException ignored) {}
+                } catch (Exception ignored) {}
             }
         }
 

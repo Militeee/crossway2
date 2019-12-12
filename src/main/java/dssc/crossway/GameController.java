@@ -68,7 +68,7 @@ public class GameController {
     }
 
     public void performGameMove(Coordinates m) throws IllegalMoveException, OutOfBoardException {
-        placeStone(new Move(m.getX_cord(), m.getY_cord(), currentTurnColor()));
+        placeStone(new Move(m.getX(), m.getY(), currentTurnColor()));
         this.turn++;
     }
 

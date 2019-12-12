@@ -1,28 +1,28 @@
-package test.crossway2;
+package test.crossway;
 
 
-import dssc.crossway2.Cell;
-import dssc.crossway2.Colors;
-import org.junit.jupiter.api.Test;
+import dssc.crossway.Cell;
+import dssc.crossway.Colors;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 class CellTest {
 
    @Test
-   void initializeCell () {
+   public void initializeCell () {
        Cell c = new Cell();
        assertEquals(c.getStatus(), Colors.EMPTY);
    }
 
    @Test
-   void initializeWithEnumClass() {
+   public void initializeWithEnumClass() {
        Cell c = new Cell();
        assertEquals(c.getStatus(), Colors.EMPTY);
    }
 
    @Test
-   void oppositeColorTest() {
+   public void oppositeColorTest() {
        assertEquals(Colors.BLACK.getOpposite(),Colors.WHITE);
        assertEquals(Colors.WHITE.getOpposite(),Colors.BLACK);
        assertEquals(Colors.EMPTY.getOpposite(),Colors.EMPTY);

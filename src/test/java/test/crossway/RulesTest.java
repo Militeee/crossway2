@@ -1,14 +1,14 @@
-package test.crossway2;
+package test.crossway;
 
-import dssc.crossway2.*;
-import org.junit.jupiter.api.Test;
+import dssc.crossway.*;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 public class RulesTest {
 
     @Test
-    void validateLegalMoveTest() throws OutOfBoardException {
+    public void validateLegalMoveTest() throws OutOfBoardException {
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
         gc.startGame();
         Move m0 = new Move(1, 1, Colors.WHITE);
@@ -16,33 +16,31 @@ public class RulesTest {
     }
 
     @Test
-    void validatePieRuleTest() throws OutOfBoardException, IllegalMoveException {
+    public void validatePieRuleTest() throws OutOfBoardException, IllegalMoveException {
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
         gc.startGame();
 
 
-        Move m0 = new Move(1, 1, Colors.WHITE);
+        Coordinates m0 = new Coordinates(1, 1);
         Move m1 = new Move(1, 1, Colors.BLACK);
 
-        gc.placeStone(m0);
+        gc.performGameMove(m0);
         assertTrue(gc.validateMove(m1));
     }
 
     @Test
-    void validateIllegalMoveTest() throws OutOfBoardException, IllegalMoveException {
+    public void validateIllegalMoveTest() throws OutOfBoardException, IllegalMoveException {
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
         gc.startGame();
 
-        Move m0 = new Move(1, 1, Colors.WHITE);
-        Move m1 = new Move(1, 1, Colors.BLACK);
+        Move m1 = new Move(1, 1, Colors.WHITE);
         Move m2 = new Move(1, 1, Colors.WHITE);
-        gc.placeStone( m0 );
         gc.placeStone( m1 );
         assertFalse(gc.validateMove(m2));
     }
 
     @Test
-    void crosswayIllegalMoveTestSoutheast() throws OutOfBoardException {
+    public void crosswayIllegalMoveTestSoutheast() throws OutOfBoardException {
 
         /**
          *     0 1 2
@@ -67,7 +65,7 @@ public class RulesTest {
     }
 
     @Test
-    void crosswayIllegalMoveTestSouthwest() throws OutOfBoardException {
+    public void crosswayIllegalMoveTestSouthwest() throws OutOfBoardException {
 
         /**
          *     0 1 2
@@ -92,7 +90,7 @@ public class RulesTest {
     }
 
     @Test
-    void crosswayIllegalMoveTestNorthwest() throws OutOfBoardException {
+    public void crosswayIllegalMoveTestNorthwest() throws OutOfBoardException {
 
         /**
          *     0 1 2
@@ -117,7 +115,7 @@ public class RulesTest {
     }
 
     @Test
-    void crosswayIllegalMoveTestNorthEast() throws OutOfBoardException {
+    public void crosswayIllegalMoveTestNorthEast() throws OutOfBoardException {
 
         /**
          *     0 1 2
@@ -142,7 +140,7 @@ public class RulesTest {
     }
 
     @Test
-    void hasWhiteWon() throws OutOfBoardException, IllegalMoveException {
+    public void hasWhiteWon() throws OutOfBoardException, IllegalMoveException {
 
 
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
@@ -160,7 +158,7 @@ public class RulesTest {
 
 
     @Test
-    void hasBlackWon() throws OutOfBoardException, IllegalMoveException {
+    public void hasBlackWon() throws OutOfBoardException, IllegalMoveException {
 
 
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());

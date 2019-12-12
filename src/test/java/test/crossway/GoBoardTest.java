@@ -1,37 +1,37 @@
-package test.crossway2;
+package test.crossway;
 
-import dssc.crossway2.Colors;
-import dssc.crossway2.GoBoard;
-import dssc.crossway2.OutOfBoardException;
-import org.junit.jupiter.api.Test;
+import dssc.crossway.Colors;
+import dssc.crossway.GoBoard;
+import dssc.crossway.OutOfBoardException;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 
 class GoBoardTest {
 
 
    @Test
-   void getSideTest() {
+   public void getSideTest() {
        GoBoard board = new GoBoard (8);
        assertEquals(board.getSide(),8);
    }
 
    @Test
-   void setCellStatusTest() throws OutOfBoardException {
+   public void setCellStatusTest() throws OutOfBoardException {
        GoBoard board = new GoBoard(8);
        board.setCellStatus(1,4, Colors.WHITE);
        assertEquals(board.getCellStatus(1,4), Colors.WHITE);
    }
 
     @Test
-    void getCellStatusTest() throws OutOfBoardException {
+    public void getCellStatusTest() throws OutOfBoardException {
         GoBoard board = new GoBoard(8);
         assertEquals(board.getCellStatus(1,4), Colors.EMPTY);
     }
 
    @Test
-   void testExceptionMessage() {
+   public void testExceptionMessage() {
 
        GoBoard board = new GoBoard (8);
        try {
@@ -42,7 +42,7 @@ class GoBoardTest {
    }
 
     @Test
-    void testToString() {
+    public void testToString() {
 
         GoBoard board = new GoBoard (12);
         try {

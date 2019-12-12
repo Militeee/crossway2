@@ -45,6 +45,7 @@ public class GameController {
         }
     }
 
+
     public Colors getCellStatus(int x, int y) throws OutOfBoardException {
         return this.board.getCellStatus(x,y);
     }
@@ -53,7 +54,7 @@ public class GameController {
 
 
     public boolean validateMove(Move m) throws OutOfBoardException {
-        return rules.validateMove(this.board, m);
+        return rules.validateMove(this.board, m, this.turn);
     }
 
     public int getSide()  {
@@ -66,7 +67,7 @@ public class GameController {
 
     }
 
-    public void autoPlaceStone(Coordinates m) throws IllegalMoveException, OutOfBoardException {
+    public void performGameMove(Coordinates m) throws IllegalMoveException, OutOfBoardException {
         placeStone(new Move(m.getX_cord(), m.getY_cord(), currentTurnColor()));
         this.turn++;
     }
@@ -80,3 +81,4 @@ public class GameController {
     }
 
 }
+

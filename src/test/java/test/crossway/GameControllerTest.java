@@ -1,31 +1,32 @@
-package test.crossway2;
+package test.crossway;
 
-import dssc.crossway2.*;
-import org.junit.jupiter.api.Test;
+import dssc.crossway.*;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 
 class GameControllerTest {
 
 
    @Test
-   void boardIsValid(){
+   public void boardIsValid(){
        GameController gc = initialize();
        assertTrue(gc.exists());
    }
    @Test
-    void gameIsStarted(){
+   public void gameIsStarted(){
        GameController gc = initialize();
        gc.startGame();
 
    }
 
    @Test
-    void firstMove() throws OutOfBoardException {
+   public void firstMove() throws OutOfBoardException, IllegalMoveException {
        GameController gc = initialize();
        gc.startGame();
-       gc.placeStone(1,1, Colors.WHITE);
+       gc.placeStone(new Move(1,1, Colors.WHITE));
        assertEquals(gc.getCellStatus(1,1), Colors.WHITE);
    }
 
@@ -35,7 +36,7 @@ class GameControllerTest {
 
 
     @Test
-    void firstMove2() throws OutOfBoardException, IllegalMoveException {
+    public void firstMove2() throws OutOfBoardException, IllegalMoveException {
         GameController gc = initialize();
         gc.startGame();
         Move m = new Move(1,1, Colors.WHITE);
@@ -44,7 +45,7 @@ class GameControllerTest {
     }
 
     @Test
-    void illegalMove() throws OutOfBoardException, IllegalMoveException {
+    public void illegalMove() throws OutOfBoardException, IllegalMoveException {
         GameController gc = initialize();
         gc.startGame();
         Move m1 = new Move(1,1, Colors.WHITE);

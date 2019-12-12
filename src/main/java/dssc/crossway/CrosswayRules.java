@@ -69,8 +69,9 @@ public class CrosswayRules extends Validator {
     }
 
     @Override
-    public boolean validateMove(GoBoard board, Move m) throws OutOfBoardException {
+    public boolean validateMove(GoBoard board, Move m, int turn) throws OutOfBoardException {
         //check rule 1
+        if(turn == 1) return true;
         return noSuperposition(board, m) &&
                 noCrossways(board,m);
 
@@ -160,7 +161,7 @@ public class CrosswayRules extends Validator {
         for(int i = x; i < x + 3; i++){
             for(int j = y; j < y + 3; j++){
                 try {
-                    if ((i != node.getX_cord() || j != node.getY_cord()) && (board.getCellStatus(i, j) == c)) {
+                    if (!(i == node.getX_cord() && j == node.getY_cord()) && (board.getCellStatus(i, j) == c)) {
                         ret.add(new Coordinates(i, j));
                     }
                 } catch (OutOfBoardException ignored) {}

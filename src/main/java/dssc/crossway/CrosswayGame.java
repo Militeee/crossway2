@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class CrosswayGame {
 
-    private GameController controller = new GameController(new GoBoard(4), new CrosswayRules());
+    private GameController controller = new GameController(new GoBoard(12), new CrosswayRules());
 
     public void start() {
 
@@ -15,7 +15,7 @@ public class CrosswayGame {
 
         while(!gameOver) {
             winner = turn();
-            gameOver = winner!= Colors.EMPTY;
+            gameOver = winner != Colors.EMPTY;
         }
 
         showEndingMessage(winner);
@@ -23,16 +23,16 @@ public class CrosswayGame {
     }
 
     private Colors turn()  {
-        boolean endTurn = false;
+        boolean validMove = false;
 
-        while(!endTurn) {
+        while(!validMove) {
             printBoard();
             showCurrentPlayer();
             try {
 
                 Coordinates m = askMove();
                 applyMove(m);
-                System.out.println( controller.winner().toString());
+                validMove = true;
 
 
             } catch (Exception e) {
@@ -55,7 +55,7 @@ public class CrosswayGame {
 
 
     private void applyMove(Coordinates m) throws IllegalMoveException, OutOfBoardException {
-        this.controller.autoPlaceStone(m);
+        this.controller.performGameMove(m);
     }
 
     private Coordinates askMove() {

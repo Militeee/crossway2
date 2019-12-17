@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb783e39-6736-40ec-8a70-b64a8865b0ab" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/Coordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/CrosswayRules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/CrosswayRules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/GenericBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/GenericBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/GoBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/GoBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/CrosswayGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/CrosswayGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/CrosswayGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/CrosswayGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +92,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
+    <property name="last_directory_selection" value="$USER_HOME$/1✪1✪3/DSSC/Corsi/SDM/crossway2/src/main/java/dssc/crossway" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../crossway" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -99,21 +100,25 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="dssc.crossway" />
+      <recent name="dssc.crossway2" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/java/test/crossway2" />
       <recent name="$PROJECT_DIR$/src/main/java/dssc/crossway2" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="dssc.crossway2" />
-    </key>
   </component>
   <component name="RunManager" selected="JUnit.test.crossway in crossway2.test">
-    <configuration name="Unnamed" type="ConfigurationType" factoryName="PerlRun" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="INTERPRETER_NAME" value="" />
-      <option name="PROGRAM_NAME" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <module name="" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dssc.crossway.Main" />
+      <module name="crossway2.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dssc.crossway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -178,6 +183,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.CellTest and 4 more" />
       <item itemvalue="JUnit.MainTest" />
       <item itemvalue="JUnit.test.crossway in crossway2.test" />
@@ -186,6 +192,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.test.crossway in crossway2.test" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.CellTest and 4 more" />
         <item itemvalue="JUnit.MainTest and 1 more" />
         <item itemvalue="JUnit.MainTest" />
@@ -269,42 +276,43 @@
     <MESSAGE value="added all old files from crossway1 project" />
     <MESSAGE value="codice funzionante" />
     <MESSAGE value="NoCrossway refactored" />
-    <option name="LAST_COMMIT_MESSAGE" value="NoCrossway refactored" />
+    <MESSAGE value="added a public because Travis has problems" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a public because Travis has problems" />
   </component>
   <component name="WindowStateProjectService">
     <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576148642288">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576148642288" />
-    <state x="625" y="158" width="1083" height="810" key="CommitChangelistDialog2" timestamp="1576150218147">
+    <state x="625" y="158" width="1083" height="810" key="CommitChangelistDialog2" timestamp="1576150964351">
       <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state x="566" y="148" width="777" height="818" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1576147621903" />
-    <state x="625" y="158" width="1083" height="810" key="CommitChangelistDialog2/83.38.1837.1042@83.38.1837.1042" timestamp="1576150218147" />
+    <state x="625" y="158" width="1083" height="810" key="CommitChangelistDialog2/83.38.1837.1042@83.38.1837.1042" timestamp="1576150964351" />
     <state x="678" y="202" width="636" height="712" key="FileChooserDialogImpl" timestamp="1576149067457">
       <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state x="678" y="202" width="636" height="712" key="FileChooserDialogImpl/83.38.1837.1042@83.38.1837.1042" timestamp="1576149067457" />
-    <state width="1769" height="232" key="GridCell.Tab.0.bottom" timestamp="1576150920706">
+    <state width="1769" height="231" key="GridCell.Tab.0.bottom" timestamp="1576574157043">
       <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state width="937" height="275" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1576148746242" />
-    <state width="1769" height="232" key="GridCell.Tab.0.bottom/83.38.1837.1042@83.38.1837.1042" timestamp="1576150920706" />
-    <state width="1769" height="232" key="GridCell.Tab.0.center" timestamp="1576150920705">
+    <state width="1769" height="231" key="GridCell.Tab.0.bottom/83.38.1837.1042@83.38.1837.1042" timestamp="1576574157043" />
+    <state width="1769" height="231" key="GridCell.Tab.0.center" timestamp="1576574157043">
       <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state width="937" height="275" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1576148746242" />
-    <state width="1769" height="232" key="GridCell.Tab.0.center/83.38.1837.1042@83.38.1837.1042" timestamp="1576150920705" />
-    <state width="1769" height="232" key="GridCell.Tab.0.left" timestamp="1576150920704">
+    <state width="1769" height="231" key="GridCell.Tab.0.center/83.38.1837.1042@83.38.1837.1042" timestamp="1576574157043" />
+    <state width="1769" height="231" key="GridCell.Tab.0.left" timestamp="1576574157042">
       <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state width="937" height="275" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1576148746242" />
-    <state width="1769" height="232" key="GridCell.Tab.0.left/83.38.1837.1042@83.38.1837.1042" timestamp="1576150920704" />
-    <state width="1769" height="232" key="GridCell.Tab.0.right" timestamp="1576150920706">
+    <state width="1769" height="231" key="GridCell.Tab.0.left/83.38.1837.1042@83.38.1837.1042" timestamp="1576574157042" />
+    <state width="1769" height="231" key="GridCell.Tab.0.right" timestamp="1576574157043">
       <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state width="937" height="275" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1576148746242" />
-    <state width="1769" height="232" key="GridCell.Tab.0.right/83.38.1837.1042@83.38.1837.1042" timestamp="1576150920706" />
+    <state width="1769" height="231" key="GridCell.Tab.0.right/83.38.1837.1042@83.38.1837.1042" timestamp="1576574157043" />
     <state x="665" y="271" width="580" height="571" key="MultipleFileMergeDialog" timestamp="1576145690899">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -314,23 +322,29 @@
     </state>
     <state x="443" y="131" width="1024" height="852" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1576143342271" />
     <state x="318" y="38" width="1539" height="1042" key="SettingsEditor/83.38.1837.1042@83.38.1837.1042" timestamp="1576149043156" />
-    <state x="614" y="297" width="768" height="530" key="Vcs.Push.Dialog.v2" timestamp="1576150226415">
+    <state x="614" y="297" width="768" height="530" key="Vcs.Push.Dialog.v2" timestamp="1576574177940">
       <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1576147627514" />
-    <state x="614" y="297" width="768" height="530" key="Vcs.Push.Dialog.v2/83.38.1837.1042@83.38.1837.1042" timestamp="1576150226415" />
-    <state x="616" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1575456226134">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state x="614" y="297" width="768" height="530" key="Vcs.Push.Dialog.v2/83.38.1837.1042@83.38.1837.1042" timestamp="1576574177940" />
+    <state x="669" y="309" width="654" height="498" key="chooseDestDirectoryDialog" timestamp="1576346283253">
+      <screen x="83" y="38" width="1837" height="1042" />
+    </state>
+    <state x="669" y="309" width="654" height="498" key="chooseDestDirectoryDialog/83.38.1837.1042@83.38.1837.1042" timestamp="1576346283253" />
+    <state x="672" y="388" key="com.intellij.ide.util.TipDialog" timestamp="1576573572001">
+      <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state x="616" y="381" key="com.intellij.ide.util.TipDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1575456226134" />
+    <state x="672" y="388" key="com.intellij.ide.util.TipDialog/83.38.1837.1042@83.38.1837.1042" timestamp="1576573572001" />
     <state x="632" y="449" width="636" height="231" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1576142975978">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="632" y="449" width="636" height="231" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.27.1920.1053@0.27.1920.1053" timestamp="1576142975978" />
-    <state x="728" y="473" width="454" height="174" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576145683479">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state x="780" y="479" width="675" height="234" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576574161552">
+      <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state x="728" y="473" width="454" height="174" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1053@0.27.1920.1053" timestamp="1576145683479" />
+    <state x="780" y="479" width="675" height="234" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/83.38.1837.1042@83.38.1837.1042" timestamp="1576574161552" />
     <state x="649" y="347" width="612" height="420" key="git4idea.merge.GitPullDialog" timestamp="1576142643759">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

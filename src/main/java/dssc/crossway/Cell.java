@@ -1,9 +1,7 @@
 package dssc.crossway;
 
 /**
- * A Cell class.
- *
- * Default status = "null"
+ * This class represents a cell characterized by a color.
  */
 public class Cell {
 

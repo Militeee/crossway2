@@ -1,9 +1,9 @@
 package dssc.crossway;
 
 /**
- * A Cell class.
+ * A class that stores a cell with a defined status coded as a Colors enumerator
  *
- * Default status = "null"
+ * Default status = "Colors.EMPTY"
  */
 public class Cell {
 

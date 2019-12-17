@@ -9,7 +9,18 @@ import java.util.Scanner;
  */
 public class CrosswayGame {
 
+<<<<<<< Updated upstream
     private GameController controller = new GameController(new GoBoard(12), new CrosswayRules());
+=======
+    public static final int CROSSWAY_BOARD_SIDE = 12;
+    private static final String STARTING_MESSAGE = "CROSSWAY";
+    private static final String WINNER_MESSAGE = "%s won the game";
+    private static final String CURRENT_PLAYER_MESSAGE = "%s moves now";
+    private static final String X_REQUEST_MESSAGE = "Enter X:";
+    private static final String Y_REQUEST_MESSAGE = "Enter Y:";
+
+    private GameController controller = new GameController(new GoBoard(CROSSWAY_BOARD_SIDE), new CrosswayRules());
+>>>>>>> Stashed changes
 
     /**
      *  Instantiate a new game and manage turns.
@@ -22,7 +33,8 @@ public class CrosswayGame {
         Colors winner = Colors.EMPTY;
 
         while(!gameOver) {
-            winner = turn();
+            turn();
+            winner = controller.winner();
             gameOver = winner != Colors.EMPTY;
         }
 
@@ -34,14 +46,16 @@ public class CrosswayGame {
      * helper class for a single turn management.
      * @return Color of winner. Returns Colors.EMPTY if no one is winning the game.
      */
-    private Colors turn()  {
+    private void turn()  {
         boolean validMove = false;
 
         while(!validMove) {
+<<<<<<< Updated upstream
             printBoard();
             showCurrentPlayer();
+=======
+>>>>>>> Stashed changes
             try {
-
                 Coordinates m = askMove();
                 applyMove(m);
                 validMove = true;
@@ -51,17 +65,14 @@ public class CrosswayGame {
                 System.out.println(e.getMessage());
             }
 
-
-
         }
-        return controller.winner();
     }
 
     /**
      *  Helper class. Prints the current player color.
      */
     private void showCurrentPlayer() {
-        System.out.println(controller.currentTurnColor() + " moves now:");
+        System.out.println(String.format(CURRENT_PLAYER_MESSAGE, controller.currentTurnColor()));
     }
 
     /**
@@ -86,6 +97,7 @@ public class CrosswayGame {
      * @return a Coordinate object with the user input.
      */
     private Coordinates askMove() {
+<<<<<<< Updated upstream
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter X:");
@@ -95,6 +107,10 @@ public class CrosswayGame {
 
 
 
+=======
+        int x = ConsoleInputHandler.askInt(0, CROSSWAY_BOARD_SIDE, X_REQUEST_MESSAGE);
+        int y = ConsoleInputHandler.askInt(0, CROSSWAY_BOARD_SIDE, Y_REQUEST_MESSAGE);
+>>>>>>> Stashed changes
         return new Coordinates(x,y);
     }
 
@@ -103,13 +119,13 @@ public class CrosswayGame {
      * @param winner
      */
     private void showEndingMessage(Colors winner) {
-        System.out.println("Winner:" + winner.toString());
+        System.out.println(String.format(WINNER_MESSAGE, winner.toString()));
     }
 
     /**
      * Helper class: prints welcome message and game rules.
      */
     private void showStartingMessage() {
-        System.out.println("Rules placeholder");
+        System.out.println(STARTING_MESSAGE);
     }
 }

@@ -3,84 +3,50 @@ package dssc.crossway;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+/**
+ *  Game rules class. This class is responsible for validation of a move.
+ */
 public class CrosswayRules extends Validator {
 
     public CrosswayRules() {
 
     }
 
+    /**
+     * No superposition rule: a player cannot place a piece in an already occupied cell.
+     * @param board the game board
+     * @param m the Move object to be validated
+     * @return true if the move is legal, false otherwise.
+     * @throws OutOfBoardException if the Move falls outside of the board.
+     */
     private boolean noSuperposition(GoBoard board, Move m) throws OutOfBoardException {
         return board.getCellStatus(m.getX(), m.getY()) == Colors.EMPTY;
     }
 
-    /*
-    private boolean noCrossways(GoBoard board, Move m) throws OutOfBoardException {
-
-        Colors enemy = m.getColor().getOpposite();
-        Colors friendly = m.getColor();
-        boolean legality = true;
-        GoBoard window = new GoBoard(2);
-
-        //case 1: the move cell is SouthEast
-        try {
-            window.setCellStatus(0,0, board.getCellStatus(m.getX()-1, m.getY()-1));
-            window.setCellStatus(1,0, board.getCellStatus(m.getX(),      m.getY()-1));
-            window.setCellStatus(0,1, board.getCellStatus(m.getX()-1,    m.getY())  );
-        } catch (OutOfBoardException ignored) {}
-
-        if ( window.getCellStatus(0,0) == friendly &&
-            window.getCellStatus(1,0) == enemy &&
-            window.getCellStatus(0,1) == enemy)  {legality = false;}
-
-        //case 2: the move cell is SouthWest
-        try {
-            window.setCellStatus(0,0, board.getCellStatus(m.getX(), m.getY()-1));
-            window.setCellStatus(1,0, board.getCellStatus(m.getX()+1,      m.getY()-1));
-            window.setCellStatus(1,1, board.getCellStatus(m.getX()+1,    m.getY())  );
-        } catch (OutOfBoardException ignored) {}
-
-        if ( window.getCellStatus(1,0) == friendly &&
-                window.getCellStatus(0,0) == enemy &&
-                window.getCellStatus(1,1) == enemy)  {legality = false;}
-
-        //case 3: the move cell is NorthWest
-        try {
-            window.setCellStatus(0,1, board.getCellStatus(m.getX(), m.getY()+1));
-            window.setCellStatus(1,1, board.getCellStatus(m.getX()+1,      m.getY()+1));
-            window.setCellStatus(1,0, board.getCellStatus(m.getX()+1,    m.getY()));
-        } catch (OutOfBoardException ignored) {}
-
-        if ( window.getCellStatus(1,1) == friendly &&
-                window.getCellStatus(1,0) == enemy &&
-                window.getCellStatus(0,1) == enemy)  {legality = false;}
-
-        //case 4: the move cell is NorthEast
-        try {
-            window.setCellStatus(0,0, board.getCellStatus(m.getX()-1,         m.getY()));
-            window.setCellStatus(0,1, board.getCellStatus(m.getX()-1,      m.getY()+1));
-            window.setCellStatus(1,1, board.getCellStatus(m.getX(),           m.getY()+1));
-        } catch (OutOfBoardException ignored) {}
-
-        if ( window.getCellStatus(0,1) == friendly &&
-                window.getCellStatus(0,0) == enemy &&
-                window.getCellStatus(1,1) == enemy)  {legality = false;}
-
-
-
-        return legality;
-    }
-    */
-
+    /**
+     * No crossways rule: forbids the placement of a piece if nearby pieces are in a certain configuration.
+     * See website rules for details
+     * @param board the game board
+     * @param m the Move object to be validated
+     * @return true if the move is legal, false otherwise.
+     * @throws OutOfBoardException if the Move falls outside of the board.
+     */
     private boolean noCrossways(GoBoard board, Move m) throws OutOfBoardException {
         ArrayList<Coordinates> diagonalPositions = getDiagonalPositions(board, m.getCoordinates());
 
-        boolean result = diagonalPositions.stream()
+        return diagonalPositions.stream()
                 .map(x -> !areCrossed(board, m, x))
                 .reduce(true, Boolean::logicalAnd);
-
-        return result;
     }
 
+    /**
+     * Helper function for noCrossway method.
+     *
+     * @param board the game board
+     * @param m the Move object to be validated
+     * @param coord2 the coordinates of the cells which legality should be verified.
+     * @return true if the move is legal, false otherwise.
+     */
     private boolean areCrossed(GoBoard board, Move m, Coordinates coord2) {
         Coordinates coord1 = m.getCoordinates();
         Coordinates coord3 = new Coordinates(coord1.getX(), coord2.getY());
@@ -99,6 +65,12 @@ public class CrosswayRules extends Validator {
 
     }
 
+    /**
+     * Helper function to retrieve diagonal position whose legality is to be verified.
+     * @param board the game board
+     * @param c the coordinates of a cell whose diagonals are queried.
+     * @return an ArrayList of Coordinates object, with the 4 diagonally adiacents cells, if they exists.
+     */
     private ArrayList<Coordinates> getDiagonalPositions(GoBoard board, Coordinates c) {
         ArrayList<Coordinates> diagonalPositions = new ArrayList<>();
         Coordinates[] diagonals = {
@@ -117,6 +89,14 @@ public class CrosswayRules extends Validator {
         return diagonalPositions;
     }
 
+    /**
+     *  Main rule validation class. It checks if all the rules are satisfied.
+     * @param board the game board.
+     * @param m the Move object to be validated
+     * @param turn the game turn, passed by GameController. Needed to implement the pie rule.
+     * @return true if the move is valid, false otherwise.
+     * @throws OutOfBoardException if the Move points out of the board.
+     */
     @Override
     public boolean validateMove(GoBoard board, Move m, int turn) throws OutOfBoardException {
         //check rule 1
@@ -126,8 +106,12 @@ public class CrosswayRules extends Validator {
 
     }
 
+    /**
+     * Given a board status, it checks whether there is a winner, if asked by the GameController.
+     * @param board a game board
+     * @return Colors.EMPTY if there is no winner, Colors object of the winner color if there is one.
+     */
     @Override
-
     public Colors winner(GoBoard board){
 
         try {
@@ -161,7 +145,6 @@ public class CrosswayRules extends Validator {
      * @param c color of the current player
      * @param board 2D board
      * @return if there is a winner
-     * @throws OutOfBoardException
      */
 
     private boolean winningChain(int x, int y, Colors c, GoBoard board)  {
@@ -170,8 +153,9 @@ public class CrosswayRules extends Validator {
 
         int side = board.getSide();
 
-        boolean visited[][] = new boolean[side][side];
-        LinkedList<Coordinates> Q = new LinkedList<Coordinates>();
+        boolean[][] visited = new boolean[side][side];
+        LinkedList<Coordinates> Q;
+        Q = new LinkedList<Coordinates>();
 
         visited[x][y] = true;
         Coordinates node = new Coordinates(x,y);
@@ -199,6 +183,13 @@ public class CrosswayRules extends Validator {
         return false;
     }
 
+    /**
+     * Helper function to retrieve cell coordinates of nearby cells where there are stones of the provided color.
+     * @param node Coordinate objects of a cell.
+     * @param board a game board
+     * @param c the provided color
+     * @return a LinkedList<Coordinates> </Coordinates>
+     */
     private LinkedList<Coordinates> adjacentNodes(Coordinates node, GoBoard board, Colors c) {
 
         int x = node.getX() - 1;

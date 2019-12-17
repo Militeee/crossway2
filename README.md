@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Militeee/crossway2.svg?branch=master)](https://travis-ci.org/Militeee/crossway2)
+
 # Crossway
 
 Crossway is a game played with a Go set designed by Mark Steere in 2007.

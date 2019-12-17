@@ -7,8 +7,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/Colors.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/Colors.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/Colors.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/crossway/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/crossway/CellTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,18 +122,6 @@
       <recent name="$PROJECT_DIR$/src/main/java/dssc/crossway2" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="JUnit.all tests">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dssc.crossway.Main" />
@@ -229,10 +219,10 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Gradle.crossway2 [javadoc]" />
+      <item itemvalue="JUnit.all tests" />
       <item itemvalue="JUnit.CellTest and 4 more" />
       <item itemvalue="JUnit.test.crossway in crossway2.test" />
       <item itemvalue="JUnit.MainTest and 1 more" />
-      <item itemvalue="JUnit.all tests" />
     </list>
     <recent_temporary>
       <list>
@@ -243,6 +233,18 @@
         <item itemvalue="JUnit.MainTest and 1 more" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -328,6 +330,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576148642288" />
+    <state x="769" y="435" width="455" height="246" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576581460691">
+      <screen x="83" y="38" width="1837" height="1042" />
+    </state>
+    <state x="769" y="435" width="455" height="246" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/83.38.1837.1042@83.38.1837.1042" timestamp="1576581460691" />
     <state x="566" y="148" width="1083" height="810" key="CommitChangelistDialog2" timestamp="1576574801094">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -337,26 +343,26 @@
       <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state x="678" y="202" width="636" height="712" key="FileChooserDialogImpl/83.38.1837.1042@83.38.1837.1042" timestamp="1576149067457" />
-    <state width="937" height="275" key="GridCell.Tab.0.bottom" timestamp="1576578066822">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state width="1769" height="231" key="GridCell.Tab.0.bottom" timestamp="1576582097840">
+      <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state width="937" height="275" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1576578066822" />
-    <state width="1769" height="231" key="GridCell.Tab.0.bottom/83.38.1837.1042@83.38.1837.1042" timestamp="1576574157043" />
-    <state width="937" height="275" key="GridCell.Tab.0.center" timestamp="1576578066822">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state width="1769" height="231" key="GridCell.Tab.0.bottom/83.38.1837.1042@83.38.1837.1042" timestamp="1576582097840" />
+    <state width="1769" height="231" key="GridCell.Tab.0.center" timestamp="1576582097839">
+      <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state width="937" height="275" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1576578066822" />
-    <state width="1769" height="231" key="GridCell.Tab.0.center/83.38.1837.1042@83.38.1837.1042" timestamp="1576574157043" />
-    <state width="937" height="275" key="GridCell.Tab.0.left" timestamp="1576578066821">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state width="1769" height="231" key="GridCell.Tab.0.center/83.38.1837.1042@83.38.1837.1042" timestamp="1576582097839" />
+    <state width="1769" height="231" key="GridCell.Tab.0.left" timestamp="1576582097839">
+      <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state width="937" height="275" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1576578066821" />
-    <state width="1769" height="231" key="GridCell.Tab.0.left/83.38.1837.1042@83.38.1837.1042" timestamp="1576574157042" />
-    <state width="937" height="275" key="GridCell.Tab.0.right" timestamp="1576578066822">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state width="1769" height="231" key="GridCell.Tab.0.left/83.38.1837.1042@83.38.1837.1042" timestamp="1576582097839" />
+    <state width="1769" height="231" key="GridCell.Tab.0.right" timestamp="1576582097839">
+      <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state width="937" height="275" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1576578066822" />
-    <state width="1769" height="231" key="GridCell.Tab.0.right/83.38.1837.1042@83.38.1837.1042" timestamp="1576574157043" />
+    <state width="1769" height="231" key="GridCell.Tab.0.right/83.38.1837.1042@83.38.1837.1042" timestamp="1576582097839" />
     <state x="665" y="271" width="580" height="571" key="MultipleFileMergeDialog" timestamp="1576574825860">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -375,11 +381,11 @@
       <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state x="669" y="309" width="654" height="498" key="chooseDestDirectoryDialog/83.38.1837.1042@83.38.1837.1042" timestamp="1576346283253" />
-    <state x="672" y="388" key="com.intellij.ide.util.TipDialog" timestamp="1576573572001">
+    <state x="672" y="388" key="com.intellij.ide.util.TipDialog" timestamp="1576581448881">
       <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state x="616" y="381" key="com.intellij.ide.util.TipDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1575456226134" />
-    <state x="672" y="388" key="com.intellij.ide.util.TipDialog/83.38.1837.1042@83.38.1837.1042" timestamp="1576573572001" />
+    <state x="672" y="388" key="com.intellij.ide.util.TipDialog/83.38.1837.1042@83.38.1837.1042" timestamp="1576581448881" />
     <state x="632" y="449" width="636" height="231" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1576142975978">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

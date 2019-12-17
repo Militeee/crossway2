@@ -9,9 +9,7 @@ import java.util.Scanner;
  */
 public class CrosswayGame {
 
-    public static final int CROSSWAY_BOARD_SIDE = 12;
-
-    private GameController controller = new GameController(new GoBoard(CROSSWAY_BOARD_SIDE), new CrosswayRules());
+    private GameController controller = new GameController(new GoBoard(12), new CrosswayRules());
 
     /**
      *  Instantiate a new game and manage turns.
@@ -38,16 +36,16 @@ public class CrosswayGame {
      */
     private Colors turn()  {
         boolean validMove = false;
-        printBoard();
-        showCurrentPlayer();
 
         while(!validMove) {
-
+            printBoard();
+            showCurrentPlayer();
             try {
 
                 Coordinates m = askMove();
                 applyMove(m);
                 validMove = true;
+
 
             } catch (Exception e) {
                 System.out.println(e.getMessage());
@@ -89,8 +87,13 @@ public class CrosswayGame {
      */
     private Coordinates askMove() {
 
-        int x = ConsoleInputHandler.askInt(0, CROSSWAY_BOARD_SIDE, "Enter X:");
-        int y = ConsoleInputHandler.askInt(0, CROSSWAY_BOARD_SIDE, "Enter Y:");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter X:");
+        int x = scanner.nextInt();
+        System.out.print("Enter Y:");
+        int y = scanner.nextInt();
+
+
 
         return new Coordinates(x,y);
     }

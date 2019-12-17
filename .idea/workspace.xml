@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb783e39-6736-40ec-8a70-b64a8865b0ab" name="Default Changelist" comment="pushed documentation">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="cb783e39-6736-40ec-8a70-b64a8865b0ab" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/Colors.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/crossway/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/crossway/CellTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +50,12 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="crossway2" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build setup" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="crossway2" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="documentation" type="c8890929:TasksNode$1" />
               </path>
               <path>
@@ -77,7 +86,7 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1UVynJliZ9t3trmQwoPRfkDMbju" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -113,7 +122,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/dssc/crossway2" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.crossway2 [javadoc]">
+  <component name="RunManager" selected="JUnit.all tests">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dssc.crossway.Main" />
       <module name="crossway2.main" />
@@ -171,6 +180,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="all tests" type="JUnit" factoryName="JUnit">
+      <module name="crossway2.test" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <option name="PARAMETERS" value="" />
+      <patterns>
+        <pattern testClass="test.crossway.CellTest" />
+        <pattern testClass="test.crossway.GameControllerTest" />
+        <pattern testClass="test.crossway.GoBoardTest" />
+        <pattern testClass="test.crossway.MainTest" />
+        <pattern testClass="test.crossway.RulesTest" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="test.crossway in crossway2.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage">
         <pattern>
@@ -193,16 +219,17 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Gradle.crossway2 [javadoc]" />
+      <item itemvalue="JUnit.all tests" />
       <item itemvalue="JUnit.CellTest and 4 more" />
       <item itemvalue="JUnit.test.crossway in crossway2.test" />
       <item itemvalue="JUnit.MainTest and 1 more" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CellTest and 4 more" />
         <item itemvalue="Gradle.crossway2 [javadoc]" />
         <item itemvalue="JUnit.test.crossway in crossway2.test" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.CellTest and 4 more" />
         <item itemvalue="JUnit.MainTest and 1 more" />
       </list>
     </recent_temporary>
@@ -265,21 +292,7 @@
       <option name="project" value="LOCAL" />
       <updated>1576574801190</updated>
     </task>
-    <task id="LOCAL-00006" summary="pushed documentation">
-      <created>1576578098089</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1576578098089</updated>
-    </task>
-    <task id="LOCAL-00007" summary="pushed documentation">
-      <created>1576578228888</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1576578228888</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -310,43 +323,46 @@
     <MESSAGE value="commented GoBoard class" />
     <MESSAGE value="commented Main class" />
     <MESSAGE value="commented Validator class" />
-    <MESSAGE value="pushed documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="pushed documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="commented Validator class" />
   </component>
   <component name="WindowStateProjectService">
     <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576148642288">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576148642288" />
-    <state x="566" y="148" width="1083" height="810" key="CommitChangelistDialog2" timestamp="1576578228831">
+    <state x="769" y="435" width="455" height="246" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576581460691">
+      <screen x="83" y="38" width="1837" height="1042" />
+    </state>
+    <state x="769" y="435" width="455" height="246" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/83.38.1837.1042@83.38.1837.1042" timestamp="1576581460691" />
+    <state x="566" y="148" width="1083" height="810" key="CommitChangelistDialog2" timestamp="1576574801094">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="566" y="148" width="777" height="818" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1576578228831" />
+    <state x="566" y="148" width="777" height="818" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1576574801094" />
     <state x="625" y="158" width="1083" height="810" key="CommitChangelistDialog2/83.38.1837.1042@83.38.1837.1042" timestamp="1576150964351" />
     <state x="678" y="202" width="636" height="712" key="FileChooserDialogImpl" timestamp="1576149067457">
       <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state x="678" y="202" width="636" height="712" key="FileChooserDialogImpl/83.38.1837.1042@83.38.1837.1042" timestamp="1576149067457" />
-    <state width="937" height="275" key="GridCell.Tab.0.bottom" timestamp="1576579824668">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state width="1769" height="231" key="GridCell.Tab.0.bottom" timestamp="1576582097840">
+      <screen x="83" y="38" width="1837" height="1042" />
     </state>
-    <state width="937" height="275" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1576579824668" />
-    <state width="1769" height="231" key="GridCell.Tab.0.bottom/83.38.1837.1042@83.38.1837.1042" timestamp="1576574157043" />
-    <state width="937" height="275" key="GridCell.Tab.0.center" timestamp="1576579824667">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state width="937" height="275" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1576578066822" />
+    <state width="1769" height="231" key="GridCell.Tab.0.bottom/83.38.1837.1042@83.38.1837.1042" timestamp="1576582097840" />
+    <state width="1769" height="231" key="GridCell.Tab.0.center" timestamp="1576582097839">
+      <screen x="83" y="38" width="1837" height="1042" />
     </state>
-    <state width="937" height="275" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1576579824667" />
-    <state width="1769" height="231" key="GridCell.Tab.0.center/83.38.1837.1042@83.38.1837.1042" timestamp="1576574157043" />
-    <state width="937" height="275" key="GridCell.Tab.0.left" timestamp="1576579824667">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state width="937" height="275" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1576578066822" />
+    <state width="1769" height="231" key="GridCell.Tab.0.center/83.38.1837.1042@83.38.1837.1042" timestamp="1576582097839" />
+    <state width="1769" height="231" key="GridCell.Tab.0.left" timestamp="1576582097839">
+      <screen x="83" y="38" width="1837" height="1042" />
     </state>
-    <state width="937" height="275" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1576579824667" />
-    <state width="1769" height="231" key="GridCell.Tab.0.left/83.38.1837.1042@83.38.1837.1042" timestamp="1576574157042" />
-    <state width="937" height="275" key="GridCell.Tab.0.right" timestamp="1576579824667">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state width="937" height="275" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1576578066821" />
+    <state width="1769" height="231" key="GridCell.Tab.0.left/83.38.1837.1042@83.38.1837.1042" timestamp="1576582097839" />
+    <state width="1769" height="231" key="GridCell.Tab.0.right" timestamp="1576582097839">
+      <screen x="83" y="38" width="1837" height="1042" />
     </state>
-    <state width="937" height="275" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1576579824667" />
-    <state width="1769" height="231" key="GridCell.Tab.0.right/83.38.1837.1042@83.38.1837.1042" timestamp="1576574157043" />
+    <state width="937" height="275" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1576578066822" />
+    <state width="1769" height="231" key="GridCell.Tab.0.right/83.38.1837.1042@83.38.1837.1042" timestamp="1576582097839" />
     <state x="665" y="271" width="580" height="571" key="MultipleFileMergeDialog" timestamp="1576574825860">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -356,28 +372,28 @@
     </state>
     <state x="443" y="131" width="1024" height="852" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1576575260803" />
     <state x="318" y="38" width="1539" height="1042" key="SettingsEditor/83.38.1837.1042@83.38.1837.1042" timestamp="1576149043156" />
-    <state x="555" y="289" width="768" height="530" key="Vcs.Push.Dialog.v2" timestamp="1576578233586">
+    <state x="555" y="289" width="768" height="530" key="Vcs.Push.Dialog.v2" timestamp="1576578082617">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1576578233586" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1576578082617" />
     <state x="614" y="297" width="768" height="530" key="Vcs.Push.Dialog.v2/83.38.1837.1042@83.38.1837.1042" timestamp="1576574177940" />
     <state x="669" y="309" width="654" height="498" key="chooseDestDirectoryDialog" timestamp="1576346283253">
       <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state x="669" y="309" width="654" height="498" key="chooseDestDirectoryDialog/83.38.1837.1042@83.38.1837.1042" timestamp="1576346283253" />
-    <state x="672" y="388" key="com.intellij.ide.util.TipDialog" timestamp="1576573572001">
+    <state x="672" y="388" key="com.intellij.ide.util.TipDialog" timestamp="1576581448881">
       <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state x="616" y="381" key="com.intellij.ide.util.TipDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1575456226134" />
-    <state x="672" y="388" key="com.intellij.ide.util.TipDialog/83.38.1837.1042@83.38.1837.1042" timestamp="1576573572001" />
+    <state x="672" y="388" key="com.intellij.ide.util.TipDialog/83.38.1837.1042@83.38.1837.1042" timestamp="1576581448881" />
     <state x="632" y="449" width="636" height="231" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1576142975978">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="632" y="449" width="636" height="231" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.27.1920.1053@0.27.1920.1053" timestamp="1576142975978" />
-    <state x="728" y="473" width="454" height="178" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576578208317">
+    <state x="728" y="473" width="454" height="178" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576578061483">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="728" y="473" width="454" height="178" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1053@0.27.1920.1053" timestamp="1576578208317" />
+    <state x="728" y="473" width="454" height="178" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1053@0.27.1920.1053" timestamp="1576578061483" />
     <state x="780" y="479" width="675" height="234" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/83.38.1837.1042@83.38.1837.1042" timestamp="1576574161552" />
     <state x="649" y="347" width="612" height="427" key="git4idea.merge.GitPullDialog" timestamp="1576574953864">
       <screen x="0" y="27" width="1920" height="1053" />

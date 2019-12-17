@@ -100,7 +100,7 @@ public class CrosswayGame {
 
     /**
      * Helper class: prints a message when there is a winner.
-     * @param winner
+     * @param winner Winner color.
      */
     private void showEndingMessage(Colors winner) {
         System.out.println("Winner:" + winner.toString());

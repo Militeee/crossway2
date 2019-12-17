@@ -188,7 +188,7 @@ public class CrosswayRules extends Validator {
      * @param node Coordinate objects of a cell.
      * @param board a game board
      * @param c the provided color
-     * @return a LinkedList<Coordinates> object with all such cells.
+     * @return a LinkedList<Coordinates> </Coordinates>
      */
     private LinkedList<Coordinates> adjacentNodes(Coordinates node, GoBoard board, Colors c) {
 

@@ -1,7 +1,5 @@
 package dssc.crossway;
 
-import java.util.Scanner;
-
 /**
  *  Main game managemen class.
  *  <p>
@@ -9,9 +7,6 @@ import java.util.Scanner;
  */
 public class CrosswayGame {
 
-<<<<<<< Updated upstream
-    private GameController controller = new GameController(new GoBoard(12), new CrosswayRules());
-=======
     public static final int CROSSWAY_BOARD_SIDE = 12;
     private static final String STARTING_MESSAGE = "CROSSWAY";
     private static final String WINNER_MESSAGE = "%s won the game";
@@ -20,7 +15,7 @@ public class CrosswayGame {
     private static final String Y_REQUEST_MESSAGE = "Enter Y:";
 
     private GameController controller = new GameController(new GoBoard(CROSSWAY_BOARD_SIDE), new CrosswayRules());
->>>>>>> Stashed changes
+
 
     /**
      *  Instantiate a new game and manage turns.
@@ -39,7 +34,6 @@ public class CrosswayGame {
         }
 
         showEndingMessage(winner);
-
     }
 
     /**
@@ -48,13 +42,11 @@ public class CrosswayGame {
      */
     private void turn()  {
         boolean validMove = false;
+        printBoard();
+        showCurrentPlayer();
 
         while(!validMove) {
-<<<<<<< Updated upstream
-            printBoard();
-            showCurrentPlayer();
-=======
->>>>>>> Stashed changes
+
             try {
                 Coordinates m = askMove();
                 applyMove(m);
@@ -97,20 +89,8 @@ public class CrosswayGame {
      * @return a Coordinate object with the user input.
      */
     private Coordinates askMove() {
-<<<<<<< Updated upstream
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter X:");
-        int x = scanner.nextInt();
-        System.out.print("Enter Y:");
-        int y = scanner.nextInt();
-
-
-
-=======
         int x = ConsoleInputHandler.askInt(0, CROSSWAY_BOARD_SIDE, X_REQUEST_MESSAGE);
         int y = ConsoleInputHandler.askInt(0, CROSSWAY_BOARD_SIDE, Y_REQUEST_MESSAGE);
->>>>>>> Stashed changes
         return new Coordinates(x,y);
     }
 

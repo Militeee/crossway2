@@ -11,4 +11,6 @@ Each stone in the sequence must be connected to neighboring stones in the sequen
 Players take turns adding their stones to the board, one stone per turn. 
 A player must never complete the formation shown in Figure or a 90 degree rotation of this formation. 
 ![Illegal move](crossway.png)
-White has the option of switching colors with Black, and claiming Black’s first move as his own. 
+White has the option of switching colors with Black, and claiming Black’s first move as his own.
+
+Original rules can be found [at the author website](https://boardgamegeek.com/boardgame/30517/crossway).

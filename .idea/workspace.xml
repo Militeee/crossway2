@@ -2,9 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb783e39-6736-40ec-8a70-b64a8865b0ab" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/Coordinates.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/Coordinates.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/CrosswayGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/CrosswayGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/Move.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/Move.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/test/crossway/GameControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/test/crossway/GameControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/test/crossway/MainTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/test/crossway/MainTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/test/crossway/RulesTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/test/crossway/RulesTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/crossway/GameControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/crossway/GameControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/crossway/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/crossway/MainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/crossway/RulesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/crossway/RulesTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576574801190</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="commented Cell">
+      <created>1576575373109</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1576575373109</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -280,17 +301,22 @@
     <MESSAGE value="NoCrossway refactored" />
     <MESSAGE value="added a public because Travis has problems" />
     <MESSAGE value="commented Coordinates" />
-    <option name="LAST_COMMIT_MESSAGE" value="commented Coordinates" />
+    <MESSAGE value="commented Cell" />
+    <option name="LAST_COMMIT_MESSAGE" value="commented Cell" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="555" y="215" width="826" height="684" key="#Project_Structure" timestamp="1576575461483">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="555" y="215" width="826" height="684" key="#Project_Structure/0.27.1920.1053@0.27.1920.1053" timestamp="1576575461483" />
     <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576148642288">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576148642288" />
-    <state x="566" y="148" width="1083" height="810" key="CommitChangelistDialog2" timestamp="1576574801094">
+    <state x="566" y="148" width="1083" height="810" key="CommitChangelistDialog2" timestamp="1576575373057">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="566" y="148" width="777" height="818" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1576574801094" />
+    <state x="566" y="148" width="777" height="818" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1576575373057" />
     <state x="625" y="158" width="1083" height="810" key="CommitChangelistDialog2/83.38.1837.1042@83.38.1837.1042" timestamp="1576150964351" />
     <state x="678" y="202" width="636" height="712" key="FileChooserDialogImpl" timestamp="1576149067457">
       <screen x="83" y="38" width="1837" height="1042" />
@@ -316,19 +342,19 @@
     </state>
     <state width="937" height="275" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1576148746242" />
     <state width="1769" height="231" key="GridCell.Tab.0.right/83.38.1837.1042@83.38.1837.1042" timestamp="1576574157043" />
-    <state x="665" y="271" width="580" height="571" key="MultipleFileMergeDialog" timestamp="1576574825860">
+    <state x="833" y="407" width="580" height="571" key="MultipleFileMergeDialog" timestamp="1576575424797">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="665" y="271" width="580" height="571" key="MultipleFileMergeDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576574825860" />
-    <state x="443" y="131" width="1539" height="1042" key="SettingsEditor" timestamp="1576575260803">
+    <state x="833" y="407" width="580" height="571" key="MultipleFileMergeDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576575424797" />
+    <state x="443" y="131" width="1539" height="1042" key="SettingsEditor" timestamp="1576576011433">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="443" y="131" width="1024" height="852" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1576575260803" />
+    <state x="443" y="131" width="1024" height="852" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1576576011433" />
     <state x="318" y="38" width="1539" height="1042" key="SettingsEditor/83.38.1837.1042@83.38.1837.1042" timestamp="1576149043156" />
-    <state x="555" y="289" width="768" height="530" key="Vcs.Push.Dialog.v2" timestamp="1576574849586">
+    <state x="555" y="289" width="768" height="530" key="Vcs.Push.Dialog.v2" timestamp="1576575435364">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1576574849586" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1576575435364" />
     <state x="614" y="297" width="768" height="530" key="Vcs.Push.Dialog.v2/83.38.1837.1042@83.38.1837.1042" timestamp="1576574177940" />
     <state x="669" y="309" width="654" height="498" key="chooseDestDirectoryDialog" timestamp="1576346283253">
       <screen x="83" y="38" width="1837" height="1042" />

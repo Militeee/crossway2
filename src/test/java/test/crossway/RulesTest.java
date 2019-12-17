@@ -10,7 +10,6 @@ public class RulesTest {
     @Test
     public void validateLegalMoveTest() throws OutOfBoardException {
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
-        gc.startGame();
         Move m0 = new Move(1, 1, Colors.WHITE);
         assertTrue(gc.validateMove(m0));
     }
@@ -18,7 +17,6 @@ public class RulesTest {
     @Test
     public void validatePieRuleTest() throws OutOfBoardException, IllegalMoveException {
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
-        gc.startGame();
 
 
         Coordinates m0 = new Coordinates(1, 1);
@@ -31,7 +29,6 @@ public class RulesTest {
     @Test
     public void validateIllegalMoveTest() throws OutOfBoardException, IllegalMoveException {
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
-        gc.startGame();
 
         Move m1 = new Move(1, 1, Colors.WHITE);
         Move m2 = new Move(1, 1, Colors.WHITE);
@@ -50,7 +47,6 @@ public class RulesTest {
          *
          */
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
-        gc.startGame();
         try {
             gc.placeStone(new Move(1, 1, Colors.BLACK));
             gc.placeStone(new Move(1, 2, Colors.WHITE));
@@ -75,7 +71,6 @@ public class RulesTest {
          *
          */
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
-        gc.startGame();
         try {
             gc.placeStone(new Move(2, 1, Colors.BLACK));
             gc.placeStone(new Move(2, 2, Colors.WHITE));
@@ -100,7 +95,6 @@ public class RulesTest {
          *
          */
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
-        gc.startGame();
         try {
             gc.placeStone(new Move(2, 2, Colors.BLACK));
             gc.placeStone(new Move(1, 2, Colors.WHITE));
@@ -125,7 +119,6 @@ public class RulesTest {
          *
          */
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
-        gc.startGame();
         try {
             gc.placeStone(new Move(1, 2, Colors.BLACK));
             gc.placeStone(new Move(1, 1, Colors.WHITE));
@@ -144,7 +137,6 @@ public class RulesTest {
 
 
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
-        gc.startGame();
         try {
             for(int i = 0; i < gc.getSide() ; i++){
                 gc.placeStone(new Move(i, 0, Colors.WHITE));
@@ -162,7 +154,6 @@ public class RulesTest {
 
 
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
-        gc.startGame();
         try {
             for(int i = 0; i < gc.getSide() ; i++){
                 gc.placeStone(new Move(0, i, Colors.BLACK));

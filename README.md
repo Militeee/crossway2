@@ -13,4 +13,6 @@ A player must never complete the formation shown in Figure or a 90 degree rotati
 
 ![Illegal move](crossway.png)
 
-White has the option of switching colors with Black, and claiming Black’s first move as his own. 
+Only during the second turn turn White has the option of switching colors with Black, and claiming Black’s first move as his own. 
+
+Draws and ties cannot occur in Crossway.

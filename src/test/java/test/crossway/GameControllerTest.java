@@ -10,22 +10,16 @@ import static org.junit.Assert.assertTrue;
 public class GameControllerTest {
 
 
-   @Test
-   public void boardIsValid(){
-       GameController gc = initialize();
-       assertTrue(gc.exists());
-   }
+
    @Test
    public void gameIsStarted(){
        GameController gc = initialize();
-       gc.startGame();
 
    }
 
    @Test
    public void firstMove() throws OutOfBoardException, IllegalMoveException {
        GameController gc = initialize();
-       gc.startGame();
        gc.placeStone(new Move(1,1, Colors.WHITE));
        assertEquals(gc.getCellStatus(1,1), Colors.WHITE);
    }
@@ -38,7 +32,6 @@ public class GameControllerTest {
     @Test
     public void firstMove2() throws OutOfBoardException, IllegalMoveException {
         GameController gc = initialize();
-        gc.startGame();
         Move m = new Move(1,1, Colors.WHITE);
         gc.placeStone(m);
         assertEquals(gc.getCellStatus(1,1), Colors.WHITE);
@@ -47,7 +40,6 @@ public class GameControllerTest {
     @Test
     public void illegalMove() throws OutOfBoardException, IllegalMoveException {
         GameController gc = initialize();
-        gc.startGame();
         Move m1 = new Move(1,1, Colors.WHITE);
         gc.placeStone(m1);
         Move m2 = new Move(1,1, Colors.WHITE);

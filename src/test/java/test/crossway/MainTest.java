@@ -7,16 +7,7 @@ import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class MainTest {
-    //board initializer
-    private GameController initialize() {
-        return new GameController(new GoBoard(12), new CrosswayRules());
-    }
 
-    @Test
-    public void boardIsValid(){
-        GameController gc = initialize();
-        assertTrue(gc.exists());
-    }
 
     @Test
     public void getSideTest() {

@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cb783e39-6736-40ec-8a70-b64a8865b0ab" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/Coordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/CrosswayRules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/CrosswayRules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/GenericBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/GenericBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/GoBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/GoBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/CrosswayGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/CrosswayGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +102,18 @@
       <recent name="dssc.crossway2" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager" selected="JUnit.test.crossway in crossway2.test">
     <configuration name="Unnamed" type="ConfigurationType" factoryName="PerlRun" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -191,18 +198,6 @@
         <item itemvalue="JUnit.MainTest" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />

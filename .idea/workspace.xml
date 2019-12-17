@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb783e39-6736-40ec-8a70-b64a8865b0ab" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/CrosswayGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/CrosswayGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/Colors.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/Colors.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +48,12 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="crossway2" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build setup" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="crossway2" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="documentation" type="c8890929:TasksNode$1" />
               </path>
               <path>
@@ -81,7 +84,7 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1UVynJliZ9t3trmQwoPRfkDMbju" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -117,7 +120,19 @@
       <recent name="$PROJECT_DIR$/src/main/java/dssc/crossway2" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.crossway2 [javadoc]">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.all tests">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dssc.crossway.Main" />
       <module name="crossway2.main" />
@@ -175,6 +190,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="all tests" type="JUnit" factoryName="JUnit">
+      <module name="crossway2.test" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <option name="PARAMETERS" value="" />
+      <patterns>
+        <pattern testClass="test.crossway.CellTest" />
+        <pattern testClass="test.crossway.GameControllerTest" />
+        <pattern testClass="test.crossway.GoBoardTest" />
+        <pattern testClass="test.crossway.MainTest" />
+        <pattern testClass="test.crossway.RulesTest" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="test.crossway in crossway2.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage">
         <pattern>
@@ -200,28 +232,17 @@
       <item itemvalue="JUnit.CellTest and 4 more" />
       <item itemvalue="JUnit.test.crossway in crossway2.test" />
       <item itemvalue="JUnit.MainTest and 1 more" />
+      <item itemvalue="JUnit.all tests" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CellTest and 4 more" />
         <item itemvalue="Gradle.crossway2 [javadoc]" />
         <item itemvalue="JUnit.test.crossway in crossway2.test" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.CellTest and 4 more" />
         <item itemvalue="JUnit.MainTest and 1 more" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />

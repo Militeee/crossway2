@@ -10,11 +10,11 @@ public class GameController {
 
 
     private GoBoard board;
-    private  Validator rules;
+    private BoardGameRules rules;
     private int turn = 0;
 
 
-    public GameController(GoBoard board, Validator rules) {
+    public GameController(GoBoard board, BoardGameRules rules) {
         this.board = board;
         this.rules = rules;
     }
@@ -45,7 +45,7 @@ public class GameController {
      * @return the status of the cell in that position
      * @throws OutOfBoardException if the coordinated are out of the board size
      */
-    public Colors getCellStatus(int x, int y) throws OutOfBoardException {
+    public StoneColor getCellStatus(int x, int y) throws OutOfBoardException {
         return this.board.getCellStatus(x,y);
     }
 
@@ -68,7 +68,7 @@ public class GameController {
      *
      * @return the Color of the winner in that turn, if none returns COLORS.EMPTY
      */
-    public Colors winner() {
+    public StoneColor winner() {
 
         return  this.rules.winner(this.board);
 
@@ -89,8 +89,9 @@ public class GameController {
      *
      * @return the color that is currently playing
      */
-    public Colors currentTurnColor() {
-        return (this.turn % 2 == 0) ? Colors.WHITE : Colors.BLACK;
+    public StoneColor currentTurnColor() {
+        StoneColor starterColor = rules.firstPlayer();
+        return (this.turn % 2 == 0) ? starterColor : starterColor.getOpposite();
     }
 
     /**

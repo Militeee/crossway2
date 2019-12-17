@@ -1,6 +1,6 @@
 package test.crossway;
 
-import dssc.crossway.Colors;
+import dssc.crossway.StoneColor;
 import dssc.crossway.Coordinates;
 import dssc.crossway.GoBoard;
 import dssc.crossway.OutOfBoardException;
@@ -33,14 +33,14 @@ public class GoBoardTest {
    @Test
    public void setCellStatusTest() throws OutOfBoardException {
        GoBoard board = new GoBoard(8);
-       board.setCellStatus(1,4, Colors.WHITE);
-       assertEquals(board.getCellStatus(1,4), Colors.WHITE);
+       board.setCellStatus(1,4, StoneColor.WHITE);
+       assertEquals(board.getCellStatus(1,4), StoneColor.WHITE);
    }
 
     @Test
     public void getCellStatusTest() throws OutOfBoardException {
         GoBoard board = new GoBoard(8);
-        assertEquals(board.getCellStatus(1,4), Colors.EMPTY);
+        assertEquals(board.getCellStatus(1,4), StoneColor.EMPTY);
     }
 
    @Test
@@ -48,7 +48,7 @@ public class GoBoardTest {
 
        GoBoard board = new GoBoard (8);
        try {
-           board.setCellStatus(1,9, Colors.WHITE);
+           board.setCellStatus(1,9, StoneColor.WHITE);
        } catch (OutOfBoardException e) {
            assertEquals(e.getMessage(),"Out of board!");
        }
@@ -59,11 +59,11 @@ public class GoBoardTest {
 
         GoBoard board = new GoBoard (12);
         try {
-            board.setCellStatus(1,9, Colors.WHITE);
-            board.setCellStatus(0,2, Colors.WHITE);
-            board.setCellStatus(7,4, Colors.BLACK);
-            board.setCellStatus(5,11, Colors.BLACK);
-            board.setCellStatus(5,7, Colors.BLACK);
+            board.setCellStatus(1,9, StoneColor.WHITE);
+            board.setCellStatus(0,2, StoneColor.WHITE);
+            board.setCellStatus(7,4, StoneColor.BLACK);
+            board.setCellStatus(5,11, StoneColor.BLACK);
+            board.setCellStatus(5,7, StoneColor.BLACK);
         } catch (OutOfBoardException e) {
             assertEquals(e.getMessage(),"Out of board!");
         }

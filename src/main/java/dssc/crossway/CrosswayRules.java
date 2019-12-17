@@ -6,7 +6,7 @@ import java.util.LinkedList;
 /**
  *  Game rules class. This class is responsible for validation of a move.
  */
-public class CrosswayRules extends Validator {
+public class CrosswayRules extends BoardGameRules {
 
     public CrosswayRules() {
 
@@ -20,7 +20,7 @@ public class CrosswayRules extends Validator {
      * @throws OutOfBoardException if the Move falls outside of the board.
      */
     private boolean noSuperposition(GoBoard board, Move m) throws OutOfBoardException {
-        return board.getCellStatus(m.getX(), m.getY()) == Colors.EMPTY;
+        return board.getCellStatus(m.getX(), m.getY()) == StoneColor.EMPTY;
     }
 
     /**
@@ -52,14 +52,14 @@ public class CrosswayRules extends Validator {
         Coordinates coord3 = new Coordinates(coord1.getX(), coord2.getY());
         Coordinates coord4 = new Coordinates(coord2.getX(), coord1.getY());
 
-        Colors c[] = new Colors[0];
+        StoneColor c[] = new StoneColor[0];
         try {
-            c = new Colors[]{m.getColor(), board.getCellStatus(coord2), board.getCellStatus(coord3), board.getCellStatus(coord4)};
+            c = new StoneColor[]{m.getColor(), board.getCellStatus(coord2), board.getCellStatus(coord3), board.getCellStatus(coord4)};
         } catch (OutOfBoardException e) {
             e.printStackTrace();
         }
 
-        boolean full = c[0]!=Colors.EMPTY && c[1]!=Colors.EMPTY && c[2]!=Colors.EMPTY && c[3]!=Colors.EMPTY;
+        boolean full = c[0]!= StoneColor.EMPTY && c[1]!= StoneColor.EMPTY && c[2]!= StoneColor.EMPTY && c[3]!= StoneColor.EMPTY;
         boolean cross = c[0] == c[1] && c[2] == c[3] && c[0] != c[2];
         return full && cross;
 
@@ -112,24 +112,24 @@ public class CrosswayRules extends Validator {
      * @return Colors.EMPTY if there is no winner, Colors object of the winner color if there is one.
      */
     @Override
-    public Colors winner(GoBoard board){
+    public StoneColor winner(GoBoard board){
 
         try {
             for (int i = 0; i < board.getSide(); i++) {
                 // Check white
-                if (board.getCellStatus(i, 0) == Colors.WHITE) {
-                    if (winningChain(i, 0, Colors.WHITE, board))
-                        return Colors.WHITE;
+                if (board.getCellStatus(i, 0) == StoneColor.WHITE) {
+                    if (winningChain(i, 0, StoneColor.WHITE, board))
+                        return StoneColor.WHITE;
                 }
                 //Check black
-                if (board.getCellStatus(0, i) == Colors.BLACK) {
-                    if (winningChain(0, i, Colors.BLACK, board))
-                        return Colors.BLACK;
+                if (board.getCellStatus(0, i) == StoneColor.BLACK) {
+                    if (winningChain(0, i, StoneColor.BLACK, board))
+                        return StoneColor.BLACK;
                 }
             }
         } catch (Exception e) {e.printStackTrace();}
 
-        return Colors.EMPTY;
+        return StoneColor.EMPTY;
 
     }
 
@@ -147,7 +147,7 @@ public class CrosswayRules extends Validator {
      * @return if there is a winner
      */
 
-    private boolean winningChain(int x, int y, Colors c, GoBoard board)  {
+    private boolean winningChain(int x, int y, StoneColor c, GoBoard board)  {
 
 
 
@@ -166,9 +166,9 @@ public class CrosswayRules extends Validator {
             node = Q.poll();
             for (Coordinates n : adjacentNodes( node, board, c)) {
 
-                if ((n.getX() == (side - 1)) && (c == Colors.WHITE)) {
+                if ((n.getX() == (side - 1)) && (c == StoneColor.WHITE)) {
                     return true;
-                } else if ((n.getY() == (side - 1)) && (c == Colors.BLACK)) {
+                } else if ((n.getY() == (side - 1)) && (c == StoneColor.BLACK)) {
                     return true;
                 }
                 if (!visited[n.getX()][n.getY()]) {
@@ -190,7 +190,7 @@ public class CrosswayRules extends Validator {
      * @param c the provided color
      * @return a LinkedList<Coordinates> </Coordinates>
      */
-    private LinkedList<Coordinates> adjacentNodes(Coordinates node, GoBoard board, Colors c) {
+    private LinkedList<Coordinates> adjacentNodes(Coordinates node, GoBoard board, StoneColor c) {
 
         int x = node.getX() - 1;
         int y = node.getY() - 1;
@@ -209,6 +209,14 @@ public class CrosswayRules extends Validator {
         }
 
         return ret;
+    }
+
+    /**
+     * This method returns BLACK: the color of the player that does the first move.
+     * @return BLACK
+     */
+    public StoneColor firstPlayer() {
+        return StoneColor.BLACK;
     }
 
 }

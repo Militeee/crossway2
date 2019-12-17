@@ -2,5 +2,5 @@
 /.idea/
 /build/
 /.gradle/
-!/build/docs/
+!/build/docs
 /.idea/workspace.xml*

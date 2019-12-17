@@ -93,19 +93,13 @@ public class GoBoard extends GenericBoard {
         return side;
     }
 
-    /** Cell getter
-     * @return Gets the String status of a cell
-     */
     public Colors getCellStatus(int x, int y) throws OutOfBoardException {
         return getCellStatus(new Coordinates(x,y));
     }
 
-    /** Cell getter
-     * @return Gets the String status of a cell
-     */
     public Colors getCellStatus(Coordinates c) throws OutOfBoardException {
         if(!isInside(c))
-            new OutOfBoardException();
+            throw new OutOfBoardException();
 
         return this.board[c.getX()][c.getY()].getStatus();
     }

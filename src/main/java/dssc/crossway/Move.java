@@ -12,8 +12,8 @@ public class Move {
 
     /**
      * Constructor of a Move, characterized by a coordinate c and a the color of the piece
-     * @param c
-     * @param color
+     * @param c Coordinates of the move
+     * @param color Colors object of the move
      */
     public Move(Coordinates c, Colors color) {
         coordinates = c;
@@ -22,9 +22,9 @@ public class Move {
 
     /**
      * Constructor of a Move, characterized by the x and y coordinates c and a the color of the piece
-     * @param x
-     * @param y
-     * @param color
+     * @param x X coordinate of the move
+     * @param y Y coordinate of the move
+     * @param color Colors object of the move
      */
     public Move(int x, int y, Colors color) {
         coordinates = new Coordinates(x,y);

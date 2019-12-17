@@ -3,9 +3,9 @@ package dssc.crossway;
 import java.util.Scanner;
 
 /**
- *  Main game managemen class.
+ *  Main game management class.
  *  <p>
- *      Class responsability: Manage game turns.
+ *      Class responsibility: Manage game turns.
  */
 public class CrosswayGame {
 

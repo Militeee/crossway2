@@ -1,5 +1,8 @@
 package dssc.crossway;
 
+/**
+ * Main game program.
+ */
 public class Main {
 
     /**

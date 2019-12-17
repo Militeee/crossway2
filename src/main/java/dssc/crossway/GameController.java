@@ -54,7 +54,7 @@ public class GameController {
      * Control if a move respect the set of rules encoded by its validator
      * @param m the Move object to be validated
      * @return boolean that encode the validity
-     * @throws OutOfBoardException
+     * @throws OutOfBoardException if the move is out of the board
      */
     public boolean validateMove(Move m) throws OutOfBoardException {
         return rules.validateMove(this.board, m, this.turn);
@@ -76,9 +76,9 @@ public class GameController {
 
     /**
      * Same as PlaceStone but updates the number of turns
-     * @param m
-     * @throws IllegalMoveException
-     * @throws OutOfBoardException
+     * @param m Move Coordinates object
+     * @throws IllegalMoveException if the move is forbidden by the rules
+     * @throws OutOfBoardException if the coordinates are out of the board
      */
     public void performGameMove(Coordinates m) throws IllegalMoveException, OutOfBoardException {
         placeStone(new Move(m.getX(), m.getY(), currentTurnColor()));

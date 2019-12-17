@@ -2,6 +2,9 @@ package dssc.crossway;
 
  abstract class Validator {
 
+     /**
+      *  Abstract class for rule validation.
+      */
      Validator() {
     }
 

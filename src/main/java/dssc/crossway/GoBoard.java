@@ -21,7 +21,7 @@ public class GoBoard extends GenericBoard {
     }
 
     /**
-     * board initialization
+     * board initialization: fills the board with empty Cells objects.
      */
     @Override
     public void initializeBoard() {
@@ -32,6 +32,10 @@ public class GoBoard extends GenericBoard {
         }
     }
 
+    /**
+     * pretty prints a Board.
+     * @return a String representation of the board status.
+     */
     public String toString() {
         char[][] canvas = new char[side][side];
         for(int i=0;i<side;i++) {
@@ -58,18 +62,25 @@ public class GoBoard extends GenericBoard {
 
     }
 
-    private String matrixToString(char[][] canvas, int a, int b) {
+    /**
+     * Helper function for printing the board.
+     * @param canvas a 2D array of chars
+     * @param x first dimension of the array
+     * @param y second dimension of the array
+     * @return
+     */
+    private String matrixToString(char[][] canvas, int x, int y) {
 
         StringBuilder s = new StringBuilder();
 
-        for(int i=0;i<a;i++) {
-            for (int j = 0; j < b; j++) {
+        for(int i=0;i<x;i++) {
+            for (int j = 0; j < y; j++) {
                 s.append(canvas[i][j]);
             }
             s.append("\n");
         }
 
-        return s.substring(0,s.length()-1); // I don't want last \n;
+        return s.substring(0,s.length()-1);
     }
 
 
@@ -99,14 +110,26 @@ public class GoBoard extends GenericBoard {
         return this.board[c.getX()][c.getY()].getStatus();
     }
 
-
-    public void setCellStatus(Coordinates c, Colors newStatus) throws OutOfBoardException {
-        if (!isInside(c)) {
+    /**
+     * Changes the color status of a Cell
+     * @param coordinates cell Coordinates
+     * @param newStatus new Colors object
+     * @throws OutOfBoardException if coordinates are out of the board
+     */
+    public void setCellStatus(Coordinates coordinates, Colors newStatus) throws OutOfBoardException {
+        if (!isInside(coordinates)) {
             throw new OutOfBoardException();
         }
-        this.board[c.getX()][c.getY()].setStatus(newStatus);
+        this.board[coordinates.getX()][coordinates.getY()].setStatus(newStatus);
     }
 
+    /**
+     * Polymorphic version of the method that accepts x and y values instead of a Coordinates object.
+     * @param x integer x value of the coordinates
+     * @param y integer y value of the coordinates
+     * @param newStatus new Colors object
+     * @throws OutOfBoardException if coordinates are out of the board
+     */
     public void setCellStatus(int x, int y, Colors newStatus) throws OutOfBoardException {
         setCellStatus(new Coordinates(x,y), newStatus);
     }

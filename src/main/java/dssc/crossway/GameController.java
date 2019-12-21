@@ -34,8 +34,7 @@ public class GameController {
 
     public void placeStone(Move m) throws OutOfBoardException, IllegalMoveException {
         if(this.validateMove(m)) {
-            board.setCellStatus(m.getX(), m.getY(), m.getColor());
-
+            board.setCellStatus(m.getCoordinates(), m.getColor());
         }
         else {
             throw new IllegalMoveException();
@@ -80,12 +79,12 @@ public class GameController {
 
     /**
      * Same as PlaceStone but updates the number of turns
-     * @param m Move Coordinates object
+     * @param c Coordinates object
      * @throws IllegalMoveException if the move is forbidden by the rules
      * @throws OutOfBoardException if the coordinates are out of the board
      */
-    public void performGameMove(Coordinates m) throws IllegalMoveException, OutOfBoardException {
-        placeStone(new Move(m.getX(), m.getY(), currentTurnColor()));
+    public void performGameMove(Coordinates c) throws IllegalMoveException, OutOfBoardException {
+        placeStone(new Move(c, currentTurnColor()));
         this.turn++;
     }
 

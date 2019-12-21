@@ -12,7 +12,7 @@ public class ConsoleInputHandler {
 
     /**
      * This method ask to the user an int between a certain interval, until it inputs a valid number.
-     * @param minIncluded minimum (icluded) accepted value
+     * @param minIncluded minimum (included) accepted value
      * @param maxExcluded maximum (excluded) accepted value
      * @param message the message printed on console before asking an input to the user
      * @return the number inserted by the user

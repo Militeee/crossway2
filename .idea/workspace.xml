@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb783e39-6736-40ec-8a70-b64a8865b0ab" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/CrosswayRules.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/CrosswayRules.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/GenericBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/GenericBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/GameController.java" afterDir="false" />
-    </list>
+    <list default="true" id="cb783e39-6736-40ec-8a70-b64a8865b0ab" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -326,7 +315,8 @@
     <MESSAGE value="commented Validator class" />
     <MESSAGE value="commented Validator and Input Handler class, implemented first turn rule." />
     <MESSAGE value="corrected a little error and added a commmented fullMatch test" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrected a little error and added a commmented fullMatch test" />
+    <MESSAGE value="Moved method for finding diagonal coordinates in GenericBoard, substituted survived (x,y) couples with Coordinates object, corrected some comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved method for finding diagonal coordinates in GenericBoard, substituted survived (x,y) couples with Coordinates object, corrected some comments" />
   </component>
   <component name="WindowStateProjectService">
     <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576148642288">
@@ -341,35 +331,35 @@
       <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state x="769" y="435" width="455" height="246" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/83.38.1837.1042@83.38.1837.1042" timestamp="1576581460691" />
-    <state x="625" y="158" width="1083" height="810" key="CommitChangelistDialog2" timestamp="1576931553715">
+    <state x="625" y="158" width="1083" height="810" key="CommitChangelistDialog2" timestamp="1576934006050">
       <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state x="566" y="148" width="777" height="818" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1576574801094" />
-    <state x="625" y="158" width="1083" height="810" key="CommitChangelistDialog2/83.38.1837.1042@83.38.1837.1042" timestamp="1576931553715" />
+    <state x="625" y="158" width="1083" height="810" key="CommitChangelistDialog2/83.38.1837.1042@83.38.1837.1042" timestamp="1576934006050" />
     <state x="678" y="202" width="636" height="712" key="FileChooserDialogImpl" timestamp="1576149067457">
       <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state x="678" y="202" width="636" height="712" key="FileChooserDialogImpl/83.38.1837.1042@83.38.1837.1042" timestamp="1576149067457" />
-    <state width="1769" height="204" key="GridCell.Tab.0.bottom" timestamp="1576933832169">
+    <state width="1769" height="204" key="GridCell.Tab.0.bottom" timestamp="1576934009384">
       <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state width="937" height="275" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1576578066822" />
-    <state width="1769" height="204" key="GridCell.Tab.0.bottom/83.38.1837.1042@83.38.1837.1042" timestamp="1576933832169" />
-    <state width="1769" height="204" key="GridCell.Tab.0.center" timestamp="1576933832169">
+    <state width="1769" height="204" key="GridCell.Tab.0.bottom/83.38.1837.1042@83.38.1837.1042" timestamp="1576934009384" />
+    <state width="1769" height="204" key="GridCell.Tab.0.center" timestamp="1576934009384">
       <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state width="937" height="275" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1576578066822" />
-    <state width="1769" height="204" key="GridCell.Tab.0.center/83.38.1837.1042@83.38.1837.1042" timestamp="1576933832169" />
-    <state width="1769" height="204" key="GridCell.Tab.0.left" timestamp="1576933832168">
+    <state width="1769" height="204" key="GridCell.Tab.0.center/83.38.1837.1042@83.38.1837.1042" timestamp="1576934009384" />
+    <state width="1769" height="204" key="GridCell.Tab.0.left" timestamp="1576934009383">
       <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state width="937" height="275" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1576578066821" />
-    <state width="1769" height="204" key="GridCell.Tab.0.left/83.38.1837.1042@83.38.1837.1042" timestamp="1576933832168" />
-    <state width="1769" height="204" key="GridCell.Tab.0.right" timestamp="1576933832169">
+    <state width="1769" height="204" key="GridCell.Tab.0.left/83.38.1837.1042@83.38.1837.1042" timestamp="1576934009383" />
+    <state width="1769" height="204" key="GridCell.Tab.0.right" timestamp="1576934009384">
       <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state width="937" height="275" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1576578066822" />
-    <state width="1769" height="204" key="GridCell.Tab.0.right/83.38.1837.1042@83.38.1837.1042" timestamp="1576933832169" />
+    <state width="1769" height="204" key="GridCell.Tab.0.right/83.38.1837.1042@83.38.1837.1042" timestamp="1576934009384" />
     <state x="665" y="271" width="580" height="571" key="MultipleFileMergeDialog" timestamp="1576574825860">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -379,11 +369,11 @@
     </state>
     <state x="443" y="131" width="1024" height="852" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1576575260803" />
     <state x="318" y="38" width="1539" height="1042" key="SettingsEditor/83.38.1837.1042@83.38.1837.1042" timestamp="1576149043156" />
-    <state x="614" y="297" width="768" height="530" key="Vcs.Push.Dialog.v2" timestamp="1576931579248">
+    <state x="614" y="297" width="768" height="530" key="Vcs.Push.Dialog.v2" timestamp="1576934018624">
       <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1576578082617" />
-    <state x="614" y="297" width="768" height="530" key="Vcs.Push.Dialog.v2/83.38.1837.1042@83.38.1837.1042" timestamp="1576931579248" />
+    <state x="614" y="297" width="768" height="530" key="Vcs.Push.Dialog.v2/83.38.1837.1042@83.38.1837.1042" timestamp="1576934018624" />
     <state x="669" y="309" width="654" height="498" key="chooseDestDirectoryDialog" timestamp="1576346283253">
       <screen x="83" y="38" width="1837" height="1042" />
     </state>

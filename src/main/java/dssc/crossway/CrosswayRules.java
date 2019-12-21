@@ -8,9 +8,6 @@ import java.util.LinkedList;
  */
 public class CrosswayRules extends BoardGameRules {
 
-    public CrosswayRules() {
-
-    }
 
     /**
      * No superposition rule: a player cannot place a piece in an already occupied cell.
@@ -20,7 +17,7 @@ public class CrosswayRules extends BoardGameRules {
      * @throws OutOfBoardException if the Move falls outside of the board.
      */
     private boolean noSuperposition(GoBoard board, Move m) throws OutOfBoardException {
-        return board.getCellStatus(m.getX(), m.getY()) == StoneColor.EMPTY;
+        return board.getCellStatus(m.getCoordinates()) == StoneColor.EMPTY;
     }
 
     /**
@@ -32,7 +29,7 @@ public class CrosswayRules extends BoardGameRules {
      * @throws OutOfBoardException if the Move falls outside of the board.
      */
     private boolean noCrossways(GoBoard board, Move m) throws OutOfBoardException {
-        ArrayList<Coordinates> diagonalPositions = getDiagonalPositions(board, m.getCoordinates());
+        ArrayList<Coordinates> diagonalPositions = board.getDiagonalPositions(m.getCoordinates());
 
         return diagonalPositions.stream()
                 .map(x -> !areCrossed(board, m, x))
@@ -65,29 +62,6 @@ public class CrosswayRules extends BoardGameRules {
 
     }
 
-    /**
-     * Helper function to retrieve diagonal position whose legality is to be verified.
-     * @param board the game board
-     * @param c the coordinates of a cell whose diagonals are queried.
-     * @return an ArrayList of Coordinates object, with the 4 diagonally adiacents cells, if they exists.
-     */
-    private ArrayList<Coordinates> getDiagonalPositions(GoBoard board, Coordinates c) {
-        ArrayList<Coordinates> diagonalPositions = new ArrayList<>();
-        Coordinates[] diagonals = {
-                c.getNorthEast(),
-                c.getNorthWest(),
-                c.getSouthWest(),
-                c.getSouthEast()
-        };
-
-        for(Coordinates coord: diagonals)
-        {
-            if(board.isInside(coord))
-                diagonalPositions.add(coord);
-        }
-
-        return diagonalPositions;
-    }
 
     /**
      *  Main rule validation class. It checks if all the rules are satisfied.
@@ -146,7 +120,6 @@ public class CrosswayRules extends BoardGameRules {
      * @param board 2D board
      * @return if there is a winner
      */
-
     private boolean winningChain(int x, int y, StoneColor c, GoBoard board)  {
 
 

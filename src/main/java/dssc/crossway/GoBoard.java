@@ -89,7 +89,6 @@ public class GoBoard extends GenericBoard {
      * @return the side of the board in cells
      */
     public int getSide() {
-
         return side;
     }
 
@@ -118,7 +117,7 @@ public class GoBoard extends GenericBoard {
     }
 
     /**
-     * Polymorphic version of the method that accepts x and y values instead of a Coordinates object.
+     * Changes the color status of a Cell.
      * @param x integer x value of the coordinates
      * @param y integer y value of the coordinates
      * @param newStatus new Colors object

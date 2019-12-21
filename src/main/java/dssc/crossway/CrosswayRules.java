@@ -91,13 +91,13 @@ public class CrosswayRules extends BoardGameRules {
         try {
             for (int i = 0; i < board.getSide(); i++) {
                 // Check white
-                if (board.getCellStatus(i, 0) == StoneColor.WHITE) {
-                    if (winningChain(i, 0, StoneColor.WHITE, board))
+                if (board.getCellStatus(0, i) == StoneColor.WHITE) {
+                    if (winningChain(0, i, StoneColor.WHITE, board))
                         return StoneColor.WHITE;
                 }
                 //Check black
-                if (board.getCellStatus(0, i) == StoneColor.BLACK) {
-                    if (winningChain(0, i, StoneColor.BLACK, board))
+                if (board.getCellStatus(i, 0) == StoneColor.BLACK) {
+                    if (winningChain(i, 0, StoneColor.BLACK, board))
                         return StoneColor.BLACK;
                 }
             }

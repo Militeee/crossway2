@@ -50,7 +50,7 @@ public class GameControllerTest {
         }
     }
 
-    /**
+
     @Test
     public void fullMatch() throws OutOfBoardException, IllegalMoveException {
         GameController gc = initialize();
@@ -98,7 +98,7 @@ public class GameControllerTest {
         assertEquals(StoneColor.WHITE, gc.winner());
 
     }
-    **/
+
 
 
 }

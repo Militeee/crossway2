@@ -18,7 +18,7 @@ public class MainTest {
     @Test
     public void setCellStatusTest() throws OutOfBoardException {
         GoBoard board = new GoBoard(8);
-        board.setCellStatus(1,4, Colors.WHITE);
-        assertEquals(board.getCellStatus(1,4), Colors.WHITE);
+        board.setCellStatus(1,4, StoneColor.WHITE);
+        assertEquals(board.getCellStatus(1,4), StoneColor.WHITE);
     }
 }

@@ -8,14 +8,14 @@ package dssc.crossway;
 public class Move {
 
     private Coordinates coordinates;
-    private Colors color;
+    private StoneColor color;
 
     /**
      * Constructor of a Move, characterized by a coordinate c and a the color of the piece
      * @param c Coordinates of the move
      * @param color Colors object of the move
      */
-    public Move(Coordinates c, Colors color) {
+    public Move(Coordinates c, StoneColor color) {
         coordinates = c;
         this.color = color;
     }
@@ -26,7 +26,7 @@ public class Move {
      * @param y Y coordinate of the move
      * @param color Colors object of the move
      */
-    public Move(int x, int y, Colors color) {
+    public Move(int x, int y, StoneColor color) {
         coordinates = new Coordinates(x,y);
         this.color = color;
     }
@@ -39,7 +39,7 @@ public class Move {
         return coordinates.getY();
     }
 
-    public Colors getColor() {
+    public StoneColor getColor() {
         return color;
     }
 

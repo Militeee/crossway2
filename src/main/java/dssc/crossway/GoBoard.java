@@ -27,7 +27,7 @@ public class GoBoard extends GenericBoard {
     public void initializeBoard() {
         for (int i=0; i<this.side; i++) {
             for (int j=0; j<this.side; j++) {
-                this.board[i][j] = new Cell(Colors.EMPTY);
+                this.board[i][j] = new Cell(StoneColor.EMPTY);
             }
         }
     }
@@ -40,20 +40,20 @@ public class GoBoard extends GenericBoard {
         char[][] canvas = new char[side][side];
         for(int i=0;i<side;i++) {
             for(int j=0;j<side;j++) {
-                Colors c = null;
+                StoneColor c = null;
                 try {
                     c = getCellStatus(j,i);
                 } catch (OutOfBoardException e) {
                     e.printStackTrace();
                 }
 
-                if(c== Colors.WHITE)
+                if(c== StoneColor.WHITE)
                     canvas[i][j]=WHITE_SIGN;
 
-                if(c== Colors.BLACK)
+                if(c== StoneColor.BLACK)
                     canvas[i][j]=BLACK_SIGN;
 
-                if(c== Colors.EMPTY)
+                if(c== StoneColor.EMPTY)
                     canvas[i][j]=EMPTY_SIGN;
             }
         }
@@ -89,15 +89,14 @@ public class GoBoard extends GenericBoard {
      * @return the side of the board in cells
      */
     public int getSide() {
-
         return side;
     }
 
-    public Colors getCellStatus(int x, int y) throws OutOfBoardException {
+    public StoneColor getCellStatus(int x, int y) throws OutOfBoardException {
         return getCellStatus(new Coordinates(x,y));
     }
 
-    public Colors getCellStatus(Coordinates c) throws OutOfBoardException {
+    public StoneColor getCellStatus(Coordinates c) throws OutOfBoardException {
         if(!isInside(c))
             throw new OutOfBoardException();
 
@@ -110,7 +109,7 @@ public class GoBoard extends GenericBoard {
      * @param newStatus new Colors object
      * @throws OutOfBoardException if coordinates are out of the board
      */
-    public void setCellStatus(Coordinates coordinates, Colors newStatus) throws OutOfBoardException {
+    public void setCellStatus(Coordinates coordinates, StoneColor newStatus) throws OutOfBoardException {
         if (!isInside(coordinates)) {
             throw new OutOfBoardException();
         }
@@ -118,13 +117,13 @@ public class GoBoard extends GenericBoard {
     }
 
     /**
-     * Polymorphic version of the method that accepts x and y values instead of a Coordinates object.
+     * Changes the color status of a Cell.
      * @param x integer x value of the coordinates
      * @param y integer y value of the coordinates
      * @param newStatus new Colors object
      * @throws OutOfBoardException if coordinates are out of the board
      */
-    public void setCellStatus(int x, int y, Colors newStatus) throws OutOfBoardException {
+    public void setCellStatus(int x, int y, StoneColor newStatus) throws OutOfBoardException {
         setCellStatus(new Coordinates(x,y), newStatus);
     }
 }

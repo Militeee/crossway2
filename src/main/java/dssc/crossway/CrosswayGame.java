@@ -25,14 +25,15 @@ public class CrosswayGame {
         showStartingMessage();
 
         boolean gameOver = false;
-        Colors winner = Colors.EMPTY;
+        StoneColor winner = StoneColor.EMPTY;
 
         while(!gameOver) {
             turn();
             winner = controller.winner();
-            gameOver = winner != Colors.EMPTY;
+            gameOver = (winner != StoneColor.EMPTY);
         }
 
+        printBoard();
         showEndingMessage(winner);
     }
 
@@ -98,7 +99,7 @@ public class CrosswayGame {
      * Helper class: prints a message when there is a winner.
      * @param winner Winner color.
      */
-    private void showEndingMessage(Colors winner) {
+    private void showEndingMessage(StoneColor winner) {
         System.out.println(String.format(WINNER_MESSAGE, winner.toString()));
     }
 

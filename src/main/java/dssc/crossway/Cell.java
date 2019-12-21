@@ -5,21 +5,21 @@ package dssc.crossway;
  */
 public class Cell {
 
-    private Colors status;
+    private StoneColor status;
 
     public Cell() {
-        this.status = Colors.EMPTY;
+        this.status = StoneColor.EMPTY;
     }
 
-    Cell (Colors status) {
+    Cell (StoneColor status) {
         this.status = status;
     }
 
-    public Colors getStatus() {
+    public StoneColor getStatus() {
         return this.status;
     }
 
-    void setStatus(Colors newStatus) {
+    void setStatus(StoneColor newStatus) {
         this.status = newStatus;
     }
 }

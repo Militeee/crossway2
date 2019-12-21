@@ -30,9 +30,10 @@ public class CrosswayGame {
         while(!gameOver) {
             turn();
             winner = controller.winner();
-            gameOver = winner != StoneColor.EMPTY;
+            gameOver = (winner != StoneColor.EMPTY);
         }
 
+        printBoard();
         showEndingMessage(winner);
     }
 

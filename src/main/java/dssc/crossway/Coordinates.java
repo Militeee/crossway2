@@ -1,5 +1,8 @@
 package dssc.crossway;
 
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+
 /**
  *  Data structure used to store information about the position of an entity
  *  in the board
@@ -12,21 +15,12 @@ public class Coordinates {
     int x_cord;
     int y_cord;
 
-
     public int getX() {
         return x_cord;
     }
 
-    public void setX(int x_cord) {
-        this.x_cord = x_cord;
-    }
-
     public int getY() {
         return y_cord;
-    }
-
-    public void setY(int y_cord) {
-        this.y_cord = y_cord;
     }
 
     public Coordinates(int x_cord, int y_cord) {
@@ -34,37 +28,36 @@ public class Coordinates {
         this.y_cord = y_cord;
     }
 
+
     /**
-     * Considering a 3x3 square centered into the current coordinate
-     * @return the coordinates of the upper-left corner
+     * Returns an ArrayList with the coordinates of the discrete space [x1, x2)x[y1,y2)
+     * @param x1 included
+     * @param x2 excluded
+     * @param y1 included
+     * @param y2 excluded
+     * @return  ArrayList of coordinates
      */
-    public Coordinates getNorthWest()
-    {
-        return new Coordinates(x_cord-1, y_cord-1);
+    public static ArrayList<Coordinates> getCoordinatesMesh(int x1, int x2, int y1, int y2) {
+
+        ArrayList<Coordinates> mesh = new ArrayList<>();
+
+        for(int i = x1; i<x2; i++)
+            for(int j = y1; j<y2; j++)
+                mesh.add(new Coordinates(i,j));
+
+        return mesh;
     }
 
     /**
-     * Considering a 3x3 square centered into the current coordinate
-     * @return the coordinates of the upper-right corner
+     * Returns an ArrayList with the coordinates of the Adjacents coordinates
+     * with diagonals, center excluded
+     *
+     * @return  ArrayList of coordinates
      */
-    public Coordinates getNorthEast()
-    {
-        return new Coordinates(x_cord+1, y_cord-1);
-    }
-    /**
-     * Considering a 3x3 square centered into the current coordinate
-     * @return the coordinates of the lower-right corner
-     */
-    public Coordinates getSouthEast()
-    {
-        return new Coordinates(x_cord+1, y_cord+1);
-    }
-    /**
-     * Considering a 3x3 square centered into the current coordinate
-     * @return the coordinates of the lower-left corner
-     */
-    public Coordinates getSouthWest()
-    {
-        return new Coordinates(x_cord-1, y_cord+1);
+    public ArrayList<Coordinates> getAdjacents() {
+
+        return getCoordinatesMesh(getX()-1, getX()+2, getY()-1, getY()+2).stream()
+                .filter(c -> !this.equals(c))
+                .collect(Collectors.toCollection(ArrayList::new));
     }
 }

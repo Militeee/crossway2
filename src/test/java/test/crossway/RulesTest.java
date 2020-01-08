@@ -39,12 +39,12 @@ public class RulesTest {
     @Test
     public void crosswayIllegalMoveTestSoutheast() throws OutOfBoardException {
 
-        /**
-         *     0 1 2
-         *   0
-         *   1   F E
-         *   2   E i
-         *
+        /*
+              0 1 2
+            0
+            1   F E
+            2   E i
+
          */
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
         try {
@@ -63,12 +63,12 @@ public class RulesTest {
     @Test
     public void crosswayIllegalMoveTestSouthwest() throws OutOfBoardException {
 
-        /**
-         *     0 1 2
-         *   0
-         *   1   E F
-         *   2   i E
-         *
+        /*
+              0 1 2
+            0
+            1   E F
+            2   i E
+
          */
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
         try {
@@ -87,12 +87,12 @@ public class RulesTest {
     @Test
     public void crosswayIllegalMoveTestNorthwest() throws OutOfBoardException {
 
-        /**
-         *     0 1 2
-         *   0
-         *   1   i E
-         *   2   E F
-         *
+        /*
+              0 1 2
+            0
+            1   i E
+            2   E F
+
          */
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
         try {
@@ -111,12 +111,12 @@ public class RulesTest {
     @Test
     public void crosswayIllegalMoveTestNorthEast() throws OutOfBoardException {
 
-        /**
-         *     0 1 2
-         *   0
-         *   1   E i
-         *   2   F E
-         *
+        /*
+              0 1 2
+            0
+            1   E i
+            2   F E
+
          */
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
         try {
@@ -133,7 +133,7 @@ public class RulesTest {
     }
 
     @Test
-    public void hasWhiteWon() throws OutOfBoardException, IllegalMoveException {
+    public void hasWhiteWon() {
 
 
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
@@ -150,7 +150,7 @@ public class RulesTest {
 
 
     @Test
-    public void hasBlackWon() throws OutOfBoardException, IllegalMoveException {
+    public void hasBlackWon(){
 
 
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());

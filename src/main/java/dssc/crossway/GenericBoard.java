@@ -1,6 +1,7 @@
 package dssc.crossway;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 /**
  * Abstract class for a game board made of Cells.
@@ -39,25 +40,18 @@ public abstract class GenericBoard {
 
 
     /**
-     * Helper function to retrieve diagonal position whose legality is to be verified.
+     * Returns an ArrayList filled with all the legal diagonal-adjacent positions
+     * relatively to a given coordinate.
+     *
      * @param c the coordinates of a cell whose diagonals are queried.
      * @return an ArrayList of Coordinates object, with the 4 diagonally adiacents cells, if they exists.
      */
     public ArrayList<Coordinates> getDiagonalPositions(Coordinates c) {
-        ArrayList<Coordinates> diagonalPositions = new ArrayList<>();
-        Coordinates[] diagonals = {
-                c.getNorthEast(),
-                c.getNorthWest(),
-                c.getSouthWest(),
-                c.getSouthEast()
-        };
 
-        for(Coordinates coord: diagonals)
-        {
-            if(isInside(coord))
-                diagonalPositions.add(coord);
-        }
-
-        return diagonalPositions;
+        return c.getAdjacents().stream()
+                .filter(this::isInside)
+                .filter(p -> p.getY()!=c.getY() && p.getX()!=c.getX())
+                .collect(Collectors.toCollection(ArrayList::new));
     }
+
 }

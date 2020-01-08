@@ -3,6 +3,7 @@ package dssc.crossway;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+
 /**
  *  Game rules class. This class is responsible for validation of a move.
  */
@@ -26,9 +27,8 @@ public class CrosswayRules extends BoardGameRules {
      * @param board the game board
      * @param m the Move object to be validated
      * @return true if the move is legal, false otherwise.
-     * @throws OutOfBoardException if the Move falls outside of the board.
      */
-    private boolean noCrossways(GoBoard board, Move m) throws OutOfBoardException {
+    private boolean noCrossways(GoBoard board, Move m) {
         ArrayList<Coordinates> diagonalPositions = board.getDiagonalPositions(m.getCoordinates());
 
         return diagonalPositions.stream()
@@ -37,7 +37,9 @@ public class CrosswayRules extends BoardGameRules {
     }
 
     /**
-     * Helper function for noCrossway method.
+     * Checks for a given move and a given relative adjacent-diagonal position on the board
+     * if the move is considered illegal, since in these two position there are pieces of the same color,
+     * and this is opposite to the color of the pieces that "cross" these two.
      *
      * @param board the game board
      * @param m the Move object to be validated
@@ -49,7 +51,7 @@ public class CrosswayRules extends BoardGameRules {
         Coordinates coord3 = new Coordinates(coord1.getX(), coord2.getY());
         Coordinates coord4 = new Coordinates(coord2.getX(), coord1.getY());
 
-        StoneColor c[] = new StoneColor[0];
+        StoneColor[] c = new StoneColor[4];
         try {
             c = new StoneColor[]{m.getColor(), board.getCellStatus(coord2), board.getCellStatus(coord3), board.getCellStatus(coord4)};
         } catch (OutOfBoardException e) {
@@ -77,7 +79,6 @@ public class CrosswayRules extends BoardGameRules {
         if(turn == 1) return true;
         return noSuperposition(board, m) &&
                 noCrossways(board,m);
-
     }
 
     /**
@@ -122,13 +123,10 @@ public class CrosswayRules extends BoardGameRules {
      */
     private boolean winningChain(int x, int y, StoneColor c, GoBoard board)  {
 
-
-
         int side = board.getSide();
 
         boolean[][] visited = new boolean[side][side];
-        LinkedList<Coordinates> Q;
-        Q = new LinkedList<Coordinates>();
+        LinkedList<Coordinates> Q = new LinkedList<>();
 
         visited[x][y] = true;
         Coordinates node = new Coordinates(x,y);
@@ -137,7 +135,7 @@ public class CrosswayRules extends BoardGameRules {
         while(Q.size() != 0){
 
             node = Q.poll();
-            for (Coordinates n : adjacentNodes( node, board, c)) {
+            for (Coordinates n : board.adjacentFriendsCoordinates( node, board, c)) {
 
                 if ((n.getX() == (side - 1)) && (c == StoneColor.WHITE)) {
                     return true;
@@ -156,33 +154,7 @@ public class CrosswayRules extends BoardGameRules {
         return false;
     }
 
-    /**
-     * Helper function to retrieve cell coordinates of nearby cells where there are stones of the provided color.
-     * @param node Coordinate objects of a cell.
-     * @param board a game board
-     * @param c the provided color
-     * @return a LinkedList<Coordinates> </Coordinates>
-     */
-    private LinkedList<Coordinates> adjacentNodes(Coordinates node, GoBoard board, StoneColor c) {
 
-        int x = node.getX() - 1;
-        int y = node.getY() - 1;
-
-        LinkedList<Coordinates> ret = new LinkedList<Coordinates>();
-
-
-        for(int i = x; i < x + 3; i++){
-            for(int j = y; j < y + 3; j++){
-                try {
-                    if (!(i == node.getX() && j == node.getY()) && (board.getCellStatus(i, j) == c)) {
-                        ret.add(new Coordinates(i, j));
-                    }
-                } catch (Exception ignored) {}
-            }
-        }
-
-        return ret;
-    }
 
     /**
      * This method returns BLACK: the color of the player that does the first move.
@@ -191,5 +163,6 @@ public class CrosswayRules extends BoardGameRules {
     public StoneColor firstPlayer() {
         return StoneColor.BLACK;
     }
+
 
 }

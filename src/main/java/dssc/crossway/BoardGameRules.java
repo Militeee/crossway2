@@ -15,7 +15,7 @@ package dssc.crossway;
       * @param m move which validity will be checked
       * @param turn actual turn
       * @return true if the move is legal, false otherwise
-      * @throws OutOfBoardException
+      * @throws OutOfBoardException if move coordinate id out of board
       */
      public abstract boolean validateMove(GoBoard board, Move m, int turn) throws OutOfBoardException;
 

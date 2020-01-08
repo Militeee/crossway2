@@ -19,10 +19,6 @@ public class GameController {
         this.rules = rules;
     }
 
-    public int getTurn() {
-        return this.turn;
-    }
-
 
     /**
      * Validate a move and then perform a it
@@ -106,4 +102,3 @@ public class GameController {
     }
 
 }
-

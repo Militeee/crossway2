@@ -31,14 +31,6 @@ public class Move {
         this.color = color;
     }
 
-    public int getX() {
-        return coordinates.getX();
-    }
-
-    public int getY() {
-        return coordinates.getY();
-    }
-
     public StoneColor getColor() {
         return color;
     }

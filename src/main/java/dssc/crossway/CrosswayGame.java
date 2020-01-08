@@ -3,14 +3,14 @@ package dssc.crossway;
 /**
  *  Main game management class.
  *  <p>
- *      Class responsibility: Manage game turns.
+ *      Class responsibility: Manage game turns logic.
  */
 public class CrosswayGame {
 
     public static final int CROSSWAY_BOARD_SIDE = 12;
     private static final String STARTING_MESSAGE = "CROSSWAY";
-    private static final String WINNER_MESSAGE = "%s won the game";
-    private static final String CURRENT_PLAYER_MESSAGE = "%s moves now";
+    private static final String WINNER_MESSAGE = "\n%s won the game";
+    private static final String CURRENT_PLAYER_MESSAGE = "\n%s moves now";
     private static final String X_REQUEST_MESSAGE = "Enter X:";
     private static final String Y_REQUEST_MESSAGE = "Enter Y:";
 
@@ -38,13 +38,13 @@ public class CrosswayGame {
     }
 
     /**
-     * helper class for a single turn management.
-     * @return Color of winner. Returns Colors.EMPTY if no one is winning the game.
+     * Method for a single turn management.
      */
     private void turn()  {
-        boolean validMove = false;
+
         printBoard();
         showCurrentPlayer();
+        boolean validMove = false;
 
         while(!validMove) {
 
@@ -52,7 +52,6 @@ public class CrosswayGame {
                 Coordinates m = askMove();
                 applyMove(m);
                 validMove = true;
-
 
             } catch (Exception e) {
                 System.out.println(e.getMessage());
@@ -62,21 +61,21 @@ public class CrosswayGame {
     }
 
     /**
-     *  Helper class. Prints the current player color.
+     *  Prints the current player color.
      */
     private void showCurrentPlayer() {
         System.out.println(String.format(CURRENT_PLAYER_MESSAGE, controller.currentTurnColor()));
     }
 
     /**
-     *  Helper class. Pretty prints a board.
+     *  Pretty prints a board.
      */
     private void printBoard() {
         System.out.println(controller.stringBoard());
     }
 
     /**
-     * Helper class. It tries to perform a move m.
+     * Tries to perform a move m.
      * @param m a Coordinate object
      * @throws IllegalMoveException whenever the move is illegal
      * @throws OutOfBoardException whenever the coordinates falls outside of the board
@@ -86,7 +85,7 @@ public class CrosswayGame {
     }
 
     /**
-     * Helper class. Asks the current player to input the next move.
+     * Asks the current player to input the next move.
      * @return a Coordinate object with the user input.
      */
     private Coordinates askMove() {
@@ -96,7 +95,7 @@ public class CrosswayGame {
     }
 
     /**
-     * Helper class: prints a message when there is a winner.
+     * Prints a message when there is a winner.
      * @param winner Winner color.
      */
     private void showEndingMessage(StoneColor winner) {
@@ -104,7 +103,7 @@ public class CrosswayGame {
     }
 
     /**
-     * Helper class: prints welcome message and game rules.
+     * Prints welcome message and game rules.
      */
     private void showStartingMessage() {
         System.out.println(STARTING_MESSAGE);

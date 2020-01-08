@@ -1,6 +1,9 @@
 package dssc.crossway;
 
 
+import java.util.LinkedList;
+import java.util.stream.Collectors;
+
 /**
  * Go board class. A class to manage a Go Board, that is a square check board.
  *
@@ -40,21 +43,14 @@ public class GoBoard extends GenericBoard {
         char[][] canvas = new char[side][side];
         for(int i=0;i<side;i++) {
             for(int j=0;j<side;j++) {
-                StoneColor c = null;
+                StoneColor c = StoneColor.EMPTY;
                 try {
                     c = getCellStatus(j,i);
                 } catch (OutOfBoardException e) {
                     e.printStackTrace();
                 }
 
-                if(c== StoneColor.WHITE)
-                    canvas[i][j]=WHITE_SIGN;
-
-                if(c== StoneColor.BLACK)
-                    canvas[i][j]=BLACK_SIGN;
-
-                if(c== StoneColor.EMPTY)
-                    canvas[i][j]=EMPTY_SIGN;
+                canvas[i][j] = color2consoleRepresentation(c);
             }
         }
 
@@ -63,19 +59,40 @@ public class GoBoard extends GenericBoard {
     }
 
     /**
-     * Helper function for printing the board.
-     * @param canvas a 2D array of chars
+     * Method that maps a Stone color to its representing char on the console
+     * @param c the color of the stone
+     * @return char representing the color
+     */
+    private char color2consoleRepresentation(StoneColor c) {
+        
+        char sign;
+        
+        switch(c) 
+        {
+            case WHITE: sign = WHITE_SIGN; break;
+            case BLACK: sign = BLACK_SIGN; break;
+            case EMPTY: sign = EMPTY_SIGN; break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + c);
+        }
+        
+        return sign;
+    }
+
+    /**
+     * Method that returns the String representation of a matrix of characters
+     * @param charMatrix a 2D array of chars
      * @param x first dimension of the array
      * @param y second dimension of the array
-     * @return
+     * @return String representation of a matrix of characters
      */
-    private String matrixToString(char[][] canvas, int x, int y) {
+    private String matrixToString(char[][] charMatrix, int x, int y) {
 
         StringBuilder s = new StringBuilder();
 
         for(int i=0;i<x;i++) {
             for (int j = 0; j < y; j++) {
-                s.append(canvas[i][j]);
+                s.append(charMatrix[i][j]);
             }
             s.append("\n");
         }
@@ -125,5 +142,28 @@ public class GoBoard extends GenericBoard {
      */
     public void setCellStatus(int x, int y, StoneColor newStatus) throws OutOfBoardException {
         setCellStatus(new Coordinates(x,y), newStatus);
+    }
+
+
+    /**
+     * Helper function to retrieve cell coordinates of nearby cells where there are stones of the provided color.
+     * @param node Coordinate objects of a cell.
+     * @param board a game board
+     * @param c the provided color
+     * @return a LinkedList<Coordinates> </Coordinates>
+     */
+    public LinkedList<Coordinates> adjacentFriendsCoordinates(Coordinates node, GoBoard board, StoneColor c) {
+
+        return node.getAdjacents().stream()
+                .filter(board::isInside)
+                .filter(p -> {
+                    try {
+                        return board.getCellStatus(p) == c;
+                    } catch (OutOfBoardException e) {
+                        e.printStackTrace();
+                    }
+                    return false;
+                })
+                .collect(Collectors.toCollection(LinkedList::new));
     }
 }

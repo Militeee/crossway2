@@ -8,12 +8,13 @@ import static org.junit.Assert.*;
 
 public class GameControllerTest {
 
-
+    private GameController initialize() {
+        return new GameController(new GoBoard(12), new CrosswayRules());
+    }
 
    @Test
    public void gameIsStarted(){
-       GameController gc = initialize();
-
+        initialize();
    }
 
    @Test
@@ -23,9 +24,7 @@ public class GameControllerTest {
        assertEquals(gc.getCellStatus(1,1), StoneColor.WHITE);
    }
 
-   private GameController initialize() {
-       return new GameController(new GoBoard(12), new CrosswayRules());
-   }
+
 
 
     @Test
@@ -68,8 +67,6 @@ public class GameControllerTest {
         {
             gc.performGameMove(new Coordinates(i,i+1)); //BLACK
             gc.performGameMove(new Coordinates(i+1,i+1)); //WHITE
-            System.out.println("\n now the winner is " + gc.winner() + " turn: " + gc.getTurn());
-            System.out.println(gc.stringBoard());
             assertEquals(StoneColor.EMPTY, gc.winner());
         }
 
@@ -78,23 +75,15 @@ public class GameControllerTest {
         assertTrue(gc.validateMove(new Move(new Coordinates(2,1), StoneColor.WHITE)));
 
         gc.performGameMove(new Coordinates(9,11)); //BLACK
-        System.out.println("\n now the winner is " + gc.winner() + " turn: " + gc.getTurn());
-        System.out.println(gc.stringBoard());
         assertEquals(StoneColor.EMPTY, gc.winner());
 
         gc.performGameMove(new Coordinates(10,11)); //WHITE
-        System.out.println("\n now the winner is " + gc.winner() + " turn: " + gc.getTurn());
-        System.out.println(gc.stringBoard());
         assertEquals(StoneColor.EMPTY, gc.winner());
 
         gc.performGameMove(new Coordinates(11,11)); //BLACK
-        System.out.println("\n now the winner is " + gc.winner() + " turn: " + gc.getTurn());
-        System.out.println(gc.stringBoard());
         assertEquals(StoneColor.EMPTY, gc.winner());
 
         gc.performGameMove(new Coordinates(11,10)); //WHITE
-        System.out.println("\n now the winner is " + gc.winner() + " turn: " + gc.getTurn());
-        System.out.println(gc.stringBoard());
         assertEquals(StoneColor.WHITE, gc.winner());
 
     }

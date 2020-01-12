@@ -11,8 +11,8 @@ import java.util.stream.Collectors;
 public class GoBoard extends GenericBoard {
 
     private final static char EMPTY_SIGN = '.';
-    private final static char WHITE_SIGN = 'W';
-    private final static char BLACK_SIGN = 'B';
+    private final static char WHITE_SIGN =  '\u25CF';//'W';
+    private final static char BLACK_SIGN = '\u25CB';
 
     /**
      * GoBoard constructor
@@ -90,9 +90,21 @@ public class GoBoard extends GenericBoard {
 
         StringBuilder s = new StringBuilder();
 
+        s.append ("  ");
+        for (int i=0; i<y; i++) {
+            s.append(i%10);
+            s.append( " ");
+
+        }
+        s.append("\n");
+
         for(int i=0;i<x;i++) {
+            s.append(i%10);
+            s.append(" ");
             for (int j = 0; j < y; j++) {
+
                 s.append(charMatrix[i][j]);
+                s.append(" ");
             }
             s.append("\n");
         }

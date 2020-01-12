@@ -68,9 +68,22 @@ public class GoBoardTest {
             assertEquals(e.getMessage(),"Out of board!");
         }
 
-       // String expected = "............accapo............accapoW...........accapo............accapo.......B....accapo............accapo............accapo.....B......accapo............accapo.W..........accapo............accapo.....B......accapo";
 
-        String expected =                  //y
+    String expected ="  0 1 2 3 4 5 6 7 8 9 0 1 \n"+
+        "0 . . . . . . . . . . . . \n"+
+        "1 . . . . . . . . . . . . \n"+
+        "2 ● . . . . . . . . . . . \n"+
+        "3 . . . . . . . . . . . . \n"+
+        "4 . . . . . . . ○ . . . . \n"+
+        "5 . . . . . . . . . . . . \n"+
+        "6 . . . . . . . . . . . . \n"+
+        "7 . . . . . ○ . . . . . . \n"+
+        "8 . . . . . . . . . . . . \n"+
+        "9 . ● . . . . . . . . . . \n"+
+        "0 . . . . . . . . . . . . \n"+
+        "1 . . . . . ○ . . . . . . ";
+
+/*        String expected =                  //y
                         "............\n" + //0
                         "............\n" + //1
                         "W...........\n" + //2
@@ -84,7 +97,7 @@ public class GoBoardTest {
                         "............\n" + //10
                         ".....B......";    //11
                     //x: 0123456789te
-
+*/
         assertEquals(expected,board.toString());
     }
 

@@ -45,7 +45,7 @@ public class GoBoard extends GenericBoard {
             for(int j=0;j<side;j++) {
                 StoneColor c = StoneColor.EMPTY;
                 try {
-                    c = getCellStatus(j,i);
+                    c = getCellStatus(new Coordinates(j,i));
                 } catch (OutOfBoardException e) {
                     e.printStackTrace();
                 }
@@ -109,9 +109,7 @@ public class GoBoard extends GenericBoard {
         return side;
     }
 
-    public StoneColor getCellStatus(int x, int y) throws OutOfBoardException {
-        return getCellStatus(new Coordinates(x,y));
-    }
+
 
     public StoneColor getCellStatus(Coordinates c) throws OutOfBoardException {
         if(!isInside(c))
@@ -133,16 +131,6 @@ public class GoBoard extends GenericBoard {
         this.board[coordinates.getX()][coordinates.getY()].setStatus(newStatus);
     }
 
-    /**
-     * Changes the color status of a Cell.
-     * @param x integer x value of the coordinates
-     * @param y integer y value of the coordinates
-     * @param newStatus new Colors object
-     * @throws OutOfBoardException if coordinates are out of the board
-     */
-    public void setCellStatus(int x, int y, StoneColor newStatus) throws OutOfBoardException {
-        setCellStatus(new Coordinates(x,y), newStatus);
-    }
 
 
     /**

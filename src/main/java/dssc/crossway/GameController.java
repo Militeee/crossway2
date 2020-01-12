@@ -39,13 +39,12 @@ public class GameController {
 
     /**
      *  Return the color of a cell
-     * @param x coordinate
-     * @param y coordinate
+     * @param coor coordinates
      * @return the status of the cell in that position
      * @throws OutOfBoardException if the coordinated are out of the board size
      */
-    public StoneColor getCellStatus(int x, int y) throws OutOfBoardException {
-        return this.board.getCellStatus(x,y);
+    public StoneColor getCellStatus(Coordinates coor) throws OutOfBoardException {
+        return this.board.getCellStatus(coor);
     }
 
 

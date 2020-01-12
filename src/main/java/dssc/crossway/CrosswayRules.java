@@ -88,19 +88,15 @@ public class CrosswayRules extends BoardGameRules {
      */
     @Override
     public StoneColor winner(GoBoard board){
-
         try {
             for (int i = 0; i < board.getSide(); i++) {
                 // Check white
-                if (board.getCellStatus(0, i) == StoneColor.WHITE) {
-                    if (winningChain(0, i, StoneColor.WHITE, board))
-                        return StoneColor.WHITE;
-                }
+                if(hasPlayerWon(new Coordinates(0,i),StoneColor.WHITE, board))
+                    return StoneColor.WHITE;
+
                 //Check black
-                if (board.getCellStatus(i, 0) == StoneColor.BLACK) {
-                    if (winningChain(i, 0, StoneColor.BLACK, board))
-                        return StoneColor.BLACK;
-                }
+                if(hasPlayerWon(new Coordinates(i,0),StoneColor.BLACK, board))
+                    return StoneColor.BLACK;
             }
         } catch (Exception e) {e.printStackTrace();}
 
@@ -108,6 +104,20 @@ public class CrosswayRules extends BoardGameRules {
 
     }
 
+    /**
+     *
+     * @param coor coordinates
+     * @param col color that is being considered
+     * @param board the game board.
+     * @return true if the color compatible with the coordinate has won the game, false otherwise
+     * @throws OutOfBoardException if the Move points out of the board.
+     */
+    private boolean hasPlayerWon(Coordinates coor,StoneColor col,GoBoard board) throws OutOfBoardException {
+        if (board.getCellStatus(coor) == col) {
+            return winningChain(coor, col, board);
+        }
+        return false;
+    }
 
 
 
@@ -115,21 +125,19 @@ public class CrosswayRules extends BoardGameRules {
      *
      * Implements breadth first search for finding the winner
      *
-     * @param x vertical axes
-     * @param y horizontal axes
+     * @param node coordinates of the node
      * @param c color of the current player
      * @param board 2D board
      * @return if there is a winner
      */
-    private boolean winningChain(int x, int y, StoneColor c, GoBoard board)  {
+    private boolean winningChain(Coordinates node, StoneColor c, GoBoard board)  {
 
         int side = board.getSide();
 
         boolean[][] visited = new boolean[side][side];
         LinkedList<Coordinates> Q = new LinkedList<>();
 
-        visited[x][y] = true;
-        Coordinates node = new Coordinates(x,y);
+        visited[node.getX()][node.getY()] = true;
         Q.add(node);
 
         while(Q.size() != 0){

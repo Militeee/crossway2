@@ -20,16 +20,7 @@ public class Move {
         this.color = color;
     }
 
-    /**
-     * Constructor of a Move, characterized by the x and y coordinates c and a the color of the piece
-     * @param x X coordinate of the move
-     * @param y Y coordinate of the move
-     * @param color Colors object of the move
-     */
-    public Move(int x, int y, StoneColor color) {
-        coordinates = new Coordinates(x,y);
-        this.color = color;
-    }
+
 
     public StoneColor getColor() {
         return color;

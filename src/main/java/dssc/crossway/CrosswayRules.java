@@ -99,7 +99,7 @@ public class CrosswayRules {
                 if(hasPlayerWon(new Coordinates(i,0),StoneColor.BLACK, board))
                     return StoneColor.BLACK;
             }
-        } catch (Exception e) {e.printStackTrace();}
+        } catch (OutOfBoardException e) {e.printStackTrace();}
 
         return StoneColor.EMPTY;
 
@@ -136,24 +136,24 @@ public class CrosswayRules {
         int side = board.getSide();
 
         boolean[][] visited = new boolean[side][side];
-        LinkedList<Coordinates> Q = new LinkedList<>();
+        LinkedList<Coordinates> queue = new LinkedList<>();
 
         visited[node.getX()][node.getY()] = true;
-        Q.add(node);
+        queue.add(node);
 
-        while(Q.size() != 0){
+        while(queue.size() != 0){
 
-            node = Q.poll();
-            for (Coordinates n : board.adjacentFriendsCoordinates( node, board, c)) {
+            node = queue.poll();
+            for (Coordinates coordinates : board.adjacentFriendsCoordinates( node, board, c)) {
 
-                if ((n.getX() == (side - 1)) && (c == StoneColor.WHITE)) {
+                if ((coordinates.getX() == (side - 1)) && (c == StoneColor.WHITE)) {
                     return true;
-                } else if ((n.getY() == (side - 1)) && (c == StoneColor.BLACK)) {
+                } else if ((coordinates.getY() == (side - 1)) && (c == StoneColor.BLACK)) {
                     return true;
                 }
-                if (!visited[n.getX()][n.getY()]) {
-                    visited[n.getX()][n.getY()] = true;
-                    Q.add(n);
+                if (!visited[coordinates.getX()][coordinates.getY()]) {
+                    visited[coordinates.getX()][coordinates.getY()] = true;
+                    queue.add(coordinates);
                 }
 
             }
@@ -163,12 +163,6 @@ public class CrosswayRules {
         return false;
     }
 
-
-
-    /**
-     * This method returns BLACK: the color of the player that does the first move.
-     * @return BLACK
-     */
     public StoneColor firstPlayer() {
         return StoneColor.BLACK;
     }

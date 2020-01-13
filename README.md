@@ -16,3 +16,15 @@ A player must never complete the formation shown in Figure or a 90 degree rotati
 White has the option of switching colors with Black, and claiming Black’s first move as his own.
 
 Original rules can be found [at the author website](https://boardgamegeek.com/boardgame/30517/crossway).
+
+
+### Excution
+
+Clone the folder with `git clone`
+
+Build with `javac /crossway2/src/main/java/dssc/crossway/Main.java `
+
+`cd crossway2/build/classes/java/main`
+
+Run with 
+`java dssc.crossway2.Main`

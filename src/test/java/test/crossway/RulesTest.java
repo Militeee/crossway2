@@ -37,7 +37,7 @@ public class RulesTest {
     }
 
     @Test
-    public void crosswayIllegalMoveTestSoutheast() throws OutOfBoardException {
+    public void crosswayIllegalMoveTestSoutheast() throws OutOfBoardException, IllegalMoveException {
 
         /*
               0 1 2
@@ -47,21 +47,17 @@ public class RulesTest {
 
          */
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
-        try {
-            gc.placeStone(new Move(new Coordinates( 1, 1), StoneColor.BLACK));
-            gc.placeStone(new Move(new Coordinates( 1, 2), StoneColor.WHITE));
-            gc.placeStone(new Move(new Coordinates( 2, 1), StoneColor.WHITE));
 
-        } catch (Exception e) {
-            System.out.println("Something wrong with the theoretically legal moves.");
-        }
+        gc.placeStone(new Move(new Coordinates( 1, 1), StoneColor.BLACK));
+        gc.placeStone(new Move(new Coordinates( 1, 2), StoneColor.WHITE));
+        gc.placeStone(new Move(new Coordinates( 2, 1), StoneColor.WHITE));
 
         Move m4 = new Move(new Coordinates(2, 2), StoneColor.BLACK);
         assertFalse(gc.validateMove(m4));
     }
 
     @Test
-    public void crosswayIllegalMoveTestSouthwest() throws OutOfBoardException {
+    public void crosswayIllegalMoveTestSouthwest() throws OutOfBoardException, IllegalMoveException {
 
         /*
               0 1 2
@@ -71,21 +67,18 @@ public class RulesTest {
 
          */
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
-        try {
-            gc.placeStone(new Move(new Coordinates(2, 1), StoneColor.BLACK));
-            gc.placeStone(new Move(new Coordinates(2, 2), StoneColor.WHITE));
-            gc.placeStone(new Move(new Coordinates(1, 1), StoneColor.WHITE));
 
-        } catch (Exception e) {
-            System.out.println("Something wrong with the theoretically legal moves.");
-        }
+        gc.placeStone(new Move(new Coordinates(2, 1), StoneColor.BLACK));
+        gc.placeStone(new Move(new Coordinates(2, 2), StoneColor.WHITE));
+        gc.placeStone(new Move(new Coordinates(1, 1), StoneColor.WHITE));
+
 
         Move m4 = new Move(new Coordinates(1, 2), StoneColor.BLACK);
         assertFalse(gc.validateMove(m4));
     }
 
     @Test
-    public void crosswayIllegalMoveTestNorthwest() throws OutOfBoardException {
+    public void crosswayIllegalMoveTestNorthwest() throws OutOfBoardException, IllegalMoveException {
 
         /*
               0 1 2
@@ -95,21 +88,18 @@ public class RulesTest {
 
          */
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
-        try {
-            gc.placeStone(new Move(new Coordinates( 2, 2), StoneColor.BLACK));
-            gc.placeStone(new Move(new Coordinates( 1, 2), StoneColor.WHITE));
-            gc.placeStone(new Move(new Coordinates(2, 1), StoneColor.WHITE));
 
-        } catch (Exception e) {
-            System.out.println("Something wrong with the theoretically legal moves.");
-        }
+        gc.placeStone(new Move(new Coordinates( 2, 2), StoneColor.BLACK));
+        gc.placeStone(new Move(new Coordinates( 1, 2), StoneColor.WHITE));
+        gc.placeStone(new Move(new Coordinates(2, 1), StoneColor.WHITE));
+
 
         Move m4 = new Move(new Coordinates(1, 1), StoneColor.BLACK);
         assertFalse(gc.validateMove(m4));
     }
 
     @Test
-    public void crosswayIllegalMoveTestNorthEast() throws OutOfBoardException {
+    public void crosswayIllegalMoveTestNorthEast() throws OutOfBoardException, IllegalMoveException {
 
         /*
               0 1 2
@@ -119,49 +109,40 @@ public class RulesTest {
 
          */
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
-        try {
-            gc.placeStone(new Move(new Coordinates( 1, 2), StoneColor.BLACK));
-            gc.placeStone(new Move(new Coordinates( 1, 1), StoneColor.WHITE));
-            gc.placeStone(new Move(new Coordinates( 2, 2), StoneColor.WHITE));
 
-        } catch (Exception e) {
-            System.out.println("Something wrong with the theoretically legal moves.");
-        }
+        gc.placeStone(new Move(new Coordinates( 1, 2), StoneColor.BLACK));
+        gc.placeStone(new Move(new Coordinates( 1, 1), StoneColor.WHITE));
+        gc.placeStone(new Move(new Coordinates( 2, 2), StoneColor.WHITE));
+
 
         Move m4 = new Move(new Coordinates( 2, 1), StoneColor.BLACK);
         assertFalse(gc.validateMove(m4));
     }
 
     @Test
-    public void hasWhiteWon() {
+    public void hasWhiteWon() throws IllegalMoveException, OutOfBoardException {
 
 
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
-        try {
+
             for(int i = 0; i < gc.getSide() ; i++){
                 gc.placeStone(new Move(new Coordinates( i, 0), StoneColor.WHITE));
             }
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
         assertEquals(gc.winner(), StoneColor.WHITE);
     }
 
 
     @Test
-    public void hasBlackWon(){
+    public void hasBlackWon() throws IllegalMoveException, OutOfBoardException {
 
 
         GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
-        try {
-            for(int i = 0; i < gc.getSide() ; i++){
-                gc.placeStone(new Move(new Coordinates( 0, i), StoneColor.BLACK));
-            }
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        for(int i = 0; i < gc.getSide() ; i++){
+            gc.placeStone(new Move(new Coordinates( 0, i), StoneColor.BLACK));
         }
+
         assertEquals(gc.winner(), StoneColor.BLACK);
     }
     

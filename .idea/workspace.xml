@@ -12,58 +12,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/Cell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/CrosswayGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/CrosswayGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/CrosswayRules.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/CrosswayRules.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/GenericBoard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/GoBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/GoBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/test/crossway/CellTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/test/crossway/GameControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/test/crossway/GameControllerTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/test/test/crossway/GoBoardTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/test/crossway/GoBoardTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/test/crossway/MainTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/test/crossway/RulesTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/test/crossway/RulesTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/allclasses-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/allpackages-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/constant-values.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/deprecated-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/Cell.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/Cell.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/Colors.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/ConsoleInputHandler.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/ConsoleInputHandler.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/Coordinates.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/Coordinates.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/CrosswayGame.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/CrosswayGame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/CrosswayRules.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/CrosswayRules.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/GameController.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/GameController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/GenericBoard.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/GenericBoard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/GoBoard.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/GoBoard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/IllegalMoveException.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/IllegalMoveException.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/Move.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/Move.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/OutOfBoardException.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/OutOfBoardException.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/dssc/crossway/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/index-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/index-all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/member-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/member-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/member-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/package-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/package-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/serialized-form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/type-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/type-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/type-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/BoardGameRules.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/Cell.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/CrosswayRules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/CrosswayRules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/GenericBoard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/GoBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/GoBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/crossway/CellTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/crossway/GameControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/crossway/GameControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/test/crossway/GoBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/crossway/GoBoardTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/crossway/MainTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/crossway/RulesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/crossway/RulesTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -364,7 +315,8 @@
     <MESSAGE value="corrected a little error and added a commmented fullMatch test" />
     <MESSAGE value="Moved method for finding diagonal coordinates in GenericBoard, substituted survived (x,y) couples with Coordinates object, corrected some comments" />
     <MESSAGE value="graphical makeover" />
-    <option name="LAST_COMMIT_MESSAGE" value="graphical makeover" />
+    <MESSAGE value="Eliminato Cell e classi astratte usate una sola volta&#10;Eliminati alcune test unit ridondanti" />
+    <option name="LAST_COMMIT_MESSAGE" value="Eliminato Cell e classi astratte usate una sola volta&#10;Eliminati alcune test unit ridondanti" />
   </component>
   <component name="WindowStateProjectService">
     <state x="396" y="57" width="1200" height="1002" key="#Project_Structure" timestamp="1577012933563">

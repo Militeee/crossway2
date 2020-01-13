@@ -7,7 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb783e39-6736-40ec-8a70-b64a8865b0ab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/.gradle/4.4.1/taskHistory/taskHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/.gradle/4.4.1/taskHistory/taskHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/ConsoleInputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/ConsoleInputHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/CrosswayGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/CrosswayGame.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -311,7 +318,8 @@
     <MESSAGE value="Eliminato Cell e classi astratte usate una sola volta&#10;Eliminati alcune test unit ridondanti" />
     <MESSAGE value="Eliminati try/catch inutili" />
     <MESSAGE value="Sistemata specializzazione di un catch di Exception generica" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sistemata specializzazione di un catch di Exception generica" />
+    <MESSAGE value="Sistemato README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sistemato README.md" />
   </component>
   <component name="WindowStateProjectService">
     <state x="396" y="57" width="1200" height="1002" key="#Project_Structure" timestamp="1577012933563">

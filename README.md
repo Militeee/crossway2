@@ -18,13 +18,19 @@ White has the option of switching colors with Black, and claiming Black’s firs
 Original rules can be found [at the author website](https://boardgamegeek.com/boardgame/30517/crossway).
 
 
-### Excution
+### Installation
 
-Clone the folder with `git clone`
+Requires: Gradle, JVM v.11.0
 
-Build with `javac /crossway2/src/main/java/dssc/crossway/Main.java `
+Clone the folder with 
+
+`git clone https://github.com/Militeee/crossway2`
 
 `cd crossway2/build/classes/java/main`
+
+`gradle build`
+
+
 
 Run with 
 `java dssc.crossway2.Main`

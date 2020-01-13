@@ -17,7 +17,7 @@ public class ConsoleInputHandler {
      * @param message the message printed on console before asking an input to the user
      * @return the number inserted by the user
      */
-    public static int askInt(int minIncluded, int maxExcluded, String message) {
+    public static int askUserForInput(int minIncluded, int maxExcluded, String message) {
 
         Scanner scanner = new Scanner(System.in);
 

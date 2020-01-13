@@ -89,8 +89,8 @@ public class CrosswayGame {
      * @return a Coordinate object with the user input.
      */
     private Coordinates askMove() {
-        int x = ConsoleInputHandler.askInt(0, CROSSWAY_BOARD_SIDE, X_REQUEST_MESSAGE);
-        int y = ConsoleInputHandler.askInt(0, CROSSWAY_BOARD_SIDE, Y_REQUEST_MESSAGE);
+        int x = ConsoleInputHandler.askUserForInput(0, CROSSWAY_BOARD_SIDE, X_REQUEST_MESSAGE);
+        int y = ConsoleInputHandler.askUserForInput(0, CROSSWAY_BOARD_SIDE, Y_REQUEST_MESSAGE);
         return new Coordinates(x,y);
     }
 

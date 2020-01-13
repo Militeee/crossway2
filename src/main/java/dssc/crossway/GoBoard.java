@@ -1,6 +1,7 @@
 package dssc.crossway;
 
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.stream.Collectors;
 
@@ -8,29 +9,30 @@ import java.util.stream.Collectors;
  * Go board class. A class to manage a Go Board, that is a square check board.
  *
  */
-public class GoBoard extends GenericBoard {
+public class GoBoard {
 
     private final static char EMPTY_SIGN = '.';
     private final static char WHITE_SIGN =  '\u25CF';//'W';
     private final static char BLACK_SIGN = '\u25CB';
 
+    int side;
+    StoneColor[][] board;
+
     /**
-     * GoBoard constructor
-     * @param side the side of the board, in cells
+     * GoBoard Constructor. Initializes a matrix of StoneColor items
+     * @param side the side of the board in units
      */
     public GoBoard(int side) {
-        super(side);
+
+        this.side = side;
+        this.board = new StoneColor[side][side];
         initializeBoard();
     }
 
-    /**
-     * board initialization: fills the board with empty Cells objects.
-     */
-    @Override
-    public void initializeBoard() {
+    private void initializeBoard() {
         for (int i=0; i<this.side; i++) {
             for (int j=0; j<this.side; j++) {
-                this.board[i][j] = new Cell(StoneColor.EMPTY);
+                this.board[i][j] = StoneColor.EMPTY;
             }
         }
     }
@@ -43,14 +45,14 @@ public class GoBoard extends GenericBoard {
         char[][] canvas = new char[side][side];
         for(int i=0;i<side;i++) {
             for(int j=0;j<side;j++) {
-                StoneColor c = StoneColor.EMPTY;
+                StoneColor StoneColorColor = StoneColor.EMPTY;
                 try {
-                    c = getCellStatus(new Coordinates(j,i));
+                    StoneColorColor = getStoneColorStatus(new Coordinates(j,i));
                 } catch (OutOfBoardException e) {
                     e.printStackTrace();
                 }
 
-                canvas[i][j] = color2consoleRepresentation(c);
+                canvas[i][j] = color2consoleRepresentation(StoneColorColor);
             }
         }
 
@@ -112,10 +114,20 @@ public class GoBoard extends GenericBoard {
         return s.substring(0,s.length()-1);
     }
 
+    /**
+     * Checks if given Coordinates are inside the board,
+     * i.e if they are between 0 included and side excluded.
+     * @param coord the given Coordinates
+     * @return true if they are, false otherwise.
+     */
+    public boolean isInside(Coordinates coord)
+    {
+        return coord.getX()<side && coord.getY()<side && coord.getY()>=0 && coord.getX()>=0;
+    }
 
     /**
      * Side getter
-     * @return the side of the board in cells
+     * @return the side of the board in StoneColors
      */
     public int getSide() {
         return side;
@@ -123,42 +135,42 @@ public class GoBoard extends GenericBoard {
 
 
 
-    public StoneColor getCellStatus(Coordinates c) throws OutOfBoardException {
+    public StoneColor getStoneColorStatus(Coordinates c) throws OutOfBoardException {
         if(!isInside(c))
             throw new OutOfBoardException();
 
-        return this.board[c.getX()][c.getY()].getStatus();
+        return this.board[c.getX()][c.getY()];
     }
 
     /**
-     * Changes the color status of a Cell
-     * @param coordinates cell Coordinates
+     * Changes the color status of a StoneColor
+     * @param coordinates StoneColor Coordinates
      * @param newStatus new Colors object
      * @throws OutOfBoardException if coordinates are out of the board
      */
-    public void setCellStatus(Coordinates coordinates, StoneColor newStatus) throws OutOfBoardException {
+    public void setStoneColorStatus(Coordinates coordinates, StoneColor newStatus) throws OutOfBoardException {
         if (!isInside(coordinates)) {
             throw new OutOfBoardException();
         }
-        this.board[coordinates.getX()][coordinates.getY()].setStatus(newStatus);
+        this.board[coordinates.getX()][coordinates.getY()] = newStatus;
     }
 
 
 
     /**
-     * Helper function to retrieve cell coordinates of nearby cells where there are stones of the provided color.
-     * @param node Coordinate objects of a cell.
+     * Helper function to retrieve StoneColor coordinates of nearby StoneColors where there are stones of the provided color.
+     * @param node Coordinate objects of a StoneColor.
      * @param board a game board
-     * @param c the provided color
-     * @return a LinkedList<Coordinates> </Coordinates>
+     * @param color the provided color
+     * @return a LinkedList
      */
-    public LinkedList<Coordinates> adjacentFriendsCoordinates(Coordinates node, GoBoard board, StoneColor c) {
+    LinkedList<Coordinates> adjacentFriendsCoordinates(Coordinates node, GoBoard board, StoneColor color) {
 
         return node.getAdjacents().stream()
                 .filter(board::isInside)
                 .filter(p -> {
                     try {
-                        return board.getCellStatus(p) == c;
+                        return board.getStoneColorStatus(p) == color;
                     } catch (OutOfBoardException e) {
                         e.printStackTrace();
                     }
@@ -166,4 +178,20 @@ public class GoBoard extends GenericBoard {
                 })
                 .collect(Collectors.toCollection(LinkedList::new));
     }
+
+    /**
+     * Returns an ArrayList filled with all the legal diagonal-adjacent positions
+     * relatively to a given coordinate.
+     *
+     * @param c the coordinates of a StoneColor whose diagonals are queried.
+     * @return an ArrayList of Coordinates object, with the 4 diagonally adiacents StoneColors, if they exists.
+     */
+    public ArrayList<Coordinates> getDiagonalPositions(Coordinates c) {
+
+        return c.getAdjacents().stream()
+                .filter(this::isInside)
+                .filter(p -> p.getY()!=c.getY() && p.getX()!=c.getX())
+                .collect(Collectors.toCollection(ArrayList::new));
+    }
+
 }

@@ -10,11 +10,11 @@ public class GameController {
 
 
     private GoBoard board;
-    private BoardGameRules rules;
+    private CrosswayRules rules;
     private int turn = 0;
 
 
-    public GameController(GoBoard board, BoardGameRules rules) {
+    public GameController(GoBoard board, CrosswayRules rules) {
         this.board = board;
         this.rules = rules;
     }
@@ -30,7 +30,7 @@ public class GameController {
 
     public void placeStone(Move m) throws OutOfBoardException, IllegalMoveException {
         if(this.validateMove(m)) {
-            board.setCellStatus(m.getCoordinates(), m.getColor());
+            board.setStoneColorStatus(m.getCoordinates(), m.getColor());
         }
         else {
             throw new IllegalMoveException();
@@ -43,8 +43,8 @@ public class GameController {
      * @return the status of the cell in that position
      * @throws OutOfBoardException if the coordinated are out of the board size
      */
-    public StoneColor getCellStatus(Coordinates coor) throws OutOfBoardException {
-        return this.board.getCellStatus(coor);
+    public StoneColor getStoneColorStatus(Coordinates coor) throws OutOfBoardException {
+        return this.board.getStoneColorStatus(coor);
     }
 
 

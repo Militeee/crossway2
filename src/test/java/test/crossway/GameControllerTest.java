@@ -21,7 +21,7 @@ public class GameControllerTest {
    public void firstMove() throws OutOfBoardException, IllegalMoveException {
        GameController gc = initialize();
        gc.placeStone(new Move(new Coordinates(1,1), StoneColor.WHITE));
-       assertEquals(gc.getCellStatus(new Coordinates(1,1)), StoneColor.WHITE);
+       assertEquals(gc.getStoneColorStatus(new Coordinates(1,1)), StoneColor.WHITE);
    }
 
 
@@ -32,7 +32,7 @@ public class GameControllerTest {
         GameController gc = initialize();
         Move m = new Move(new Coordinates(1,1), StoneColor.WHITE);
         gc.placeStone(m);
-        assertEquals(gc.getCellStatus(new Coordinates(1,1)), StoneColor.WHITE);
+        assertEquals(gc.getStoneColorStatus(new Coordinates(1,1)), StoneColor.WHITE);
     }
 
     @Test

@@ -31,16 +31,16 @@ public class GoBoardTest {
     }
 
    @Test
-   public void setCellStatusTest() throws OutOfBoardException {
+   public void setStoneColorStatusTest() throws OutOfBoardException {
        GoBoard board = new GoBoard(8);
-       board.setCellStatus(new Coordinates( 1,4), StoneColor.WHITE);
-       assertEquals(board.getCellStatus(new Coordinates( 1,4)), StoneColor.WHITE);
+       board.setStoneColorStatus(new Coordinates( 1,4), StoneColor.WHITE);
+       assertEquals(board.getStoneColorStatus(new Coordinates( 1,4)), StoneColor.WHITE);
    }
 
     @Test
-    public void getCellStatusTest() throws OutOfBoardException {
+    public void getStoneColorStatusTest() throws OutOfBoardException {
         GoBoard board = new GoBoard(8);
-        assertEquals(board.getCellStatus(new Coordinates( 1,4)), StoneColor.EMPTY);
+        assertEquals(board.getStoneColorStatus(new Coordinates( 1,4)), StoneColor.EMPTY);
     }
 
    @Test
@@ -48,7 +48,7 @@ public class GoBoardTest {
 
        GoBoard board = new GoBoard (8);
        try {
-           board.setCellStatus(new Coordinates( 1,9), StoneColor.WHITE);
+           board.setStoneColorStatus(new Coordinates( 1,9), StoneColor.WHITE);
        } catch (OutOfBoardException e) {
            assertEquals(e.getMessage(),"Out of board!");
        }
@@ -59,11 +59,11 @@ public class GoBoardTest {
 
         GoBoard board = new GoBoard (12);
         try {
-            board.setCellStatus(new Coordinates( 1,9), StoneColor.WHITE);
-            board.setCellStatus(new Coordinates( 0,2), StoneColor.WHITE);
-            board.setCellStatus(new Coordinates( 7,4), StoneColor.BLACK);
-            board.setCellStatus(new Coordinates( 5,11), StoneColor.BLACK);
-            board.setCellStatus(new Coordinates(5,7), StoneColor.BLACK);
+            board.setStoneColorStatus(new Coordinates( 1,9), StoneColor.WHITE);
+            board.setStoneColorStatus(new Coordinates( 0,2), StoneColor.WHITE);
+            board.setStoneColorStatus(new Coordinates( 7,4), StoneColor.BLACK);
+            board.setStoneColorStatus(new Coordinates( 5,11), StoneColor.BLACK);
+            board.setStoneColorStatus(new Coordinates(5,7), StoneColor.BLACK);
         } catch (OutOfBoardException e) {
             assertEquals(e.getMessage(),"Out of board!");
         }

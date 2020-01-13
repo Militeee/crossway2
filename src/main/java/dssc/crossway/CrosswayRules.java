@@ -7,7 +7,7 @@ import java.util.LinkedList;
 /**
  *  Game rules class. This class is responsible for validation of a move.
  */
-public class CrosswayRules extends BoardGameRules {
+public class CrosswayRules {
 
 
     /**
@@ -18,7 +18,8 @@ public class CrosswayRules extends BoardGameRules {
      * @throws OutOfBoardException if the Move falls outside of the board.
      */
     private boolean noSuperposition(GoBoard board, Move m) throws OutOfBoardException {
-        return board.getCellStatus(m.getCoordinates()) == StoneColor.EMPTY;
+
+        return board.getStoneColorStatus(m.getCoordinates()) == StoneColor.EMPTY;
     }
 
     /**
@@ -53,7 +54,7 @@ public class CrosswayRules extends BoardGameRules {
 
         StoneColor[] c = new StoneColor[4];
         try {
-            c = new StoneColor[]{m.getColor(), board.getCellStatus(coord2), board.getCellStatus(coord3), board.getCellStatus(coord4)};
+            c = new StoneColor[]{m.getColor(), board.getStoneColorStatus(coord2), board.getStoneColorStatus(coord3), board.getStoneColorStatus(coord4)};
         } catch (OutOfBoardException e) {
             e.printStackTrace();
         }
@@ -73,7 +74,7 @@ public class CrosswayRules extends BoardGameRules {
      * @return true if the move is valid, false otherwise.
      * @throws OutOfBoardException if the Move points out of the board.
      */
-    @Override
+
     public boolean validateMove(GoBoard board, Move m, int turn) throws OutOfBoardException {
         //check rule 1
         if(turn == 1) return true;
@@ -86,7 +87,7 @@ public class CrosswayRules extends BoardGameRules {
      * @param board a game board
      * @return Colors.EMPTY if there is no winner, Colors object of the winner color if there is one.
      */
-    @Override
+
     public StoneColor winner(GoBoard board){
         try {
             for (int i = 0; i < board.getSide(); i++) {
@@ -113,7 +114,7 @@ public class CrosswayRules extends BoardGameRules {
      * @throws OutOfBoardException if the Move points out of the board.
      */
     private boolean hasPlayerWon(Coordinates coor,StoneColor col,GoBoard board) throws OutOfBoardException {
-        if (board.getCellStatus(coor) == col) {
+        if (board.getStoneColorStatus(coor) == col) {
             return winningChain(coor, col, board);
         }
         return false;

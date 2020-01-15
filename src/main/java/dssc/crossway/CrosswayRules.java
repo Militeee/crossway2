@@ -151,6 +151,7 @@ public class CrosswayRules {
                 } else if ((coordinates.getY() == (side - 1)) && (c == StoneColor.BLACK)) {
                     return true;
                 }
+
                 if (!visited[coordinates.getX()][coordinates.getY()]) {
                     visited[coordinates.getX()][coordinates.getY()] = true;
                     queue.add(coordinates);
@@ -166,6 +167,7 @@ public class CrosswayRules {
     public StoneColor firstPlayer() {
         return StoneColor.BLACK;
     }
+
 
 
 }

@@ -34,7 +34,10 @@ public class ConsoleInputHandler {
 
             try {
                 input = Integer.parseInt(line);
-            } catch (Exception e)
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+
             {
                 correctFormat = false;
             }

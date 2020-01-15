@@ -13,11 +13,6 @@ public class GameControllerTest {
     }
 
    @Test
-   public void gameIsStarted(){
-        initialize();
-   }
-
-   @Test
    public void firstMove() throws OutOfBoardException, IllegalMoveException {
        GameController gc = initialize();
        gc.placeStone(new Move(new Coordinates(1,1), StoneColor.WHITE));

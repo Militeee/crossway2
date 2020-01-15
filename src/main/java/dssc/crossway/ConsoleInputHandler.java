@@ -7,17 +7,14 @@ import java.util.Scanner;
  */
 public class ConsoleInputHandler {
 
-    private static final String WRONG_FORMAT_MESSAGE = "The input format is not correct";
-    private static final String ILLEGAL_VALUE_MESSAGE = "The inserted value is illegal";
+
+    private ConsoleMessageWriter consoleMessageWriter = new ConsoleMessageWriter();
 
     /**
      * This method ask to the user an int between a certain interval, until it inputs a valid number.
-     * @param minIncluded minimum (included) accepted value
-     * @param maxExcluded maximum (excluded) accepted value
-     * @param message the message printed on console before asking an input to the user
      * @return the number inserted by the user
      */
-    public static int askUserForInput(int minIncluded, int maxExcluded, String message) {
+    public int askUserForInput() {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -25,31 +22,17 @@ public class ConsoleInputHandler {
 
         boolean validInput = false;
 
-        while(!validInput)
-        {
-            boolean correctFormat = true;
-
-            System.out.println(message);
+        while(!validInput) {
             String line = scanner.nextLine();
 
             try {
                 input = Integer.parseInt(line);
-            } catch (NumberFormatException e) {
-                e.printStackTrace();
-            }
-
-            {
-                correctFormat = false;
-            }
-
-            if(!correctFormat)
-                System.out.println(WRONG_FORMAT_MESSAGE);
-            else if(!((input>=minIncluded) && (input<maxExcluded)))
-                System.out.println(ILLEGAL_VALUE_MESSAGE);
-            else
                 validInput = true;
-        }
+            } catch (NumberFormatException e) {
+                this.consoleMessageWriter.writeWrongFormatMessage();
+            }
 
+        }
         return input;
 
     }

@@ -9,11 +9,10 @@ public class CrosswayGame {
 
     private ConsoleMessageWriter consoleMessageWriter = new ConsoleMessageWriter();
     private ConsoleBoardWriter consoleBoardWriter = new ConsoleBoardWriter();
+    private UserInputManager userInputManager = new UserInputManager();
 
     public static final int CROSSWAY_BOARD_SIDE = 12;
-    private static final String CURRENT_PLAYER_MESSAGE = "\n%s moves now";
-    private static final String X_REQUEST_MESSAGE = "Enter X:";
-    private static final String Y_REQUEST_MESSAGE = "Enter Y:";
+
 
     private GameController controller = new GameController(new GoBoard(CROSSWAY_BOARD_SIDE), new CrosswayRules());
 
@@ -44,13 +43,13 @@ public class CrosswayGame {
     private void turn()  {
 
         consoleBoardWriter.printBoard(this.controller.getBoard());
-        showCurrentPlayer();
+        consoleMessageWriter.showCurrentPlayer(controller.currentTurnColor());
         boolean validMove = false;
 
         while(!validMove) {
 
             try {
-                Coordinates m = askMove();
+                Coordinates m = userInputManager.askMove(this.controller.getBoard());
                 applyMove(m);
                 validMove = true;
 
@@ -61,12 +60,6 @@ public class CrosswayGame {
         }
     }
 
-    /**
-     *  Prints the current player color.
-     */
-    private void showCurrentPlayer() {
-        System.out.println(String.format(CURRENT_PLAYER_MESSAGE, controller.currentTurnColor()));
-    }
 
 
 
@@ -80,15 +73,7 @@ public class CrosswayGame {
         this.controller.performGameMove(m);
     }
 
-    /**
-     * Asks the current player to input the next move.
-     * @return a Coordinate object with the user input.
-     */
-    private Coordinates askMove() {
-        int x = ConsoleInputHandler.askUserForInput(0, CROSSWAY_BOARD_SIDE, X_REQUEST_MESSAGE);
-        int y = ConsoleInputHandler.askUserForInput(0, CROSSWAY_BOARD_SIDE, Y_REQUEST_MESSAGE);
-        return new Coordinates(x,y);
-    }
+
 
 
 }

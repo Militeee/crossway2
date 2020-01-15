@@ -194,4 +194,7 @@ public class GoBoard {
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
+    public Boolean isInside(int position) {
+        return (position >= 0 && position < this.getSide());
+    }
 }

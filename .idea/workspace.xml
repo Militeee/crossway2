@@ -7,9 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb783e39-6736-40ec-8a70-b64a8865b0ab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/ConsoleBoardWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/ConsoleMessageWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/crossway/ConsoleGraphicsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/UserInputManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -17,13 +15,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/CrosswayGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/CrosswayGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/test/crossway/GameControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/test/crossway/GameControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/test/crossway/GoBoardTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/test/crossway/GoBoardTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/GoBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/dssc/crossway/GoBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/ConsoleInputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/ConsoleInputHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/ConsoleMessageWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/ConsoleMessageWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/CrosswayGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/CrosswayGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/crossway/GameControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/crossway/GameControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/crossway/GoBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/crossway/GoBoardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/GoBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/GoBoard.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -136,7 +132,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.all tests">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dssc.crossway.Main" />
       <module name="crossway2.main" />
@@ -330,7 +326,8 @@
     <MESSAGE value="Sistemato README.md" />
     <MESSAGE value="removed gameIsStared because it had no assertions" />
     <MESSAGE value="removed firstMove2 test: useless duplication" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed firstMove2 test: useless duplication" />
+    <MESSAGE value="Moved graphics responsabilities from CrosswayGame to ConsoleMessageWriter and ConsoleBoardWriter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved graphics responsabilities from CrosswayGame to ConsoleMessageWriter and ConsoleBoardWriter" />
   </component>
   <component name="WindowStateProjectService">
     <state x="396" y="57" width="1200" height="1002" key="#Project_Structure" timestamp="1577012933563">

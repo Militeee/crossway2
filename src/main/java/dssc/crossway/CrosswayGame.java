@@ -7,9 +7,10 @@ package dssc.crossway;
  */
 public class CrosswayGame {
 
+    private ConsoleMessageWriter consoleMessageWriter = new ConsoleMessageWriter();
+    private ConsoleBoardWriter consoleBoardWriter = new ConsoleBoardWriter();
+
     public static final int CROSSWAY_BOARD_SIDE = 12;
-    private static final String STARTING_MESSAGE = "CROSSWAY";
-    private static final String WINNER_MESSAGE = "\n%s won the game";
     private static final String CURRENT_PLAYER_MESSAGE = "\n%s moves now";
     private static final String X_REQUEST_MESSAGE = "Enter X:";
     private static final String Y_REQUEST_MESSAGE = "Enter Y:";
@@ -22,7 +23,7 @@ public class CrosswayGame {
      */
     public void start() {
 
-        showStartingMessage();
+        consoleMessageWriter.showStartingMessage();
 
         boolean gameOver = false;
         StoneColor winner = StoneColor.EMPTY;
@@ -33,8 +34,8 @@ public class CrosswayGame {
             gameOver = (winner != StoneColor.EMPTY);
         }
 
-        printBoard();
-        showEndingMessage(winner);
+        consoleBoardWriter.printBoard(this.controller.getBoard());
+        consoleMessageWriter.showEndingMessage(winner);
     }
 
     /**
@@ -42,7 +43,7 @@ public class CrosswayGame {
      */
     private void turn()  {
 
-        printBoard();
+        consoleBoardWriter.printBoard(this.controller.getBoard());
         showCurrentPlayer();
         boolean validMove = false;
 
@@ -67,12 +68,7 @@ public class CrosswayGame {
         System.out.println(String.format(CURRENT_PLAYER_MESSAGE, controller.currentTurnColor()));
     }
 
-    /**
-     *  Pretty prints a board.
-     */
-    private void printBoard() {
-        System.out.println(controller.stringBoard());
-    }
+
 
     /**
      * Tries to perform a move m.
@@ -94,18 +90,5 @@ public class CrosswayGame {
         return new Coordinates(x,y);
     }
 
-    /**
-     * Prints a message when there is a winner.
-     * @param winner Winner color.
-     */
-    private void showEndingMessage(StoneColor winner) {
-        System.out.println(String.format(WINNER_MESSAGE, winner.toString()));
-    }
 
-    /**
-     * Prints welcome message and game rules.
-     */
-    private void showStartingMessage() {
-        System.out.println(STARTING_MESSAGE);
-    }
 }

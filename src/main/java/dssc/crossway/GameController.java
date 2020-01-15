@@ -100,4 +100,7 @@ public class GameController {
         return this.board.toString();
     }
 
+    public GoBoard getBoard() {
+        return this.board;
+    }
 }

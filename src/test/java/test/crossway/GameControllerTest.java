@@ -18,7 +18,7 @@ public class GameControllerTest {
        gc.placeStone(new Move(new Coordinates(1,1), StoneColor.WHITE));
        assertEquals(gc.getStoneColorStatus(new Coordinates(1,1)), StoneColor.WHITE);
    }
-   
+
     @Test
     public void illegalMove() throws OutOfBoardException, IllegalMoveException {
         GameController gc = initialize();

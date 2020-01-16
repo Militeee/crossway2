@@ -11,10 +11,10 @@ public class ConsoleInputHandler {
     private ConsoleMessageWriter consoleMessageWriter = new ConsoleMessageWriter();
 
     /**
-     * This method ask to the user an int between a certain interval, until it inputs a valid number.
+     * This method ask to the user an int, until it inputs a valid number.
      * @return the number inserted by the user
      */
-    public int askUserForInput() {
+    public int askUserForInteger() {
 
         Scanner scanner = new Scanner(System.in);
 

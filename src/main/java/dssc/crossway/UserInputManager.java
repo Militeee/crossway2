@@ -16,8 +16,8 @@ public class UserInputManager {
     }
 
     private int requestValidInput(GoBoard crosswayBoard, char coordinate){
-        int dimension = -1;
-        Boolean dimIsValid = false;
+        int dimension;
+        Boolean dimIsValid;
         while(true){
             if (coordinate == 'x') {
                 consoleMessageWriter.requestXMoveMessage();
@@ -25,7 +25,7 @@ public class UserInputManager {
             else if (coordinate == 'y') {
                 consoleMessageWriter.requestYMoveMessage();
             }
-            dimension = consoleInputHandler.askUserForInput();
+            dimension = consoleInputHandler.askUserForInteger();
             dimIsValid = crosswayBoard.isInside(dimension);
             if (dimIsValid) { break;} // <---------------------this works but can be made much better than this. refactor later.
             else {consoleMessageWriter.writeIllegalValueMessage();}

@@ -21,7 +21,6 @@ public class Move {
     }
 
 
-
     public StoneColor getColor() {
         return color;
     }

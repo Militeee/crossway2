@@ -11,7 +11,6 @@ import static org.junit.Assert.*;
 
 public class GoBoardTest {
 
-
    @Test
    public void getSideTest() {
        GoBoard board = new GoBoard (8);
@@ -53,7 +52,5 @@ public class GoBoardTest {
            assertEquals(e.getMessage(),"Out of board!");
        }
    }
-
-
 
 }

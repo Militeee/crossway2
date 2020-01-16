@@ -1,6 +1,5 @@
 package dssc.crossway;
 
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.stream.Collectors;
@@ -11,12 +10,8 @@ import java.util.stream.Collectors;
  */
 public class GoBoard {
 
-    private final static char EMPTY_SIGN = '.';
-    private final static char WHITE_SIGN =  '\u25CF';//'W';
-    private final static char BLACK_SIGN = '\u25CB';
-
-    int side;
-    StoneColor[][] board;
+    private int side;
+    private StoneColor[][] board;
 
     /**
      * GoBoard Constructor. Initializes a matrix of StoneColor items
@@ -37,82 +32,8 @@ public class GoBoard {
         }
     }
 
-    /**
-     * pretty prints a Board.
-     * @return a String representation of the board status.
-     */
-    public String toString() {
-        char[][] canvas = new char[side][side];
-
-        for(int i=0;i<side;i++) {
-            for(int j=0;j<side;j++) {
-                StoneColor StoneColorColor = StoneColor.EMPTY;
-                try {
-                    StoneColorColor = getStoneColorStatus(new Coordinates(j,i));
-                } catch (OutOfBoardException e) {
-                    e.printStackTrace();
-                }
-
-                canvas[i][j] = color2consoleRepresentation(StoneColorColor);
-            }
-        }
-
-        return matrixToString(canvas,side,side);
-
-    }
-
-    /**
-     * Method that maps a Stone color to its representing char on the console
-     * @param c the color of the stone
-     * @return char representing the color
-     */
-    private char color2consoleRepresentation(StoneColor c) {
-        
-        char sign;
-        
-        switch(c) 
-        {
-            case WHITE: sign = WHITE_SIGN; break;
-            case BLACK: sign = BLACK_SIGN; break;
-            case EMPTY: sign = EMPTY_SIGN; break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + c);
-        }
-        
-        return sign;
-    }
-
-    /**
-     * Method that returns the String representation of a matrix of characters
-     * @param charMatrix a 2D array of chars
-     * @param x first dimension of the array
-     * @param y second dimension of the array
-     * @return String representation of a matrix of characters
-     */
-    private String matrixToString(char[][] charMatrix, int x, int y) {
-
-        StringBuilder s = new StringBuilder();
-
-        s.append ("  ");
-        for (int i=0; i<y; i++) {
-            s.append(i%10);
-            s.append( " ");
-
-        }
-        s.append("\n");
-
-        for(int i=0;i<x;i++) {
-            s.append(i%10);
-            s.append(" ");
-            for (int j = 0; j < y; j++) {
-
-                s.append(charMatrix[i][j]);
-                s.append(" ");
-            }
-            s.append("\n");
-        }
-
-        return s.substring(0,s.length()-1);
+    public Boolean isInside(int position) {
+        return (position >= 0 && position < this.getSide());
     }
 
     /**
@@ -123,17 +44,13 @@ public class GoBoard {
      */
     public boolean isInside(Coordinates coord)
     {
-        return coord.getX()<side && coord.getY()<side && coord.getY()>=0 && coord.getX()>=0;
+        return isInside(coord.getX()) && isInside(coord.getY());
     }
 
-    /**
-     * Side getter
-     * @return the side of the board in StoneColors
-     */
+
     public int getSide() {
         return side;
     }
-
 
 
     public StoneColor getStoneColorStatus(Coordinates c) throws OutOfBoardException {
@@ -179,6 +96,7 @@ public class GoBoard {
                 .collect(Collectors.toCollection(LinkedList::new));
     }
 
+
     /**
      * Returns an ArrayList filled with all the legal diagonal-adjacent positions
      * relatively to a given coordinate.
@@ -194,7 +112,4 @@ public class GoBoard {
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public Boolean isInside(int position) {
-        return (position >= 0 && position < this.getSide());
-    }
 }

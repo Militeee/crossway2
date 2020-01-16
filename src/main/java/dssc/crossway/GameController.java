@@ -8,7 +8,6 @@ package dssc.crossway;
 
 public class GameController {
 
-
     private GoBoard board;
     private CrosswayRules rules;
     private int turn = 0;
@@ -79,21 +78,13 @@ public class GameController {
         this.turn++;
     }
 
+
     /**
-     *
      * @return the color that is currently playing
      */
     public StoneColor currentTurnColor() {
         StoneColor starterColor = rules.firstPlayer();
         return (this.turn % 2 == 0) ? starterColor : starterColor.getOpposite();
-    }
-
-    /**
-     *
-     * @return the board in a String printable format
-     */
-    public String stringBoard() {
-        return this.board.toString();
     }
 
     public GoBoard getBoard() {

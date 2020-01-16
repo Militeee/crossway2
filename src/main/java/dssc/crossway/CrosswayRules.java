@@ -77,8 +77,7 @@ public class CrosswayRules {
 
     public boolean validateMove(GoBoard board, Move m, int turn) throws OutOfBoardException {
         if(turn == 1) return true;
-        return noSuperposition(board, m) &&
-                noCrossways(board,m);
+        return noSuperposition(board, m) && noCrossways(board,m);
     }
 
     /**
@@ -166,7 +165,5 @@ public class CrosswayRules {
     public StoneColor firstPlayer() {
         return StoneColor.BLACK;
     }
-
-
 
 }

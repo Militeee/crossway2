@@ -43,6 +43,7 @@ public class GoBoard {
      */
     public String toString() {
         char[][] canvas = new char[side][side];
+
         for(int i=0;i<side;i++) {
             for(int j=0;j<side;j++) {
                 StoneColor StoneColorColor = StoneColor.EMPTY;
@@ -160,17 +161,16 @@ public class GoBoard {
     /**
      * Helper function to retrieve StoneColor coordinates of nearby StoneColors where there are stones of the provided color.
      * @param node Coordinate objects of a StoneColor.
-     * @param board a game board
      * @param color the provided color
      * @return a LinkedList
      */
-    LinkedList<Coordinates> adjacentFriendsCoordinates(Coordinates node, GoBoard board, StoneColor color) {
+    LinkedList<Coordinates> adjacentFriendsCoordinates(Coordinates node, StoneColor color) {
 
         return node.getAdjacents().stream()
-                .filter(board::isInside)
+                .filter(this::isInside)
                 .filter(p -> {
                     try {
-                        return board.getStoneColorStatus(p) == color;
+                        return getStoneColorStatus(p) == color;
                     } catch (OutOfBoardException e) {
                         e.printStackTrace();
                     }

@@ -17,6 +17,7 @@ public class CrosswayGame {
     private GameController controller = new GameController(new GoBoard(CROSSWAY_BOARD_SIDE), new CrosswayRules());
 
 
+
     /**
      *  Instantiate a new game and manage turns.
      */
@@ -62,7 +63,6 @@ public class CrosswayGame {
 
 
 
-
     /**
      * Tries to perform a move m.
      * @param m a Coordinate object
@@ -72,7 +72,6 @@ public class CrosswayGame {
     private void applyMove(Coordinates m) throws IllegalMoveException, OutOfBoardException {
         this.controller.performGameMove(m);
     }
-
 
 
 

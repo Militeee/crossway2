@@ -66,11 +66,7 @@ public class GameController {
      *
      * @return the Color of the winner in that turn, if none returns COLORS.EMPTY
      */
-    public StoneColor winner() {
-
-        return  this.rules.winner(this.board);
-
-    }
+    public StoneColor winner() { return  this.rules.winner(this.board); }
 
     /**
      * Same as PlaceStone but updates the number of turns

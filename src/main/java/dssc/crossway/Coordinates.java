@@ -2,6 +2,7 @@ package dssc.crossway;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  *  Data structure used to store information about the position of an entity
@@ -38,14 +39,9 @@ public class Coordinates {
      * @return  ArrayList of coordinates
      */
     public static ArrayList<Coordinates> getCoordinatesMesh(int x1, int x2, int y1, int y2) {
-
-        ArrayList<Coordinates> mesh = new ArrayList<>();
-
-        for(int i = x1; i<x2; i++)
-            for(int j = y1; j<y2; j++)
-                mesh.add(new Coordinates(i,j));
-
-        return mesh;
+        return IntStream.range(x1,x2).boxed()
+                .flatMap(x -> IntStream.range(y1,y2).mapToObj(y -> new Coordinates(x,y)))
+                .collect(Collectors.toCollection(ArrayList::new));
     }
 
     /**

@@ -76,7 +76,6 @@ public class CrosswayRules {
      */
 
     public boolean validateMove(GoBoard board, Move m, int turn) throws OutOfBoardException {
-        //check rule 1
         if(turn == 1) return true;
         return noSuperposition(board, m) &&
                 noCrossways(board,m);
@@ -144,7 +143,7 @@ public class CrosswayRules {
         while(queue.size() != 0){
 
             node = queue.poll();
-            for (Coordinates coordinates : board.adjacentFriendsCoordinates( node, board, c)) {
+            for (Coordinates coordinates : board.adjacentFriendsCoordinates(node, c)) {
 
                 if ((coordinates.getX() == (side - 1)) && (c == StoneColor.WHITE)) {
                     return true;

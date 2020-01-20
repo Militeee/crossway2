@@ -1,4 +1,4 @@
-package dssc.crossway;
+package dssc.crossway.console;
 
 import java.util.Scanner;
 

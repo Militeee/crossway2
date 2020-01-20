@@ -3,7 +3,7 @@ package test.crossway;
 import dssc.crossway.StoneColor;
 import dssc.crossway.Coordinates;
 import dssc.crossway.GoBoard;
-import dssc.crossway.OutOfBoardException;
+import dssc.crossway.exceptions.OutOfBoardException;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

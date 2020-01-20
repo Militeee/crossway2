@@ -1,6 +1,8 @@
 package test.crossway;
 
 import dssc.crossway.*;
+import dssc.crossway.exceptions.IllegalMoveException;
+import dssc.crossway.exceptions.OutOfBoardException;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

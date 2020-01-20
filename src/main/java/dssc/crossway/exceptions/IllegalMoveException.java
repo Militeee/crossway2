@@ -1,4 +1,4 @@
-package dssc.crossway;
+package dssc.crossway.exceptions;
 
 public class IllegalMoveException extends Exception {
 

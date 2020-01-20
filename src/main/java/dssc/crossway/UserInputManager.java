@@ -1,5 +1,8 @@
 package dssc.crossway;
 
+import dssc.crossway.console.ConsoleInputHandler;
+import dssc.crossway.console.ConsoleMessageWriter;
+
 public class UserInputManager {
 
     private ConsoleMessageWriter consoleMessageWriter  = new ConsoleMessageWriter();

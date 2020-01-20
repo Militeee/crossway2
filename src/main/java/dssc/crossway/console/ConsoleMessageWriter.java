@@ -1,4 +1,6 @@
-package dssc.crossway;
+package dssc.crossway.console;
+
+import dssc.crossway.StoneColor;
 
 public class ConsoleMessageWriter {
 
@@ -15,23 +17,23 @@ public class ConsoleMessageWriter {
      * Prints a message when there is a winner.
      * @param winner Winner color.
      */
-    void showEndingMessage(StoneColor winner) {
+    public void showEndingMessage(StoneColor winner) {
         System.out.println(String.format(WINNER_MESSAGE, winner.toString()));
     }
 
-    void showStartingMessage() {
+    public void showStartingMessage() {
         System.out.println(STARTING_MESSAGE);
     }
 
-    void showCurrentPlayer(StoneColor player) {
+    public void showCurrentPlayer(StoneColor player) {
         System.out.println(String.format(CURRENT_PLAYER_MESSAGE, player));
     }
 
-    void requestYMoveMessage( ) {
+    public void requestYMoveMessage() {
         System.out.println(Y_REQUEST_MESSAGE);
     }
 
-    void requestXMoveMessage( ) {
+    public void requestXMoveMessage() {
         System.out.println(X_REQUEST_MESSAGE);
     }
 
@@ -39,7 +41,7 @@ public class ConsoleMessageWriter {
         System.out.println(WRONG_FORMAT_MESSAGE);
     }
 
-    void writeIllegalValueMessage( ) {
+    public void writeIllegalValueMessage() {
         System.out.println(ILLEGAL_VALUE_MESSAGE);
     }
 

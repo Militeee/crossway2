@@ -1,5 +1,7 @@
 package dssc.crossway;
 
+import dssc.crossway.exceptions.OutOfBoardException;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 

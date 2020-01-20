@@ -1,4 +1,9 @@
-package dssc.crossway;
+package dssc.crossway.console;
+
+import dssc.crossway.Coordinates;
+import dssc.crossway.GoBoard;
+import dssc.crossway.exceptions.OutOfBoardException;
+import dssc.crossway.StoneColor;
 
 public class ConsoleBoardWriter {
 
@@ -7,7 +12,7 @@ public class ConsoleBoardWriter {
     private final static char BLACK_SIGN = '\u25CB';
 
 
-    void printBoard(GoBoard board) {
+    public void printBoard(GoBoard board) {
         System.out.println(boardToString(board));
     }
 

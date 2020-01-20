@@ -1,5 +1,8 @@
 package dssc.crossway;
 
+import dssc.crossway.exceptions.IllegalMoveException;
+import dssc.crossway.exceptions.OutOfBoardException;
+
 /**
  *  Class that encodes the methods to carry on the game
  *

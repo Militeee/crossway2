@@ -10,36 +10,40 @@ import static org.junit.Assert.*;
 public class RulesTest {
 
     @Test
-    public void validateLegalMoveTest() throws OutOfBoardException {
-        GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
+    public void legalMoveTest() throws OutOfBoardException {
+        GoBoard b = new GoBoard(12);
+        CrosswayRules r = new CrosswayRules();
         Move m0 = new Move(new Coordinates(1,1), StoneColor.WHITE);
-        assertTrue(gc.validateMove(m0));
+
+        assertTrue(r.validateMove(b, m0, 20));
     }
 
     @Test
-    public void validatePieRuleTest() throws OutOfBoardException, IllegalMoveException {
-        GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
+    public void pieRuleTest() throws OutOfBoardException {
+        GoBoard b = new GoBoard(12);
+        CrosswayRules r = new CrosswayRules();
+        Coordinates c = new Coordinates(1, 1);
+        b.setStoneColorStatus(c, StoneColor.BLACK);
 
+        Move m = new Move(c, StoneColor.WHITE);
 
-        Coordinates m0 = new Coordinates(1, 1);
-        Move m1 = new Move(m0, StoneColor.BLACK);
-
-        gc.performGameMove(m0);
-        assertTrue(gc.validateMove(m1));
+        assertTrue(r.validateMove(b, m, 1));
     }
 
     @Test
-    public void validateIllegalMoveTest() throws OutOfBoardException, IllegalMoveException {
-        GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
+    public void noSuperpositionTest() throws OutOfBoardException {
+        GoBoard b = new GoBoard(12);
+        CrosswayRules r = new CrosswayRules();
+        Coordinates c = new Coordinates(7, 1);
+        b.setStoneColorStatus(c, StoneColor.BLACK);
 
-        Move m1 = new Move(new Coordinates(1,1), StoneColor.WHITE);
-        Move m2 = new Move(new Coordinates(1,1), StoneColor.WHITE);
-        gc.placeStone( m1 );
-        assertFalse(gc.validateMove(m2));
+        Move m = new Move(c, StoneColor.WHITE);
+
+        assertFalse(r.validateMove(b, m, 2));
     }
 
     @Test
-    public void crosswayIllegalMoveTestSoutheast() throws OutOfBoardException, IllegalMoveException {
+    public void crosswayIllegalMoveTestSoutheast() throws OutOfBoardException {
 
         /*
               0 1 2
@@ -48,18 +52,19 @@ public class RulesTest {
             2   E i
 
          */
-        GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
 
-        gc.placeStone(new Move(new Coordinates( 1, 1), StoneColor.BLACK));
-        gc.placeStone(new Move(new Coordinates( 1, 2), StoneColor.WHITE));
-        gc.placeStone(new Move(new Coordinates( 2, 1), StoneColor.WHITE));
+        GoBoard b = new GoBoard(12);
+        CrosswayRules r = new CrosswayRules();
+        b.setStoneColorStatus(new Coordinates( 1, 1), StoneColor.BLACK);
+        b.setStoneColorStatus(new Coordinates( 1, 2), StoneColor.WHITE);
+        b.setStoneColorStatus(new Coordinates( 2, 1), StoneColor.WHITE);
 
-        Move m4 = new Move(new Coordinates(2, 2), StoneColor.BLACK);
-        assertFalse(gc.validateMove(m4));
+        Move m = new Move(new Coordinates(2, 2), StoneColor.BLACK);
+        assertFalse(r.validateMove(b, m, 7));
     }
 
     @Test
-    public void crosswayIllegalMoveTestSouthwest() throws OutOfBoardException, IllegalMoveException {
+    public void crosswayIllegalMoveTestSouthwest() throws OutOfBoardException {
 
         /*
               0 1 2
@@ -68,19 +73,20 @@ public class RulesTest {
             2   i E
 
          */
-        GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
+        GoBoard b = new GoBoard(12);
+        CrosswayRules r = new CrosswayRules();
 
-        gc.placeStone(new Move(new Coordinates(2, 1), StoneColor.BLACK));
-        gc.placeStone(new Move(new Coordinates(2, 2), StoneColor.WHITE));
-        gc.placeStone(new Move(new Coordinates(1, 1), StoneColor.WHITE));
+        b.setStoneColorStatus(new Coordinates(2, 1), StoneColor.BLACK);
+        b.setStoneColorStatus(new Coordinates(2, 2), StoneColor.WHITE);
+        b.setStoneColorStatus(new Coordinates(1, 1), StoneColor.WHITE);
 
 
-        Move m4 = new Move(new Coordinates(1, 2), StoneColor.BLACK);
-        assertFalse(gc.validateMove(m4));
+        Move m = new Move(new Coordinates(1, 2), StoneColor.BLACK);
+        assertFalse(r.validateMove(b, m, 5));
     }
 
     @Test
-    public void crosswayIllegalMoveTestNorthwest() throws OutOfBoardException, IllegalMoveException {
+    public void crosswayIllegalMoveTestNorthwest() throws OutOfBoardException {
 
         /*
               0 1 2
@@ -89,19 +95,20 @@ public class RulesTest {
             2   E F
 
          */
-        GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
+        GoBoard b = new GoBoard(12);
+        CrosswayRules r = new CrosswayRules();
 
-        gc.placeStone(new Move(new Coordinates( 2, 2), StoneColor.BLACK));
-        gc.placeStone(new Move(new Coordinates( 1, 2), StoneColor.WHITE));
-        gc.placeStone(new Move(new Coordinates(2, 1), StoneColor.WHITE));
+        b.setStoneColorStatus(new Coordinates( 2, 2), StoneColor.BLACK);
+        b.setStoneColorStatus(new Coordinates( 1, 2), StoneColor.WHITE);
+        b.setStoneColorStatus(new Coordinates(2, 1), StoneColor.WHITE);
 
 
-        Move m4 = new Move(new Coordinates(1, 1), StoneColor.BLACK);
-        assertFalse(gc.validateMove(m4));
+        Move m = new Move(new Coordinates(1, 1), StoneColor.BLACK);
+        assertFalse(r.validateMove(b, m, 25));
     }
 
     @Test
-    public void crosswayIllegalMoveTestNorthEast() throws OutOfBoardException, IllegalMoveException {
+    public void crosswayIllegalMoveTestNorthEast() throws OutOfBoardException {
 
         /*
               0 1 2
@@ -110,42 +117,42 @@ public class RulesTest {
             2   F E
 
          */
-        GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
+        GoBoard b = new GoBoard(12);
+        CrosswayRules r = new CrosswayRules();
 
-        gc.placeStone(new Move(new Coordinates( 1, 2), StoneColor.BLACK));
-        gc.placeStone(new Move(new Coordinates( 1, 1), StoneColor.WHITE));
-        gc.placeStone(new Move(new Coordinates( 2, 2), StoneColor.WHITE));
+        b.setStoneColorStatus(new Coordinates( 1, 2), StoneColor.BLACK);
+        b.setStoneColorStatus(new Coordinates( 1, 1), StoneColor.WHITE);
+        b.setStoneColorStatus(new Coordinates( 2, 2), StoneColor.WHITE);
 
-
-        Move m4 = new Move(new Coordinates( 2, 1), StoneColor.BLACK);
-        assertFalse(gc.validateMove(m4));
+        Move m = new Move(new Coordinates( 2, 1), StoneColor.BLACK);
+        assertFalse(r.validateMove(b, m, 25));
     }
 
     @Test
-    public void hasWhiteWon() throws IllegalMoveException, OutOfBoardException {
+    public void hasWhiteWon() throws  OutOfBoardException {
 
+        GoBoard b = new GoBoard(12);
+        CrosswayRules r = new CrosswayRules();
 
-        GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
-
-            for(int i = 0; i < gc.getSide() ; i++){
-                gc.placeStone(new Move(new Coordinates( i, 0), StoneColor.WHITE));
+            for(int i = 0; i < b.getSide() ; i++){
+                b.setStoneColorStatus(new Coordinates( i, 0), StoneColor.WHITE);
             }
 
-        assertEquals(gc.winner(), StoneColor.WHITE);
+        assertEquals(r.winner(b), StoneColor.WHITE);
     }
 
 
     @Test
-    public void hasBlackWon() throws IllegalMoveException, OutOfBoardException {
+    public void hasBlackWon() throws OutOfBoardException {
 
+        GoBoard b = new GoBoard(12);
+        CrosswayRules r = new CrosswayRules();
 
-        GameController gc = new GameController(new GoBoard(12), new CrosswayRules());
-
-        for(int i = 0; i < gc.getSide() ; i++){
-            gc.placeStone(new Move(new Coordinates( 0, i), StoneColor.BLACK));
+        for(int i = 0; i < b.getSide() ; i++){
+            b.setStoneColorStatus(new Coordinates( 0, i), StoneColor.BLACK);
         }
 
-        assertEquals(gc.winner(), StoneColor.BLACK);
+        assertEquals(r.winner(b), StoneColor.BLACK);
     }
     
 }

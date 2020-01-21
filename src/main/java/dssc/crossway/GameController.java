@@ -30,23 +30,13 @@ public class GameController {
      * @throws IllegalMoveException if the move is not allowed by the rules
      */
 
-    public void placeStone(Move m) throws OutOfBoardException, IllegalMoveException {
+    private void placeStone(Move m) throws OutOfBoardException, IllegalMoveException {
         if(this.validateMove(m)) {
             board.setStoneColorStatus(m.getCoordinates(), m.getColor());
         }
         else {
             throw new IllegalMoveException();
         }
-    }
-
-    /**
-     *  Return the color of a cell
-     * @param coor coordinates
-     * @return the status of the cell in that position
-     * @throws OutOfBoardException if the coordinated are out of the board size
-     */
-    public StoneColor getStoneColorStatus(Coordinates coor) throws OutOfBoardException {
-        return this.board.getStoneColorStatus(coor);
     }
 
 
@@ -56,13 +46,10 @@ public class GameController {
      * @return boolean that encode the validity
      * @throws OutOfBoardException if the move is out of the board
      */
-    public boolean validateMove(Move m) throws OutOfBoardException {
+    private boolean validateMove(Move m) throws OutOfBoardException {
         return rules.validateMove(this.board, m, this.turn);
     }
 
-    public int getSide()  {
-        return this.board.getSide();
-    }
 
     /**
      *

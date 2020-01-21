@@ -17,27 +17,32 @@ public class GameControllerTest {
    @Test
    public void firstMove() throws OutOfBoardException, IllegalMoveException {
        GameController gc = initialize();
-       gc.placeStone(new Move(new Coordinates(1,1), StoneColor.WHITE));
-       assertEquals(gc.getStoneColorStatus(new Coordinates(1,1)), StoneColor.WHITE);
+       gc.performGameMove((new Coordinates(1,1)));
+       assertEquals(gc.getBoard().getStoneColorStatus(new Coordinates(1,1)), StoneColor.BLACK);
    }
 
     @Test
     public void illegalMove() throws OutOfBoardException, IllegalMoveException {
         GameController gc = initialize();
-        Move m1 = new Move(new Coordinates(1,1), StoneColor.WHITE);
-        gc.placeStone(m1);
-        Move m2 = new Move(new Coordinates(1,1), StoneColor.WHITE);
+        gc.performGameMove(new Coordinates(1,1));
+        gc.performGameMove(new Coordinates(1,2));
+
+        String exceptionMessage = "";
 
         try {
-            gc.placeStone(m2);
+            gc.performGameMove(new Coordinates(1,1));
         } catch (IllegalMoveException e) {
-            assertEquals(e.getMessage(), "Illegal move!");
+            exceptionMessage = e.getMessage();
         }
+
+        assertEquals("Illegal move!", exceptionMessage);
+
     }
 
 
     @Test
     public void fullMatch() throws OutOfBoardException, IllegalMoveException {
+
         GameController gc = initialize();
         assertEquals(StoneColor.EMPTY, gc.winner());
 
@@ -56,9 +61,9 @@ public class GameControllerTest {
             assertEquals(StoneColor.EMPTY, gc.winner());
         }
 
-        assertFalse(gc.validateMove(new Move(new Coordinates(2,1), StoneColor.BLACK)));
-        assertFalse(gc.validateMove(new Move(new Coordinates(5,7), StoneColor.WHITE)));
-        assertTrue(gc.validateMove(new Move(new Coordinates(2,1), StoneColor.WHITE)));
+        //assertFalse(gc.validateMove(new Move(new Coordinates(2,1), StoneColor.BLACK)));
+        //assertFalse(gc.validateMove(new Move(new Coordinates(5,7), StoneColor.WHITE)));
+        //assertTrue(gc.validateMove(new Move(new Coordinates(2,1), StoneColor.WHITE)));
 
         gc.performGameMove(new Coordinates(9,11)); //BLACK
         assertEquals(StoneColor.EMPTY, gc.winner());
@@ -73,7 +78,6 @@ public class GameControllerTest {
         assertEquals(StoneColor.WHITE, gc.winner());
 
     }
-
 
 
 }

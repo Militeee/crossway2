@@ -39,6 +39,7 @@ public class CrosswayRules {
                 .reduce(true, Boolean::logicalAnd);
     }
 
+
     /**
      * Checks for a given move and a given relative adjacent-diagonal position on the board
      * if the move is considered illegal, since in these two position there are pieces of the same color,
@@ -46,25 +47,24 @@ public class CrosswayRules {
      *
      * @param board the game board
      * @param m the Move object to be validated
-     * @param coord2 the coordinates of the cells which legality should be verified.
+     * @param friendPosition the coordinates of the cells which legality should be verified.
      * @return true if the move is legal, false otherwise.
      */
-    private boolean areCrossed(GoBoard board, Move m, Coordinates coord2) {
-        Coordinates coord1 = m.getCoordinates();
-        Coordinates coord3 = new Coordinates(coord1.getX(), coord2.getY());
-        Coordinates coord4 = new Coordinates(coord2.getX(), coord1.getY());
+    private boolean areCrossed(GoBoard board, Move m, Coordinates friendPosition) {
 
-        StoneColor[] c = new StoneColor[4];
+        Coordinates crossingPosition1 = new Coordinates(m.getCoordinates().getX(), friendPosition.getY());
+        Coordinates crossingPosition2 = new Coordinates(friendPosition.getX(), m.getCoordinates().getY());
+
         try {
-            c = new StoneColor[]{m.getColor(), board.getStoneColorStatus(coord2), board.getStoneColorStatus(coord3), board.getStoneColorStatus(coord4)};
+            if(board.getStoneColorStatus(crossingPosition1) == m.getColor().getOpposite() &&
+                    board.getStoneColorStatus(crossingPosition2) == m.getColor().getOpposite())
+                return true;
+
         } catch (OutOfBoardException e) {
             e.printStackTrace();
         }
 
-        boolean full = c[0]!= StoneColor.EMPTY && c[1]!= StoneColor.EMPTY && c[2]!= StoneColor.EMPTY && c[3]!= StoneColor.EMPTY;
-        boolean cross = c[0] == c[1] && c[2] == c[3] && c[0] != c[2];
-        return full && cross;
-
+        return false;
     }
 
 

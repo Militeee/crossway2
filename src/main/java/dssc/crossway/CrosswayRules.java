@@ -89,35 +89,27 @@ public class CrosswayRules {
      */
 
     public StoneColor winner(GoBoard board){
-        try {
-            for (int i = 0; i < board.getSide(); i++) {
+
+        for (int i = 0; i < board.getSide(); i++) {
+            try {
                 // Check white
-                if(hasPlayerWon(new Coordinates(0,i),StoneColor.WHITE, board))
-                    return StoneColor.WHITE;
+                StoneColor whiteChain = null;
+                whiteChain = winningChain(new Coordinates(0, i), StoneColor.WHITE, board);
+                if (whiteChain != StoneColor.EMPTY)
+                    return whiteChain;
 
                 //Check black
-                if(hasPlayerWon(new Coordinates(i,0),StoneColor.BLACK, board))
-                    return StoneColor.BLACK;
+                StoneColor blackChain = winningChain(new Coordinates(i, 0), StoneColor.BLACK, board);
+                if (blackChain != StoneColor.EMPTY)
+                    return blackChain;
             }
-        } catch (OutOfBoardException e) {e.printStackTrace();}
+            catch (OutOfBoardException e) {
+                e.printStackTrace();
+            }
+        }
 
         return StoneColor.EMPTY;
 
-    }
-
-    /**
-     * Performs a winningChain check if there is a stone of a given color in a given coordinate.
-     * @param coor coordinates
-     * @param col color that is being considered
-     * @param board the game board.
-     * @return true if the color compatible with the coordinate has won the game, false otherwise
-     * @throws OutOfBoardException if the Move points out of the board.
-     */
-    private boolean hasPlayerWon(Coordinates coor, StoneColor col, GoBoard board) throws OutOfBoardException {
-        if (board.getStoneColorStatus(coor) == col) {
-            return winningChain(coor, col, board);
-        }
-        return false;
     }
 
 
@@ -127,11 +119,13 @@ public class CrosswayRules {
      * Implements breadth first search for finding the winner
      *
      * @param node coordinates of the node
-     * @param c color of the current player
+     * @param color color of the current player
      * @param board 2D board
      * @return if there is a winner
      */
-    private boolean winningChain(Coordinates node, StoneColor c, GoBoard board)  {
+    private StoneColor winningChain(Coordinates node, StoneColor color, GoBoard board) throws OutOfBoardException {
+
+        if (board.getStoneColorStatus(node) != color) return StoneColor.EMPTY;
 
         int side = board.getSide();
 
@@ -144,12 +138,12 @@ public class CrosswayRules {
         while(queue.size() != 0){
 
             node = queue.poll();
-            for (Coordinates coordinates : board.adjacentFriendsCoordinates(node, c)) {
+            for (Coordinates coordinates : board.adjacentFriendsCoordinates(node, color)) {
 
-                if ((coordinates.getX() == (side - 1)) && (c == StoneColor.WHITE)) {
-                    return true;
-                } else if ((coordinates.getY() == (side - 1)) && (c == StoneColor.BLACK)) {
-                    return true;
+                if ((coordinates.getX() == (side - 1)) && (color == StoneColor.WHITE)) {
+                    return StoneColor.WHITE;
+                } else if ((coordinates.getY() == (side - 1)) && (color == StoneColor.BLACK)) {
+                    return StoneColor.BLACK;
                 }
 
                 if (!visited[coordinates.getX()][coordinates.getY()]) {
@@ -161,7 +155,7 @@ public class CrosswayRules {
 
         }
 
-        return false;
+        return StoneColor.EMPTY;
     }
 
     public StoneColor firstPlayer() {

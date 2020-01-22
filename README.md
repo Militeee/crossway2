@@ -26,7 +26,7 @@ Clone the repository with
 
 `git clone https://github.com/Militeee/crossway2`
 
-`cd/crossway2`
+`cd crossway2`
 
 `./gradlew build`
 

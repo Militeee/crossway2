@@ -2,18 +2,11 @@ package dssc.crossway.console;
 
 import java.util.Scanner;
 
-/**
- * This class has static functions that handles user input from console.
- */
 public class ConsoleInputHandler {
 
 
     private ConsoleMessageWriter consoleMessageWriter = new ConsoleMessageWriter();
 
-    /**
-     * This method ask to the user an int, until it inputs a valid number.
-     * @return the number inserted by the user
-     */
     public int askUserForInteger() {
 
         Scanner scanner = new Scanner(System.in);

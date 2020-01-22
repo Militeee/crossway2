@@ -12,11 +12,6 @@ public class ConsoleMessageWriter {
     private static final String WRONG_FORMAT_MESSAGE = "The input format is not correct, please retry";
     private static final String ILLEGAL_VALUE_MESSAGE = "The inserted value is illegal";
 
-
-    /**
-     * Prints a message when there is a winner.
-     * @param winner Winner color.
-     */
     public void showEndingMessage(StoneColor winner) {
         System.out.println(String.format(WINNER_MESSAGE, winner.toString()));
     }

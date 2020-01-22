@@ -7,11 +7,8 @@ public class UserInputManager {
 
     private ConsoleMessageWriter consoleMessageWriter  = new ConsoleMessageWriter();
     private ConsoleInputHandler consoleInputHandler = new ConsoleInputHandler();
-    /**
-     * Asks the current player to input the next move.
-     * @return a Coordinate object with the user input.
-     */
-     Coordinates askMove(GoBoard crosswayBoard) {
+
+    Coordinates askMove(GoBoard crosswayBoard) {
 
          int x = requestValidInput(crosswayBoard, 'x');
          int y = requestValidInput(crosswayBoard, 'y');

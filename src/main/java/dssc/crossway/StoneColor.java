@@ -1,9 +1,5 @@
 package dssc.crossway;
 
-
-/**
- * enum of possible color status of a cell.
- */
 public enum StoneColor {
     EMPTY,
     BLACK,

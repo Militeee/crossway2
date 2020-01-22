@@ -11,11 +11,11 @@ public class Coordinates {
     private int x_cord;
     private int y_cord;
 
-    int getX() {
+    public int getX() {
         return x_cord;
     }
 
-    int getY() {
+    public int getY() {
         return y_cord;
     }
 

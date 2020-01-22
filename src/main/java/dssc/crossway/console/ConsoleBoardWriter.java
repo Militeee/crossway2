@@ -23,21 +23,16 @@ public class ConsoleBoardWriter {
     public String boardToString(GoBoard board) {
         char[][] canvas = new char[board.getSide()][board.getSide()];
 
-        for(int i=0;i<board.getSide();i++) {
-            for(int j=0;j<board.getSide();j++) {
-                StoneColor StoneColorColor = StoneColor.EMPTY;
-                try {
-                    StoneColorColor = board.getStoneColorStatus(new Coordinates(j,i));
-                } catch (OutOfBoardException e) {
-                    e.printStackTrace();
-                }
-
-                canvas[i][j] = color2consoleRepresentation(StoneColorColor);
-            }
-        }
+        Coordinates.getCoordinatesMesh(0,board.getSide(),0,board.getSide())
+                .forEach(c -> {
+                    try {
+                        canvas[c.getY()][c.getX()] = color2consoleRepresentation(board.getStoneColorStatus(c));
+                    } catch (OutOfBoardException e) {
+                        e.printStackTrace();
+                    }
+                });
 
         return matrixToString(canvas,board.getSide(),board.getSide());
-
     }
 
     private char color2consoleRepresentation(StoneColor c) {

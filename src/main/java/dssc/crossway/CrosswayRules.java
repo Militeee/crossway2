@@ -4,6 +4,7 @@ import dssc.crossway.exceptions.OutOfBoardException;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.stream.IntStream;
 
 
 /**
@@ -85,16 +86,21 @@ public class CrosswayRules {
     /**
      * Given a board status, it checks whether there is a winner, if asked by the GameController.
      * @param board a game board
+     * @param currentPlayer color of the current player
      * @return Colors.EMPTY if there is no winner, Colors object of the winner color if there is one.
      */
 
-    public StoneColor winner(GoBoard board){
+    public StoneColor winner(GoBoard board, StoneColor currentPlayer){
+       return IntStream.range(0, board.getSide())
+                .mapToObj(i -> callRightChain(i, currentPlayer.getOpposite(), board)
+                ).filter(color -> color == currentPlayer.getOpposite())
+               .findAny().orElse(StoneColor.EMPTY);
 
-        for (int i = 0; i < board.getSide(); i++) {
+       /*
+       for (int i = 0; i < board.getSide(); i++) {
             try {
                 // Check white
-                StoneColor whiteChain = null;
-                whiteChain = winningChain(new Coordinates(0, i), StoneColor.WHITE, board);
+                StoneColor whiteChain = winningChain(new Coordinates(0, i), StoneColor.WHITE, board);
                 if (whiteChain != StoneColor.EMPTY)
                     return whiteChain;
 
@@ -109,10 +115,25 @@ public class CrosswayRules {
         }
 
         return StoneColor.EMPTY;
+        */
+
 
     }
 
+    private StoneColor callRightChain(int movingIndex, StoneColor color, GoBoard board){
+        try {
 
+            if(color == StoneColor.WHITE) {
+                return winningChain(new Coordinates(0, movingIndex), StoneColor.WHITE, board);
+            } else{
+                return winningChain(new Coordinates(movingIndex,0), StoneColor.BLACK, board);
+            }
+
+        } catch (OutOfBoardException e) {
+                e.printStackTrace();
+        }
+        return StoneColor.EMPTY;
+    }
 
     /**
      *
@@ -158,7 +179,7 @@ public class CrosswayRules {
         return StoneColor.EMPTY;
     }
 
-    public StoneColor firstPlayer() {
+    StoneColor firstPlayer() {
         return StoneColor.BLACK;
     }
 

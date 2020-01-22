@@ -1,7 +1,6 @@
 package test.crossway;
 
 import dssc.crossway.*;
-import dssc.crossway.exceptions.IllegalMoveException;
 import dssc.crossway.exceptions.OutOfBoardException;
 import org.junit.Test;
 
@@ -138,7 +137,7 @@ public class RulesTest {
                 b.setStoneColorStatus(new Coordinates( i, 0), StoneColor.WHITE);
             }
 
-        assertEquals(r.winner(b), StoneColor.WHITE);
+        assertEquals(r.winner(b, StoneColor.BLACK), StoneColor.WHITE);
     }
 
 
@@ -152,7 +151,7 @@ public class RulesTest {
             b.setStoneColorStatus(new Coordinates( 0, i), StoneColor.BLACK);
         }
 
-        assertEquals(r.winner(b), StoneColor.BLACK);
+        assertEquals(r.winner(b,StoneColor.WHITE ), StoneColor.BLACK);
     }
     
 }

@@ -22,15 +22,14 @@ Original rules can be found [at the author website](https://boardgamegeek.com/bo
 
 Requires: Gradle, JVM v.11.0
 
-Clone the folder with 
+Clone the repository with 
 
 `git clone https://github.com/Militeee/crossway2`
 
-`cd crossway2/build/classes/java/main`
-
-`gradle build`
-
-
+`./crossway2/gradlew build`
 
 Run with 
-`java dssc.crossway2.Main`
+
+`cd /build/classes/java/main`
+
+`java dssc.crossway.Main`

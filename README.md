@@ -36,4 +36,4 @@ Run with
 
 `java dssc.crossway.Main`
 
-...or download the JAR executable from Releases page.
+...or download the JAR executable from [release page.](https://github.com/Militeee/crossway2/releases)

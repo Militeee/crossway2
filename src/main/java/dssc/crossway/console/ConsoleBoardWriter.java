@@ -5,6 +5,9 @@ import dssc.crossway.GoBoard;
 import dssc.crossway.exceptions.OutOfBoardException;
 import dssc.crossway.StoneColor;
 
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
 public class ConsoleBoardWriter {
 
     private final static char EMPTY_SIGN = '.';
@@ -65,24 +68,19 @@ public class ConsoleBoardWriter {
         StringBuilder s = new StringBuilder();
 
         s.append ("  ");
-        for (int i=0; i<y; i++) {
-            s.append(i%10);
-            s.append( " ");
 
-        }
+        IntStream.range(0, y)
+                .forEachOrdered(n -> s.append(n % 10).append(" "));
+
         s.append("\n");
 
-        for(int i=0;i<x;i++) {
-            s.append(i%10);
-            s.append(" ");
-            for (int j = 0; j < y; j++) {
-
-                s.append(charMatrix[i][j]);
-                s.append(" ");
-            }
-            s.append("\n");
-        }
-
+        IntStream.range(0, x)
+            .forEachOrdered(row -> {
+                s.append(row % 10).append(" ");
+                IntStream.range(0,y)
+                         .forEachOrdered(col -> s.append(charMatrix[row][col]).append(" "));
+                s.append("\n");
+            });
         return s.substring(0,s.length()-1);
     }
 

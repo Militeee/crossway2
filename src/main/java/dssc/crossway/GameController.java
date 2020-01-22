@@ -28,7 +28,7 @@ public class GameController {
         return rules.validateMove(this.board, m, this.turn);
     }
 
-    public StoneColor winner(StoneColor currentPlayer) { return  this.rules.winner(this.board, currentPlayer); }
+    public StoneColor winner() { return  this.rules.winner(this.board, currentTurnColor()); }
 
     public void performGameMove(Coordinates c) throws IllegalMoveException, OutOfBoardException {
         placeStone(new Move(c, currentTurnColor()));

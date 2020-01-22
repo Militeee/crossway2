@@ -18,14 +18,11 @@ public class GoBoard {
     }
 
     private void initializeBoard() {
-        for (int i=0; i<this.side; i++) {
-            for (int j=0; j<this.side; j++) {
-                this.board[i][j] = StoneColor.EMPTY;
-            }
-        }
+        Coordinates.getCoordinatesMesh(0,side,0,side)
+                .forEach(c -> this.board[c.getX()][c.getY()] = StoneColor.EMPTY);
     }
 
-    public Boolean isInside(int position) {
+    public boolean isInside(int position) {
         return (position >= 0 && position < this.getSide());
     }
 
@@ -61,7 +58,7 @@ public class GoBoard {
      * @param color the provided color
      * @return a LinkedList
      */
-    LinkedList<Coordinates> adjacentFriendsCoordinates(Coordinates node, StoneColor color) {
+    public LinkedList<Coordinates> adjacentFriendsCoordinates(Coordinates node, StoneColor color) {
 
         return node.getAdjacents().stream()
                 .filter(this::isInside)

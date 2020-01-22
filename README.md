@@ -35,3 +35,5 @@ Run with
 `cd build/classes/java/main`
 
 `java dssc.crossway.Main`
+
+...or download the JAR executable from Releases page.

@@ -33,7 +33,7 @@ public class ConsoleMessageWriter {
         System.out.println(X_REQUEST_MESSAGE);
     }
 
-    void writeWrongFormatMessage( ) {
+    public void writeWrongFormatMessage( ) {
         System.out.println(WRONG_FORMAT_MESSAGE);
     }
 
@@ -41,5 +41,5 @@ public class ConsoleMessageWriter {
         System.out.println(ILLEGAL_VALUE_MESSAGE);
     }
 
-    public void showIllegalMoveMessage() { System.out.println(ILLEGAL_MOVE_MESSAGE); }
+    public void writeIllegalMoveMessage() { System.out.println(ILLEGAL_MOVE_MESSAGE); }
 }

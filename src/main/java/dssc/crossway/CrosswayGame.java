@@ -47,7 +47,7 @@ class CrosswayGame {
                 validMove = true;
 
             } catch (Exception e) {
-                consoleMessageWriter.showIllegalMoveMessage();
+                consoleMessageWriter.writeIllegalMoveMessage();
             }
 
         }

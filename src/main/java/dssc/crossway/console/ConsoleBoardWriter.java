@@ -6,7 +6,7 @@ import dssc.crossway.exceptions.OutOfBoardException;
 import dssc.crossway.StoneColor;
 
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
+
 
 public class ConsoleBoardWriter {
 

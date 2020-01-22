@@ -12,7 +12,6 @@ public class GoBoard {
     private StoneColor[][] board;
 
     public GoBoard(int side) {
-
         this.side = side;
         this.board = new StoneColor[side][side];
         initializeBoard();
@@ -34,7 +33,6 @@ public class GoBoard {
     {
         return isInside(coord.getX()) && isInside(coord.getY());
     }
-
 
     public int getSide() {
         return side;

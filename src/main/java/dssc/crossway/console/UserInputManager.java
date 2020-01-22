@@ -1,14 +1,14 @@
-package dssc.crossway;
+package dssc.crossway.console;
 
-import dssc.crossway.console.ConsoleInputHandler;
-import dssc.crossway.console.ConsoleMessageWriter;
+import dssc.crossway.Coordinates;
+import dssc.crossway.GoBoard;
 
 public class UserInputManager {
 
     private ConsoleMessageWriter consoleMessageWriter  = new ConsoleMessageWriter();
     private ConsoleInputHandler consoleInputHandler = new ConsoleInputHandler();
 
-    Coordinates askMove(GoBoard crosswayBoard) {
+    public Coordinates askMove(GoBoard crosswayBoard) {
 
          int x = requestValidInput(crosswayBoard, 'x');
          int y = requestValidInput(crosswayBoard, 'y');
@@ -16,23 +16,12 @@ public class UserInputManager {
     }
 
     private int requestValidInput(GoBoard crosswayBoard, char coordinate){
-         /*
-         int dimension;
-         do {
-             if (coordinate == 'x') {
-                 consoleMessageWriter.requestXMoveMessage();
-             }
-             else if (coordinate == 'y') {
-                 consoleMessageWriter.requestYMoveMessage();
-             }
-             dimension = consoleInputHandler.askUserForInteger();
-         } while (!(crosswayBoard.isInside( dimension )));
-        */
 
         int dimension = -1;
 
-        Boolean dimIsValid = true;
-        while(dimIsValid){
+        boolean dimIsValid = false;
+
+        while(!dimIsValid){
 
             if (coordinate == 'x') {
                 consoleMessageWriter.requestXMoveMessage();
@@ -43,11 +32,10 @@ public class UserInputManager {
 
             dimension = consoleInputHandler.askUserForInteger();
             dimIsValid = crosswayBoard.isInside(dimension);
-            if (dimIsValid) { break;} // <---------------------this works but can be made much better than this. refactor later.
-            else {consoleMessageWriter.writeIllegalValueMessage();}
 
+            if(!dimIsValid)
+                consoleMessageWriter.writeIllegalValueMessage();
             }
-
 
         return dimension;
     }

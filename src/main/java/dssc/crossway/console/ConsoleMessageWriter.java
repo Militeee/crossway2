@@ -11,6 +11,7 @@ public class ConsoleMessageWriter {
     private static final String Y_REQUEST_MESSAGE = "Enter Y:";
     private static final String WRONG_FORMAT_MESSAGE = "The input format is not correct, please retry";
     private static final String ILLEGAL_VALUE_MESSAGE = "The inserted value is illegal";
+    private static final String ILLEGAL_MOVE_MESSAGE = "Illegal Move";
 
     public void showEndingMessage(StoneColor winner) {
         System.out.println(String.format(WINNER_MESSAGE, winner.toString()));
@@ -40,4 +41,5 @@ public class ConsoleMessageWriter {
         System.out.println(ILLEGAL_VALUE_MESSAGE);
     }
 
+    public void showIllegalMoveMessage() { System.out.println(ILLEGAL_MOVE_MESSAGE); }
 }

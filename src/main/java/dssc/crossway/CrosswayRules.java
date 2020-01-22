@@ -113,7 +113,7 @@ public class CrosswayRules {
      * @return true if the color compatible with the coordinate has won the game, false otherwise
      * @throws OutOfBoardException if the Move points out of the board.
      */
-    private boolean hasPlayerWon(Coordinates coor,StoneColor col,GoBoard board) throws OutOfBoardException {
+    private boolean hasPlayerWon(Coordinates coor, StoneColor col, GoBoard board) throws OutOfBoardException {
         if (board.getStoneColorStatus(coor) == col) {
             return winningChain(coor, col, board);
         }

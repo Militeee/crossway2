@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class CoordinateMeshTools {
+
     /**
      * Returns an ArrayList with the coordinates of the discrete space [x1, x2)x[y1,y2)
      * @param x1 included

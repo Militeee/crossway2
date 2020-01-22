@@ -2,6 +2,7 @@ package dssc.crossway;
 
 import dssc.crossway.console.ConsoleBoardWriter;
 import dssc.crossway.console.ConsoleMessageWriter;
+import dssc.crossway.console.UserInputManager;
 import dssc.crossway.exceptions.IllegalMoveException;
 import dssc.crossway.exceptions.OutOfBoardException;
 

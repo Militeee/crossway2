@@ -37,11 +37,6 @@ public class ConsoleBoardWriter {
 
     }
 
-    /**
-     * Method that maps a Stone color to its representing char on the console
-     * @param c the color of the stone
-     * @return char representing the color
-     */
     private char color2consoleRepresentation(StoneColor c) {
 
         char sign;

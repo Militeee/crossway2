@@ -5,27 +5,16 @@ import dssc.crossway.console.ConsoleMessageWriter;
 import dssc.crossway.exceptions.IllegalMoveException;
 import dssc.crossway.exceptions.OutOfBoardException;
 
-/**
- *  Main game management class.
- *  <p>
- *      Class responsibility: Manage game turns logic.
- */
-public class CrosswayGame {
+class CrosswayGame {
 
     private ConsoleMessageWriter consoleMessageWriter = new ConsoleMessageWriter();
     private ConsoleBoardWriter consoleBoardWriter = new ConsoleBoardWriter();
     private UserInputManager userInputManager = new UserInputManager();
 
-    public static final int CROSSWAY_BOARD_SIDE = 12;
-
+    private static final int CROSSWAY_BOARD_SIDE = 12;
 
     private GameController controller = new GameController(new GoBoard(CROSSWAY_BOARD_SIDE), new CrosswayRules());
 
-
-
-    /**
-     *  Instantiate a new game and manage turns.
-     */
     public void start() {
 
         consoleMessageWriter.showStartingMessage();
@@ -43,9 +32,6 @@ public class CrosswayGame {
         consoleMessageWriter.showEndingMessage(winner);
     }
 
-    /**
-     * Method for a single turn management.
-     */
     private void turn()  {
 
         consoleBoardWriter.printBoard(this.controller.getBoard());
@@ -60,20 +46,12 @@ public class CrosswayGame {
                 validMove = true;
 
             } catch (Exception e) {
-                System.out.println(e.getMessage());
+                consoleMessageWriter.showIllegalMoveMessage();
             }
 
         }
     }
 
-
-
-    /**
-     * Tries to perform a move m.
-     * @param m a Coordinate object
-     * @throws IllegalMoveException whenever the move is illegal
-     * @throws OutOfBoardException whenever the coordinates falls outside of the board
-     */
     private void applyMove(Coordinates m) throws IllegalMoveException, OutOfBoardException {
         this.controller.performGameMove(m);
     }

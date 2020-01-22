@@ -6,19 +6,11 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.stream.Collectors;
 
-/**
- * Go board class. A class to manage a Go Board, that is a square check board.
- *
- */
 public class GoBoard {
 
     private int side;
     private StoneColor[][] board;
 
-    /**
-     * GoBoard Constructor. Initializes a matrix of StoneColor items
-     * @param side the side of the board in units
-     */
     public GoBoard(int side) {
 
         this.side = side;
@@ -38,12 +30,6 @@ public class GoBoard {
         return (position >= 0 && position < this.getSide());
     }
 
-    /**
-     * Checks if given Coordinates are inside the board,
-     * i.e if they are between 0 included and side excluded.
-     * @param coord the given Coordinates
-     * @return true if they are, false otherwise.
-     */
     public boolean isInside(Coordinates coord)
     {
         return isInside(coord.getX()) && isInside(coord.getY());
@@ -62,12 +48,6 @@ public class GoBoard {
         return this.board[c.getX()][c.getY()];
     }
 
-    /**
-     * Changes the color status of a StoneColor
-     * @param coordinates StoneColor Coordinates
-     * @param newStatus new Colors object
-     * @throws OutOfBoardException if coordinates are out of the board
-     */
     public void setStoneColorStatus(Coordinates coordinates, StoneColor newStatus) throws OutOfBoardException {
         if (!isInside(coordinates)) {
             throw new OutOfBoardException();

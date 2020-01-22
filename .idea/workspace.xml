@@ -7,20 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb783e39-6736-40ec-8a70-b64a8865b0ab" name="Default Changelist" comment="RulesTest doesn't depend on GameController anymore, areCrossed method is now more comprehensible, some methods on GameController are now private.">
-      <change beforePath="$USER_HOME$/1✪1✪3/DSSC/Corsi/SDM/crossway2/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$USER_HOME$/1✪1✪3/DSSC/Corsi/SDM/crossway2/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$USER_HOME$/1✪1✪3/DSSC/Corsi/SDM/crossway2/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$USER_HOME$/1✪1✪3/DSSC/Corsi/SDM/crossway2/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$USER_HOME$/1✪1✪3/DSSC/Corsi/SDM/crossway2/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$USER_HOME$/1✪1✪3/DSSC/Corsi/SDM/crossway2/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$USER_HOME$/1✪1✪3/DSSC/Corsi/SDM/crossway2/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$USER_HOME$/1✪1✪3/DSSC/Corsi/SDM/crossway2/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$USER_HOME$/1✪1✪3/DSSC/Corsi/SDM/crossway2/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$USER_HOME$/1✪1✪3/DSSC/Corsi/SDM/crossway2/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$USER_HOME$/1✪1✪3/DSSC/Corsi/SDM/crossway2/.idea/workspace.xml" beforeDir="false" afterPath="$USER_HOME$/1✪1✪3/DSSC/Corsi/SDM/crossway2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$USER_HOME$/1✪1✪3/DSSC/Corsi/SDM/crossway2/src/main/java/dssc/crossway/CoordinateMeshTools.java" beforeDir="false" afterPath="$USER_HOME$/1✪1✪3/DSSC/Corsi/SDM/crossway2/src/main/java/dssc/crossway/CoordinateMeshTools.java" afterDir="false" />
-      <change beforePath="$USER_HOME$/1✪1✪3/DSSC/Corsi/SDM/crossway2/src/main/java/dssc/crossway/CrosswayRules.java" beforeDir="false" afterPath="$USER_HOME$/1✪1✪3/DSSC/Corsi/SDM/crossway2/src/main/java/dssc/crossway/CrosswayRules.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/console/ConsoleBoardWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/console/ConsoleBoardWriter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,11 +65,12 @@
         <option value="Andrea" />
       </list>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$/1✪1✪3/DSSC/Corsi/SDM/crossway2" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1UVynJliZ9t3trmQwoPRfkDMbju" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -107,6 +102,18 @@
       <recent name="$PROJECT_DIR$/src/test/java/test/crossway2" />
       <recent name="$PROJECT_DIR$/src/main/java/dssc/crossway2" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Gradle.Tests in 'test.crossway'">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -187,7 +194,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;test.crossway.*&quot;" />
+        <option name="scriptParameters" value="--tests &quot;test.crossway.*&quot; --stacktrace" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -236,18 +243,6 @@
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -333,7 +328,9 @@
     <MESSAGE value="Implemented getCoordinatesMesh with streams, removed a useless argument in getAdjacentFriendCoordinates" />
     <MESSAGE value="moved the responsibility of representation of the board in ConsoleBoardWriter, and other minor changes" />
     <MESSAGE value="RulesTest doesn't depend on GameController anymore, areCrossed method is now more comprehensible, some methods on GameController are now private." />
-    <option name="LAST_COMMIT_MESSAGE" value="RulesTest doesn't depend on GameController anymore, areCrossed method is now more comprehensible, some methods on GameController are now private." />
+    <MESSAGE value="Winning chain" />
+    <MESSAGE value="New method for winningChain" />
+    <option name="LAST_COMMIT_MESSAGE" value="New method for winningChain" />
   </component>
   <component name="WindowStateProjectService">
     <state x="396" y="57" width="1200" height="1002" key="#Project_Structure" timestamp="1577012933563">

@@ -44,7 +44,7 @@ public class GameControllerTest {
     public void fullMatch() throws OutOfBoardException, IllegalMoveException {
 
         GameController gc = initialize();
-        assertEquals(StoneColor.EMPTY, gc.winner(gc.currentTurnColor()));
+        assertEquals(StoneColor.EMPTY, gc.winner());
 
         assertEquals(gc.currentTurnColor(), StoneColor.BLACK);
         gc.performGameMove(new Coordinates(0,0));
@@ -52,30 +52,26 @@ public class GameControllerTest {
         gc.performGameMove(new Coordinates(0,0));
 
         assertEquals(gc.currentTurnColor(), StoneColor.BLACK);
-        assertEquals(StoneColor.EMPTY, gc.winner(gc.currentTurnColor()));
+        assertEquals(StoneColor.EMPTY, gc.winner());
 
         for(int i=0; i<10; i++)
         {
             gc.performGameMove(new Coordinates(i,i+1)); //BLACK
             gc.performGameMove(new Coordinates(i+1,i+1)); //WHITE
-            assertEquals(StoneColor.EMPTY, gc.winner(gc.currentTurnColor()));
+            assertEquals(StoneColor.EMPTY, gc.winner());
         }
 
-        //assertFalse(gc.validateMove(new Move(new Coordinates(2,1), StoneColor.BLACK)));
-        //assertFalse(gc.validateMove(new Move(new Coordinates(5,7), StoneColor.WHITE)));
-        //assertTrue(gc.validateMove(new Move(new Coordinates(2,1), StoneColor.WHITE)));
-
         gc.performGameMove(new Coordinates(9,11)); //BLACK
-        assertEquals(StoneColor.EMPTY, gc.winner(gc.currentTurnColor()));
+        assertEquals(StoneColor.EMPTY, gc.winner());
 
         gc.performGameMove(new Coordinates(10,11)); //WHITE
-        assertEquals(StoneColor.EMPTY, gc.winner(gc.currentTurnColor()));
+        assertEquals(StoneColor.EMPTY, gc.winner());
 
         gc.performGameMove(new Coordinates(11,11)); //BLACK
-        assertEquals(StoneColor.EMPTY, gc.winner(gc.currentTurnColor()));
+        assertEquals(StoneColor.EMPTY, gc.winner());
 
         gc.performGameMove(new Coordinates(11,10)); //WHITE
-        assertEquals(StoneColor.WHITE, gc.winner(gc.currentTurnColor()));
+        assertEquals(StoneColor.WHITE, gc.winner());
 
     }
 

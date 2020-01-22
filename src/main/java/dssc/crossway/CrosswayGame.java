@@ -25,7 +25,7 @@ class CrosswayGame {
 
         while(!gameOver) {
             turn();
-            winner = controller.winner(controller.currentTurnColor());
+            winner = controller.winner();
             gameOver = (winner != StoneColor.EMPTY);
         }
 

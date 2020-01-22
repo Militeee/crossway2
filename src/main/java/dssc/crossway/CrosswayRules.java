@@ -80,7 +80,7 @@ public class CrosswayRules {
 
     public boolean validateMove(GoBoard board, Move m, int turn) throws OutOfBoardException {
         if(turn == 1) return true;
-        return noSuperposition(board, m) && noCrossways(board,m);
+        return noSuperposition(board, m) && noCrossways(board, m);
     }
 
     /**
@@ -92,32 +92,10 @@ public class CrosswayRules {
 
     public StoneColor winner(GoBoard board, StoneColor currentPlayer){
        return IntStream.range(0, board.getSide())
-                .mapToObj(i -> callRightChain(i, currentPlayer.getOpposite(), board)
-                ).filter(color -> color == currentPlayer.getOpposite())
-               .findAny().orElse(StoneColor.EMPTY);
-
-       /*
-       for (int i = 0; i < board.getSide(); i++) {
-            try {
-                // Check white
-                StoneColor whiteChain = winningChain(new Coordinates(0, i), StoneColor.WHITE, board);
-                if (whiteChain != StoneColor.EMPTY)
-                    return whiteChain;
-
-                //Check black
-                StoneColor blackChain = winningChain(new Coordinates(i, 0), StoneColor.BLACK, board);
-                if (blackChain != StoneColor.EMPTY)
-                    return blackChain;
-            }
-            catch (OutOfBoardException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return StoneColor.EMPTY;
-        */
-
-
+               .mapToObj(i -> callRightChain(i, currentPlayer.getOpposite(), board))
+               .filter(color -> color == currentPlayer.getOpposite())
+               .findAny()
+               .orElse(StoneColor.EMPTY);
     }
 
     private StoneColor callRightChain(int movingIndex, StoneColor color, GoBoard board){

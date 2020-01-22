@@ -128,6 +128,29 @@ public class RulesTest {
     }
 
     @Test
+    public void crosswaylegalMoveTest() throws OutOfBoardException {
+
+        /*
+              0 1 2
+            0 B
+            1 W i
+            2 i W
+
+         */
+        GoBoard b = new GoBoard(12);
+        CrosswayRules r = new CrosswayRules();
+
+        b.setStoneColorStatus(new Coordinates( 0, 0), StoneColor.BLACK);
+        b.setStoneColorStatus(new Coordinates( 0, 1), StoneColor.WHITE);
+        b.setStoneColorStatus(new Coordinates( 1, 2), StoneColor.WHITE);
+
+        Move m1 = new Move(new Coordinates( 1, 1), StoneColor.BLACK);
+        Move m2 = new Move(new Coordinates( 0, 2), StoneColor.BLACK);
+        assertTrue(r.validateMove(b, m1, 25));
+        assertTrue(r.validateMove(b, m2, 25));
+    }
+
+    @Test
     public void hasWhiteWon() throws  OutOfBoardException {
 
         GoBoard b = new GoBoard(12);

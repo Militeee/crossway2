@@ -57,9 +57,9 @@ public class CrosswayRules {
         Coordinates crossingPosition2 = new Coordinates(friendPosition.getX(), m.getCoordinates().getY());
 
         try {
-            if(board.getStoneColorStatus(crossingPosition1) == m.getColor().getOpposite() &&
-                    board.getStoneColorStatus(crossingPosition2) == m.getColor().getOpposite())
-                return true;
+            return (board.getStoneColorStatus(friendPosition) == m.getColor() &&
+                    board.getStoneColorStatus(crossingPosition1) == m.getColor().getOpposite() &&
+                    board.getStoneColorStatus(crossingPosition2) == m.getColor().getOpposite());
 
         } catch (OutOfBoardException e) {
             e.printStackTrace();
@@ -71,17 +71,12 @@ public class CrosswayRules {
 
     /**
      *  Main rule validation class. It checks if all the rules are satisfied.
-     * @param board the game board.
-     * @param m the Move object to be validated
-     * @param turn the game turn, passed by GameController. Needed to implement the pie rule.
-     * @return true if the move is valid, false otherwise.
-     * @throws OutOfBoardException if the Move points out of the board.
      */
-
     public boolean validateMove(GoBoard board, Move m, int turn) throws OutOfBoardException {
         if(turn == 1) return true;
         return noSuperposition(board, m) && noCrossways(board, m);
     }
+
 
     /**
      * Given a board status, it checks whether there is a winner, if asked by the GameController.
@@ -89,7 +84,6 @@ public class CrosswayRules {
      * @param currentPlayer color of the current player
      * @return Colors.EMPTY if there is no winner, Colors object of the winner color if there is one.
      */
-
     public StoneColor winner(GoBoard board, StoneColor currentPlayer){
        return IntStream.range(0, board.getSide())
                .mapToObj(i -> callRightChain(i, currentPlayer.getOpposite(), board))
@@ -137,7 +131,7 @@ public class CrosswayRules {
         while(queue.size() != 0){
 
             node = queue.poll();
-            for (Coordinates coordinates : board.adjacentFriendsCoordinates(node, color)) {
+            for (Coordinates coordinates : board.adjacentFriendsCoordinates(node)) {
 
                 if ((coordinates.getX() == (side - 1)) && (color == StoneColor.WHITE)) {
                     return StoneColor.WHITE;

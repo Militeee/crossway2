@@ -46,11 +46,18 @@ public class GoBoardTest {
    public void testExceptionMessage() {
 
        GoBoard board = new GoBoard (8);
+
+       String exceptionMessage = "There were no exception";
+
        try {
            board.setStoneColorStatus(new Coordinates( 1,9), StoneColor.WHITE);
        } catch (OutOfBoardException e) {
-           assertEquals(e.getMessage(),"Out of board!");
+           exceptionMessage = e.getMessage();
        }
+
+       assertEquals("Out of board!", exceptionMessage);
    }
+
+
 
 }

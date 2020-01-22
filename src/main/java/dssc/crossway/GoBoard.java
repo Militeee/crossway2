@@ -3,7 +3,6 @@ package dssc.crossway;
 import dssc.crossway.exceptions.OutOfBoardException;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.stream.Collectors;
 
 public class GoBoard {
@@ -55,22 +54,21 @@ public class GoBoard {
     /**
      * Helper function to retrieve StoneColor coordinates of nearby StoneColors where there are stones of the provided color.
      * @param node Coordinate objects of a StoneColor.
-     * @param color the provided color
      * @return a LinkedList
      */
-    public LinkedList<Coordinates> adjacentFriendsCoordinates(Coordinates node, StoneColor color) {
+    public ArrayList<Coordinates> adjacentFriendsCoordinates(Coordinates node) {
 
         return node.getAdjacents().stream()
                 .filter(this::isInside)
                 .filter(p -> {
                     try {
-                        return getStoneColorStatus(p) == color;
+                        return getStoneColorStatus(p) == getStoneColorStatus(node);
                     } catch (OutOfBoardException e) {
                         e.printStackTrace();
                     }
                     return false;
                 })
-                .collect(Collectors.toCollection(LinkedList::new));
+                .collect(Collectors.toCollection(ArrayList::new));
     }
 
 

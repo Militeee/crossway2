@@ -57,6 +57,4 @@ class CrosswayGame {
         this.controller.performGameMove(m);
     }
 
-
-
 }

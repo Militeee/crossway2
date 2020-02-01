@@ -4,6 +4,7 @@ import dssc.crossway.exceptions.OutOfBoardException;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 
@@ -97,7 +98,7 @@ public class CrosswayRules {
 
             if(color == StoneColor.WHITE) {
                 return winningChain(new Coordinates(0, movingIndex), StoneColor.WHITE, board);
-            } else{
+            } else {
                 return winningChain(new Coordinates(movingIndex,0), StoneColor.BLACK, board);
             }
 
@@ -118,41 +119,64 @@ public class CrosswayRules {
      */
     private StoneColor winningChain(Coordinates node, StoneColor color, GoBoard board) throws OutOfBoardException {
 
+
         if (board.getStoneColorStatus(node) != color) return StoneColor.EMPTY;
-
         int side = board.getSide();
-
         boolean[][] visited = new boolean[side][side];
-        LinkedList<Coordinates> queue = new LinkedList<>();
+        return winningChainAux(node, color, board, visited);
+        
+    }
+
+
+    private StoneColor winningChainAux(Coordinates node, StoneColor color, GoBoard board, boolean[][] visited) {
+
 
         visited[node.getX()][node.getY()] = true;
-        queue.add(node);
 
-        while(queue.size() != 0){
+        ArrayList<Coordinates> nodeList =  board.adjacentFriendsCoordinates(node).stream()
+                .filter(n -> !visited[n.getX()][n.getY()])
+                .collect(Collectors.toCollection(ArrayList::new));
 
-            node = queue.poll();
-            for (Coordinates coordinates : board.adjacentFriendsCoordinates(node)) {
+        if(nodeList.isEmpty()) return StoneColor.EMPTY;
 
-                if ((coordinates.getX() == (side - 1)) && (color == StoneColor.WHITE)) {
-                    return StoneColor.WHITE;
-                } else if ((coordinates.getY() == (side - 1)) && (color == StoneColor.BLACK)) {
-                    return StoneColor.BLACK;
-                }
+        StoneColor winningColor = nodeList.stream()
+                                    .map(n -> colorOfWinningPlayer(n, color, board))
+                                    .filter(c -> c == color)
+                                    .findAny()
+                                    .orElse(StoneColor.EMPTY);
 
-                if (!visited[coordinates.getX()][coordinates.getY()]) {
-                    visited[coordinates.getX()][coordinates.getY()] = true;
-                    queue.add(coordinates);
-                }
+        if(winningColor != StoneColor.EMPTY){
 
-            }
+            return winningColor;
 
+        } else {
+
+            return nodeList.stream().map(n -> winningChainAux(n, color, board,visited))
+                    .filter(c -> c == color)
+                    .findAny()
+                    .orElse(StoneColor.EMPTY);
         }
 
-        return StoneColor.EMPTY;
+
+
+
+    }
+
+    private StoneColor colorOfWinningPlayer(Coordinates node, StoneColor color, GoBoard board){
+
+        if ((node.getX() == (board.getSide() - 1)) && (color == StoneColor.WHITE)) {
+            return StoneColor.WHITE;
+        } else if ((node.getY() == (board.getSide() - 1)) && (color == StoneColor.BLACK)) {
+            return StoneColor.BLACK;
+        } else {
+            return StoneColor.EMPTY;
+        }
+
     }
 
     StoneColor firstPlayer() {
         return StoneColor.BLACK;
     }
+
 
 }

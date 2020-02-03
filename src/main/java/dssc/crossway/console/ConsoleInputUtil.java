@@ -2,7 +2,7 @@ package dssc.crossway.console;
 
 import java.util.Scanner;
 
-public class ConsoleInputHandler {
+public class ConsoleInputUtil {
 
 
     private ConsoleMessageWriter consoleMessageWriter = new ConsoleMessageWriter();

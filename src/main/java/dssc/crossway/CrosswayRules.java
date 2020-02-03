@@ -3,7 +3,6 @@ package dssc.crossway;
 import dssc.crossway.exceptions.OutOfBoardException;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 

@@ -3,10 +3,10 @@ package dssc.crossway.console;
 import dssc.crossway.Coordinates;
 import dssc.crossway.GoBoard;
 
-public class UserInputManager {
+public class ConsoleInputManager {
 
     private ConsoleMessageWriter consoleMessageWriter  = new ConsoleMessageWriter();
-    private ConsoleInputHandler consoleInputHandler = new ConsoleInputHandler();
+    private ConsoleInputUtil consoleInputUtil = new ConsoleInputUtil();
 
     public Coordinates askMove(GoBoard crosswayBoard) {
 
@@ -30,7 +30,7 @@ public class UserInputManager {
                 consoleMessageWriter.requestYMoveMessage();
             }
 
-            dimension = consoleInputHandler.askUserForInteger();
+            dimension = consoleInputUtil.askUserForInteger();
             dimIsValid = crosswayBoard.isInside(dimension);
 
             if(!dimIsValid)

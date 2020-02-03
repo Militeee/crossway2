@@ -2,7 +2,7 @@ package dssc.crossway;
 
 import dssc.crossway.console.ConsoleBoardWriter;
 import dssc.crossway.console.ConsoleMessageWriter;
-import dssc.crossway.console.UserInputManager;
+import dssc.crossway.console.ConsoleInputManager;
 import dssc.crossway.exceptions.IllegalMoveException;
 import dssc.crossway.exceptions.OutOfBoardException;
 
@@ -10,7 +10,7 @@ class CrosswayGame {
 
     private ConsoleMessageWriter consoleMessageWriter = new ConsoleMessageWriter();
     private ConsoleBoardWriter consoleBoardWriter = new ConsoleBoardWriter();
-    private UserInputManager userInputManager = new UserInputManager();
+    private ConsoleInputManager consoleInputManager = new ConsoleInputManager();
 
     private static final int CROSSWAY_BOARD_SIDE = 12;
 
@@ -42,7 +42,7 @@ class CrosswayGame {
         while(!validMove) {
 
             try {
-                Coordinates m = userInputManager.askMove(this.controller.getBoard());
+                Coordinates m = consoleInputManager.askMove(this.controller.getBoard());
                 applyMove(m);
                 validMove = true;
 

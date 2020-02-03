@@ -12,6 +12,8 @@ import java.util.stream.IntStream;
  */
 public class CrosswayRules {
 
+    private static final int CROSSWAY_BOARD_SIZE = 12;
+
 
     /**
      * No superposition rule: a player cannot place a piece in an already occupied cell.
@@ -178,4 +180,7 @@ public class CrosswayRules {
     }
 
 
+    public int boardSize() {
+        return CROSSWAY_BOARD_SIZE;
+    }
 }

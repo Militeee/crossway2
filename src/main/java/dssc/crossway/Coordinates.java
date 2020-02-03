@@ -46,9 +46,20 @@ public class Coordinates {
      * @return  ArrayList of coordinates
      */
     public ArrayList<Coordinates> getAdjacents() {
-
         return getCoordinatesMesh(getX()-1, getX()+2, getY()-1, getY()+2).stream()
                 .filter(c -> !this.equals(c))
                 .collect(Collectors.toCollection(ArrayList::new));
+    }
+
+    public boolean equals(Object o)
+    {
+        if (o instanceof Coordinates) {
+            Coordinates c = (Coordinates)o;
+            return c.getX()==this.getX() && c.getY()==this.getY();
+        }
+        else {
+            return false;
+        }
+
     }
 }

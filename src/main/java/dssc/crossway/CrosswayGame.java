@@ -12,9 +12,7 @@ class CrosswayGame {
     private ConsoleBoardWriter consoleBoardWriter = new ConsoleBoardWriter();
     private ConsoleInputManager consoleInputManager = new ConsoleInputManager();
 
-    private static final int CROSSWAY_BOARD_SIDE = 12;
-
-    private GameController controller = new GameController(new GoBoard(CROSSWAY_BOARD_SIDE), new CrosswayRules());
+    private GameController controller = new GameController();
 
     public void start() {
 

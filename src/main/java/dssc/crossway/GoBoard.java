@@ -1,7 +1,6 @@
 package dssc.crossway;
 
 import dssc.crossway.exceptions.OutOfBoardException;
-
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
@@ -52,8 +51,8 @@ public class GoBoard {
 
 
     /**
-     * Helper function to retrieve StoneColor coordinates of nearby StoneColors where there are stones of the provided color.
-     * @param node Coordinate objects of a StoneColor.
+     * given the coordinates of a stone in the board, returns coordinates of nearby Stones of the same color .
+     * @param node selected coordinates.
      * @return a LinkedList
      */
     public ArrayList<Coordinates> adjacentFriendsCoordinates(Coordinates node) {

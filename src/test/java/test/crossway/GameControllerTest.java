@@ -10,20 +10,16 @@ import static org.junit.Assert.*;
 
 public class GameControllerTest {
 
-    private GameController initialize() {
-        return new GameController(new GoBoard(12), new CrosswayRules());
-    }
-
    @Test
    public void firstMove() throws OutOfBoardException, IllegalMoveException {
-       GameController gc = initialize();
+       GameController gc = new GameController();
        gc.performGameMove((new Coordinates(1,1)));
        assertEquals(gc.getBoard().getStoneColorStatus(new Coordinates(1,1)), StoneColor.BLACK);
    }
 
     @Test
     public void illegalMove() throws OutOfBoardException, IllegalMoveException {
-        GameController gc = initialize();
+        GameController gc = new GameController();
         gc.performGameMove(new Coordinates(1,1));
         gc.performGameMove(new Coordinates(1,2));
 
@@ -43,7 +39,7 @@ public class GameControllerTest {
     @Test
     public void fullMatch() throws OutOfBoardException, IllegalMoveException {
 
-        GameController gc = initialize();
+        GameController gc = new GameController();
         assertEquals(StoneColor.EMPTY, gc.winner());
 
         assertEquals(gc.currentTurnColor(), StoneColor.BLACK);

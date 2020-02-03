@@ -10,9 +10,9 @@ public class GameController {
     private int turn = 0;
 
 
-    public GameController(GoBoard board, CrosswayRules rules) {
-        this.board = board;
-        this.rules = rules;
+    public GameController() {
+        this.rules = new CrosswayRules();
+        this.board = new GoBoard(this.rules.boardSize());
     }
 
     private void placeStone(Move m) throws OutOfBoardException, IllegalMoveException {

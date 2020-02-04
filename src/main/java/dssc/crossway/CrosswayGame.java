@@ -44,9 +44,13 @@ class CrosswayGame {
                 applyMove(m);
                 validMove = true;
 
-            } catch (Exception e) {
+            } catch (IllegalMoveException e) {
                 consoleMessageWriter.writeIllegalMoveMessage();
+
+            } catch (OutOfBoardException e) {
+                consoleMessageWriter.writeOutOfBoardMessage();
             }
+
 
         }
     }

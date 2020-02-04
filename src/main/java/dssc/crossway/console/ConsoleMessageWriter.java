@@ -12,6 +12,7 @@ public class ConsoleMessageWriter {
     private static final String WRONG_FORMAT_MESSAGE = "The input format is not correct, please retry";
     private static final String ILLEGAL_VALUE_MESSAGE = "The inserted value is illegal";
     private static final String ILLEGAL_MOVE_MESSAGE = "Illegal Move";
+    private static final String OUT_OF_BOARD_MESSAGE = "Out of board coordinates";
 
     public void showEndingMessage(StoneColor winner) {
         System.out.println(String.format(WINNER_MESSAGE, winner.toString()));
@@ -42,4 +43,6 @@ public class ConsoleMessageWriter {
     }
 
     public void writeIllegalMoveMessage() { System.out.println(ILLEGAL_MOVE_MESSAGE); }
+
+    public void writeOutOfBoardMessage() { System.out.println(OUT_OF_BOARD_MESSAGE); }
 }

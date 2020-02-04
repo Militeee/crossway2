@@ -94,6 +94,13 @@ public class CrosswayRules {
                .orElse(StoneColor.EMPTY);
     }
 
+    /**
+     * Calls winningChain with the right parameters based on the color
+     * @param movingIndex the index that goes from 0-boardSize
+     * @param color the current player color
+     * @param board a game board
+     * @return the winning player
+     */
     private StoneColor callRightChain(int movingIndex, StoneColor color, GoBoard board){
         try {
 
@@ -110,6 +117,14 @@ public class CrosswayRules {
     }
 
 
+    /**
+     * Performs depth first search (DFS) to find out if someone has won
+     * @param node starting node
+     * @param color player color
+     * @param board a game board
+     * @return the winning color or StoneColor.EMPTY if there is not a winner
+     * @throws OutOfBoardException  if the Move falls outside of the board.
+     */
     private StoneColor winningChain(Coordinates node, StoneColor color, GoBoard board) throws OutOfBoardException {
 
 
@@ -120,7 +135,14 @@ public class CrosswayRules {
 
     }
 
-
+    /**
+     * Auxiliary method to perform depth first search in a recursive manner
+     * @param node starting node
+     * @param color current player color
+     * @param board a game board
+     * @param visited matrix of visited coordinates
+     * @return winner or winningChain of same color neighbours, if no neighbours returns StoneColor.EMPTY
+     */
     private StoneColor winningChainAux(Coordinates node, StoneColor color, GoBoard board, boolean[][] visited) {
 
 
@@ -141,6 +163,13 @@ public class CrosswayRules {
 
     }
 
+    /**
+     * Filters same color neighbours that have been already visited
+     * @param node parent node
+     * @param board a game board
+     * @param visited matrix of visited coordinates
+     * @return ArrayList of filtered coordinates
+     */
     private ArrayList<Coordinates> filterVisited(Coordinates node, GoBoard board, boolean[][] visited){
 
         return board.adjacentFriendsCoordinates(node).stream()
@@ -148,6 +177,13 @@ public class CrosswayRules {
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
+    /**
+     * Checks if a given stone is the winning one
+     * @param node current node
+     * @param color player color
+     * @param board a game board
+     * @return if the stone is a winning one, returns the color of the winner, else StoneColor.EMPTY
+     */
     private StoneColor colorOfWinningPlayer(Coordinates node, StoneColor color, GoBoard board){
 
         if ((node.getX() == (board.getSide() - 1)) && (color == StoneColor.WHITE)) {
@@ -160,7 +196,7 @@ public class CrosswayRules {
 
     }
 
-    StoneColor firstPlayer() {
+    public StoneColor firstPlayer() {
         return StoneColor.BLACK;
     }
 

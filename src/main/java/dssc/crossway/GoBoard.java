@@ -1,6 +1,7 @@
 package dssc.crossway;
 
 import dssc.crossway.exceptions.OutOfBoardException;
+
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
@@ -16,7 +17,7 @@ public class GoBoard {
     }
 
     private void initializeBoard() {
-        Coordinates.getCoordinatesMesh(0,side,0,side)
+        Coordinates.getCoordinatesMesh(0, side, 0, side)
                 .forEach(c -> this.board[c.getX()][c.getY()] = StoneColor.EMPTY);
     }
 
@@ -24,8 +25,7 @@ public class GoBoard {
         return (position >= 0 && position < this.getSide());
     }
 
-    public boolean isInside(Coordinates coord)
-    {
+    public boolean isInside(Coordinates coord) {
         return isInside(coord.getX()) && isInside(coord.getY());
     }
 
@@ -35,7 +35,7 @@ public class GoBoard {
 
 
     public StoneColor getStoneColorStatus(Coordinates c) throws OutOfBoardException {
-        if(!isInside(c))
+        if (!isInside(c))
             throw new OutOfBoardException();
 
         return this.board[c.getX()][c.getY()];
@@ -49,9 +49,9 @@ public class GoBoard {
     }
 
 
-
     /**
      * given the coordinates of a stone in the board, returns coordinates of nearby Stones of the same color .
+     *
      * @param node selected coordinates.
      * @return a LinkedList
      */
@@ -82,7 +82,7 @@ public class GoBoard {
 
         return c.getAdjacents().stream()
                 .filter(this::isInside)
-                .filter(p -> p.getY()!=c.getY() && p.getX()!=c.getX())
+                .filter(p -> p.getY() != c.getY() && p.getX() != c.getX())
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 

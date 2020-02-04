@@ -6,8 +6,18 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb783e39-6736-40ec-8a70-b64a8865b0ab" name="Default Changelist" comment="RulesTest doesn't depend on GameController anymore, areCrossed method is now more comprehensible, some methods on GameController are now private.">
+    <list default="true" id="cb783e39-6736-40ec-8a70-b64a8865b0ab" name="Default Changelist" comment="Added comments">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/CrosswayGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/CrosswayGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/CrosswayRules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/CrosswayRules.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dssc/crossway/GoBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dssc/crossway/GoBoard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,18 +105,6 @@
       <recent name="$PROJECT_DIR$/src/main/java/dssc/crossway2" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="Gradle.Tests in 'test.crossway'">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dssc.crossway.Main" />
@@ -126,7 +124,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;test.crossway.GameControllerTest.fullMatch&quot;" />
+        <option name="scriptParameters" value="--tests &quot;test.crossway.GameControllerTest.fullMatch&quot; --info" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -220,21 +218,33 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="Gradle.Tests in 'crossway2.test'" />
-      <item itemvalue="Gradle.RulesTest.hasWhiteWon" />
       <item itemvalue="Gradle.GameControllerTest.fullMatch" />
+      <item itemvalue="Gradle.RulesTest.hasWhiteWon" />
+      <item itemvalue="Gradle.Tests in 'crossway2.test'" />
       <item itemvalue="Gradle.Tests in 'test.crossway'" />
       <item itemvalue="JUnit.all tests" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Tests in 'test.crossway'" />
-        <item itemvalue="Gradle.Tests in 'crossway2.test'" />
         <item itemvalue="Gradle.GameControllerTest.fullMatch" />
+        <item itemvalue="Gradle.Tests in 'crossway2.test'" />
         <item itemvalue="Gradle.RulesTest.hasWhiteWon" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -282,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576574801190</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Better winningChainMethod">
+      <created>1580809780934</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1580809780934</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -320,7 +337,9 @@
     <MESSAGE value="Implemented getCoordinatesMesh with streams, removed a useless argument in getAdjacentFriendCoordinates" />
     <MESSAGE value="moved the responsibility of representation of the board in ConsoleBoardWriter, and other minor changes" />
     <MESSAGE value="RulesTest doesn't depend on GameController anymore, areCrossed method is now more comprehensible, some methods on GameController are now private." />
-    <option name="LAST_COMMIT_MESSAGE" value="RulesTest doesn't depend on GameController anymore, areCrossed method is now more comprehensible, some methods on GameController are now private." />
+    <MESSAGE value="Better winningChainMethod" />
+    <MESSAGE value="Added comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comments" />
   </component>
   <component name="WindowStateProjectService">
     <state x="396" y="57" width="1200" height="1002" key="#Project_Structure" timestamp="1577012933563">
@@ -332,9 +351,10 @@
     </state>
     <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576148642288" />
     <state x="446" y="220" width="1474" height="807" key="#com.intellij.execution.impl.EditConfigurationsDialog/83.38.1837.1042@83.38.1837.1042" timestamp="1579167193817" />
-    <state x="183" y="136" width="1637" height="844" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1579629798743">
-      <screen x="83" y="38" width="1837" height="1042" />
+    <state x="105" y="126" width="1711" height="853" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1580573400875">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
+    <state x="105" y="126" width="1711" height="853" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1580573400875" />
     <state x="183" y="136" width="1637" height="844" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/83.38.1837.1042@83.38.1837.1042" timestamp="1579629798743" />
     <state x="616" y="325" width="761" height="466" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1578244793455">
       <screen x="83" y="38" width="1837" height="1042" />
@@ -357,10 +377,10 @@
     </state>
     <state x="713" y="414" width="494" height="297" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.27.1920.1053@0.27.1920.1053" timestamp="1576941388286" />
     <state x="765" y="421" width="702" height="398" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/83.38.1837.1042@83.38.1837.1042" timestamp="1578503024526" />
-    <state x="533" y="159" width="1083" height="921" key="CommitChangelistDialog2" timestamp="1579643702997">
-      <screen x="83" y="38" width="1837" height="1042" />
+    <state x="566" y="148" width="1083" height="921" key="CommitChangelistDialog2" timestamp="1580813582947">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="566" y="148" width="777" height="818" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1576574801094" />
+    <state x="566" y="148" width="777" height="818" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1580813582947" />
     <state x="533" y="159" width="1083" height="921" key="CommitChangelistDialog2/83.38.1837.1042@83.38.1837.1042" timestamp="1579643702997" />
     <state x="94" y="168" width="1469" height="863" key="DiffContextDialog" timestamp="1579166082217">
       <screen x="83" y="38" width="1837" height="1042" />
@@ -371,40 +391,56 @@
     </state>
     <state x="622" y="193" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1576941796770" />
     <state x="678" y="202" width="636" height="712" key="FileChooserDialogImpl/83.38.1837.1042@83.38.1837.1042" timestamp="1578245551084" />
-    <state width="1769" height="334" key="GridCell.Tab.0.bottom" timestamp="1579644015856">
-      <screen x="83" y="38" width="1837" height="1042" />
+    <state width="937" height="275" key="GridCell.Tab.0.bottom" timestamp="1580813583015">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="937" height="275" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1576942400902" />
+    <state width="937" height="275" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1580813583015" />
     <state width="1769" height="334" key="GridCell.Tab.0.bottom/83.38.1837.1042@83.38.1837.1042" timestamp="1579644015856" />
-    <state width="1769" height="334" key="GridCell.Tab.0.center" timestamp="1579644015855">
-      <screen x="83" y="38" width="1837" height="1042" />
+    <state width="937" height="275" key="GridCell.Tab.0.center" timestamp="1580813583015">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="937" height="275" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1576942400901" />
+    <state width="937" height="275" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1580813583015" />
     <state width="1769" height="334" key="GridCell.Tab.0.center/83.38.1837.1042@83.38.1837.1042" timestamp="1579644015855" />
-    <state width="1769" height="334" key="GridCell.Tab.0.left" timestamp="1579644015855">
-      <screen x="83" y="38" width="1837" height="1042" />
+    <state width="937" height="275" key="GridCell.Tab.0.left" timestamp="1580813583015">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="937" height="275" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1576942400901" />
+    <state width="937" height="275" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1580813583015" />
     <state width="1769" height="334" key="GridCell.Tab.0.left/83.38.1837.1042@83.38.1837.1042" timestamp="1579644015855" />
-    <state width="1769" height="334" key="GridCell.Tab.0.right" timestamp="1579644015856">
-      <screen x="83" y="38" width="1837" height="1042" />
+    <state width="937" height="275" key="GridCell.Tab.0.right" timestamp="1580813583015">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="937" height="275" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1576942400902" />
+    <state width="937" height="275" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1580813583015" />
     <state width="1769" height="334" key="GridCell.Tab.0.right/83.38.1837.1042@83.38.1837.1042" timestamp="1579644015856" />
-    <state x="719" y="250" width="866" height="830" key="MultipleFileMergeDialog" timestamp="1579687306682">
-      <screen x="83" y="38" width="1837" height="1042" />
+    <state width="937" height="340" key="GridCell.Tab.1.bottom" timestamp="1580573753437">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="665" y="271" width="580" height="571" key="MultipleFileMergeDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576574825860" />
+    <state width="937" height="340" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1580573753437" />
+    <state width="937" height="340" key="GridCell.Tab.1.center" timestamp="1580573753436">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="937" height="340" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1580573753436" />
+    <state width="937" height="340" key="GridCell.Tab.1.left" timestamp="1580573753436">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="937" height="340" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1580573753436" />
+    <state width="937" height="340" key="GridCell.Tab.1.right" timestamp="1580573753436">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="937" height="340" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1580573753436" />
+    <state x="665" y="271" width="866" height="830" key="MultipleFileMergeDialog" timestamp="1580567087715">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="665" y="271" width="580" height="571" key="MultipleFileMergeDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1580567087715" />
     <state x="719" y="250" width="866" height="830" key="MultipleFileMergeDialog/83.38.1837.1042@83.38.1837.1042" timestamp="1579687306682" />
     <state x="244" y="260" width="1539" height="680" key="SettingsEditor" timestamp="1578839503124">
       <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state x="443" y="131" width="1024" height="852" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1576941433476" />
     <state x="244" y="260" width="1539" height="680" key="SettingsEditor/83.38.1837.1042@83.38.1837.1042" timestamp="1578839503124" />
-    <state x="234" y="297" width="1575" height="530" key="Vcs.Push.Dialog.v2" timestamp="1579643740065">
-      <screen x="83" y="38" width="1837" height="1042" />
+    <state x="555" y="289" width="1575" height="530" key="Vcs.Push.Dialog.v2" timestamp="1580809786307">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1576578082617" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1580809786307" />
     <state x="234" y="297" width="1575" height="530" key="Vcs.Push.Dialog.v2/83.38.1837.1042@83.38.1837.1042" timestamp="1579643740065" />
     <state x="669" y="309" width="654" height="498" key="chooseDestDirectoryDialog" timestamp="1576346283253">
       <screen x="83" y="38" width="1837" height="1042" />
@@ -414,24 +450,24 @@
       <screen x="83" y="38" width="1837" height="1042" />
     </state>
     <state x="677" y="404" width="688" height="384" key="classpath-attribute-editor/83.38.1837.1042@83.38.1837.1042" timestamp="1578245204255" />
-    <state x="672" y="388" key="com.intellij.ide.util.TipDialog" timestamp="1579685710722">
-      <screen x="83" y="38" width="1837" height="1042" />
+    <state x="616" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1580809290485">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="616" y="381" key="com.intellij.ide.util.TipDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576941780543" />
+    <state x="616" y="381" key="com.intellij.ide.util.TipDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1580809290485" />
     <state x="672" y="388" key="com.intellij.ide.util.TipDialog/83.38.1837.1042@83.38.1837.1042" timestamp="1579685710722" />
     <state x="632" y="449" width="636" height="231" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1576142975978">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="632" y="449" width="636" height="231" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.27.1920.1053@0.27.1920.1053" timestamp="1576142975978" />
-    <state x="780" y="479" width="675" height="234" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579687279817">
-      <screen x="83" y="38" width="1837" height="1042" />
-    </state>
-    <state x="728" y="473" width="454" height="178" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1053@0.27.1920.1053" timestamp="1576578061483" />
-    <state x="780" y="479" width="675" height="234" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/83.38.1837.1042@83.38.1837.1042" timestamp="1579687279817" />
-    <state x="649" y="347" width="612" height="427" key="git4idea.merge.GitPullDialog" timestamp="1576574953864">
+    <state x="728" y="473" width="454" height="185" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580812646717">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="649" y="347" width="612" height="427" key="git4idea.merge.GitPullDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576574953864" />
+    <state x="728" y="473" width="454" height="185" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1053@0.27.1920.1053" timestamp="1580812646717" />
+    <state x="780" y="479" width="675" height="234" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/83.38.1837.1042@83.38.1837.1042" timestamp="1579687279817" />
+    <state x="649" y="347" width="612" height="434" key="git4idea.merge.GitPullDialog" timestamp="1580809716865">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="649" y="347" width="612" height="434" key="git4idea.merge.GitPullDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1580809716865" />
     <state x="83" y="38" width="1827" height="1042" key="new project wizard" timestamp="1578346023086">
       <screen x="83" y="38" width="1837" height="1042" />
     </state>

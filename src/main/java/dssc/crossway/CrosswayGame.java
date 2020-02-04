@@ -41,7 +41,7 @@ class CrosswayGame {
 
             try {
                 Coordinates m = consoleInputManager.askMove(this.controller.getBoard());
-                applyMove(m);
+                controller.performGameMove(m);
                 validMove = true;
 
             } catch (IllegalMoveException e) {
@@ -51,12 +51,7 @@ class CrosswayGame {
                 consoleMessageWriter.writeOutOfBoardMessage();
             }
 
-
         }
-    }
-
-    private void applyMove(Coordinates m) throws IllegalMoveException, OutOfBoardException {
-        this.controller.performGameMove(m);
     }
 
 }

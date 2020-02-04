@@ -127,7 +127,6 @@ public class CrosswayRules {
      */
     private StoneColor winningChain(Coordinates node, StoneColor color, GoBoard board) throws OutOfBoardException {
 
-
         if (board.getStoneColorStatus(node) != color) return StoneColor.EMPTY;
         int side = board.getSide();
         boolean[][] visited = new boolean[side][side];
@@ -145,7 +144,6 @@ public class CrosswayRules {
      */
     private StoneColor winningChainAux(Coordinates node, StoneColor color, GoBoard board, boolean[][] visited) {
 
-
         visited[node.getX()][node.getY()] = true;
 
         ArrayList<Coordinates> nodeList =  filterVisited(node, board, visited);
@@ -160,7 +158,6 @@ public class CrosswayRules {
                 .filter(c -> c == color)
                 .findAny()
                 .orElse(StoneColor.EMPTY);
-
     }
 
     /**

@@ -109,15 +109,7 @@ public class CrosswayRules {
         return StoneColor.EMPTY;
     }
 
-    /**
-     *
-     * Implements breadth first search for finding the winner
-     *
-     * @param node coordinates of the node
-     * @param color color of the current player
-     * @param board 2D board
-     * @return if there is a winner
-     */
+
     private StoneColor winningChain(Coordinates node, StoneColor color, GoBoard board) throws OutOfBoardException {
 
 
@@ -125,7 +117,7 @@ public class CrosswayRules {
         int side = board.getSide();
         boolean[][] visited = new boolean[side][side];
         return winningChainAux(node, color, board, visited);
-        
+
     }
 
 
@@ -134,33 +126,26 @@ public class CrosswayRules {
 
         visited[node.getX()][node.getY()] = true;
 
-        ArrayList<Coordinates> nodeList =  board.adjacentFriendsCoordinates(node).stream()
-                .filter(n -> !visited[n.getX()][n.getY()])
-                .collect(Collectors.toCollection(ArrayList::new));
+        ArrayList<Coordinates> nodeList =  filterVisited(node, board, visited);
+
+        StoneColor winningColor = colorOfWinningPlayer(node, color, board);
+
+        if(winningColor != StoneColor.EMPTY) return winningColor;
 
         if(nodeList.isEmpty()) return StoneColor.EMPTY;
 
-        StoneColor winningColor = nodeList.stream()
-                                    .map(n -> colorOfWinningPlayer(n, color, board))
-                                    .filter(c -> c == color)
-                                    .findAny()
-                                    .orElse(StoneColor.EMPTY);
+        return nodeList.stream().map(n -> winningChainAux(n, color, board,visited))
+                .filter(c -> c == color)
+                .findAny()
+                .orElse(StoneColor.EMPTY);
 
-        if(winningColor != StoneColor.EMPTY){
+    }
 
-            return winningColor;
+    private ArrayList<Coordinates> filterVisited(Coordinates node, GoBoard board, boolean[][] visited){
 
-        } else {
-
-            return nodeList.stream().map(n -> winningChainAux(n, color, board,visited))
-                    .filter(c -> c == color)
-                    .findAny()
-                    .orElse(StoneColor.EMPTY);
-        }
-
-
-
-
+        return board.adjacentFriendsCoordinates(node).stream()
+                .filter(n -> !visited[n.getX()][n.getY()])
+                .collect(Collectors.toCollection(ArrayList::new));
     }
 
     private StoneColor colorOfWinningPlayer(Coordinates node, StoneColor color, GoBoard board){

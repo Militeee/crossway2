@@ -14,6 +14,7 @@ public class CoordinatesTest {
     public void equalsTest() {
         assertEquals(new Coordinates(2, 3), new Coordinates(2, 3));
         assertNotEquals(new Coordinates(2, 8), new Coordinates(2, 3));
+        assertNotEquals(new Coordinates(2, 8), new Object());
     }
 
     @Test
